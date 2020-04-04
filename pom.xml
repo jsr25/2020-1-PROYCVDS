@@ -8,5 +8,11 @@
     <artifactId>2020-1-PROYCVDS</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.0.0</version>
+    </dependency>
+
 
 </project>
