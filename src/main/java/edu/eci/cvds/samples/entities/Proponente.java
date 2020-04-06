@@ -1,9 +1,13 @@
 package edu.eci.cvds.samples.entities;
 
+
+
+import java.util.Date;
+
 public class Proponente {
     private String usuario,descripcion,palabraClave,area;
     private Date fecha;
-    public void Proponente(Date fecha;String usuario,String descripcion,String palabraClave,String area,)
+    public void Proponente(Date fecha,String usuario, String descripcion, String palabraClave, String area)
     {
         this.usuario=usuario;
         this.descripcion=descripcion;

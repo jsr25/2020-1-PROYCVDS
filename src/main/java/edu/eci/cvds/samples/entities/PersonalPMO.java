@@ -8,9 +8,9 @@ public class PersonalPMO {
         this.appelido=apellido;
         this.pasword=pasword;
     }
-    public String getNombre(){ return nombre }
-    public String getAppelido(){ return appelido }
-    public String getPasword(){ return pasword }
+    public String getNombre(){ return nombre; }
+    public String getAppelido(){ return appelido; }
+    public String getPasword(){ return pasword; }
     public void setAppelido(String appelido) { this.appelido = appelido; }
     public void setNombre(String nombre) { this.nombre = nombre; }
     public void setPasword(String pasword) { this.pasword = pasword; }
