@@ -1,6 +1,8 @@
 package edu.eci.cvds.samples.services;
 import edu.eci.cvds.samples.persistence.DAOAdministrador;
+import edu.eci.cvds.samples.persistence.DAOPersonalPMO;
 import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOAdministrador;
+import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOPersonalPMO;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 
@@ -20,6 +22,7 @@ public class ServicioBancodeProyectosFactory {
                 setClassPathResource("mybatis-config.xml");
                 bind(ServicioBancodeProyectos.class).to(ServicioBancodeProyectosimpl.class);
                 bind(DAOAdministrador.class).to(MyBatisDAOAdministrador.class);
+                bind(DAOPersonalPMO.class).to(MyBatisDAOPersonalPMO.class);
             }
         });
         testingInjector = createInjector(new XMLMyBatisModule() {
@@ -30,6 +33,7 @@ public class ServicioBancodeProyectosFactory {
                 setClassPathResource("mybatis-config-h2.xml");
                 bind(ServicioBancodeProyectos.class).to(ServicioBancodeProyectosimpl.class);
                 bind(DAOAdministrador.class).to(MyBatisDAOAdministrador.class);
+                bind(DAOPersonalPMO.class).to(MyBatisDAOPersonalPMO.class);
             }
         });
     }
