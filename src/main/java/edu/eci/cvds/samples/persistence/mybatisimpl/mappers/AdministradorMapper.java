@@ -1,13 +1,11 @@
 package edu.eci.cvds.samples.persistence.mybatisimpl.mappers;
 
 
+import edu.eci.cvds.samples.entities.Administrador;
 
-public class AdministradorMapper{
+public interface AdministradorMapper{
 
-    public AdministradorMapper(){
-
-    }
-
+    public Administrador consultarInfo();
 
 
 

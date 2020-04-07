@@ -4,13 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.eci.cvds.samples.persistence.mybatisimpl.mappers.AdministradorMapper">
-    <select id='administrador' parameterType='map' resultMap='AdministradorResult'>
-        select * from Administrador
+    <select id='consultarInfo' parameterType='map' resultMap='AdministradorResult'>
+        select a.nombre,
+               a.apellido,
+               a.password
+        from
+         administrador as a;
     </select>
     <resultMap type='Administrador' id='AdministradorResult'>
-        <id property='id' column='id'/>
-        <result property='nombre' column='nombre'/>
+        <id property='nombre' column='nombre'/>
         <result property='apellido' column='apellido'/>
-        <result property='pasword' column='pasword'/>
+        <result property='password' column='password'/>
     </resultMap>
 </mapper>

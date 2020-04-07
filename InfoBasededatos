@@ -3,4 +3,6 @@ Database :d7cc15g8g8s42e
 User: ltiehiuvshooaz
 Port: 5432
 Password :e386c02834fa16f29ba05e7c41fda1bfc318e2698c0a95cba04226b1d4613929
-URI :postgres://ltiehiuvshooaz:e386c02834fa16f29ba05e7c41fda1bfc318e2698c0a95cba04226b1d4613929@ec2-3-91-112-166.compute-1.amazonaws.com:5432/d7cc15g8g8s42e
+URI jdbc:postgres://ltiehiuvshooaz:e386c02834fa16f29ba05e7c41fda1bfc318e2698c0a95cba04226b1d4613929@ec2-3-91-112-166.compute-1.amazonaws.com:5432/d7cc15g8g8s42e?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory&sslmode=require
+
+PostgreSQL - d7cc15g8g8s42e

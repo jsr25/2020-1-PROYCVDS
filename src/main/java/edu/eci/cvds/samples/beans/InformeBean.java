@@ -4,4 +4,5 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "js")
 @SessionScoped
 public class InformeBean {
+
 }
