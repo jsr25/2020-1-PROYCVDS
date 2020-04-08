@@ -14,11 +14,11 @@
         from
          personalpmo as a
          where
-         a.login='Juan'
+         a.login='matox99'
          ;
     </select>
 
-    <resultMap type='PersonalPMO' id='PersonalPMOResult'>
+    <resultMap type='edu.eci.cvds.samples.entities.PersonalPMO' id='PersonalPMOResult'>
         <id property='login' column='login'/>
         <result property='nombre' column='nombre'/>
         <result property='appelido' column='apellido'/>

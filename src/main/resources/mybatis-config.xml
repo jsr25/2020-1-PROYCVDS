@@ -25,5 +25,8 @@
 </environments>
     <mappers>
         <mapper resource="mappers/AdministradorMapper.xml"></mapper>
+        <mapper resource="mappers/PersonalPMOMapper.xml"></mapper>
     </mappers>
+
+
 </configuration>

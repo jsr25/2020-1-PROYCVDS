@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 
 import edu.eci.cvds.samples.entities.Administrador;
+import edu.eci.cvds.samples.entities.PersonalPMO;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.AdministradorMapper;
 import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.PersonalPMOMapper;
@@ -49,7 +50,7 @@ public class MyBatisExample {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
 
         SqlSession sqlss = sessionfact.openSession();
-        AdministradorMapper u=sqlss.getMapper(AdministradorMapper.class);
+        PersonalPMOMapper u=sqlss.getMapper(PersonalPMOMapper.class);
         //Administrador usuario = u.consultarInfo();
         System.out.print(u.consultarInfo());
         sqlss.commit();
