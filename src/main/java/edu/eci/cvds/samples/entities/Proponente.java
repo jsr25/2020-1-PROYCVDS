@@ -2,27 +2,59 @@ package edu.eci.cvds.samples.entities;
 
 
 
-import java.util.Date;
 
 public class Proponente {
-    private String usuario,descripcion,palabraClave,area;
-    private Date fecha;
-    public void Proponente(Date fecha,String usuario, String descripcion, String palabraClave, String area)
-    {
-        this.usuario=usuario;
-        this.descripcion=descripcion;
-        this.palabraClave=palabraClave;
-        this.area=area;
-        this.fecha=fecha;
+    private String nombre, apellido, password, login, correo;
+
+    public void Proponente(String login, String nombre, String apellido, String password, String correo) {
+        this.login = login;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.password = password;
     }
-    public String getUsuario(){ return usuario; }
-    public String getDescripcion(){ return descripcion; }
-    public String getPalabraClave(){ return palabraClave; }
-    public String getArea(){ return area; }
-    public Date getFecha(){ return fecha; }
-    public void setUsuario(){ this.usuario=usuario; }
-    public void setDescripcion(){ this.descripcion=descripcion; }
-    public void setPalabraClave(){ this.palabraClave=palabraClave; }
-    public void setArea(){ this.area=area; }
-    public void setFecha(){ this.fecha=fecha; }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String toString(){
+        return "PersonalPMO{"+ "usuario= "+ login + ", nombre=" + nombre + ", apellido=" + apellido + ", password=" + password + ", correo=" + correo +'}';
+    }
 }

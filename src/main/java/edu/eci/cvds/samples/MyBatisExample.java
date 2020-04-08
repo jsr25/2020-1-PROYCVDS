@@ -10,6 +10,8 @@ import edu.eci.cvds.samples.entities.PersonalPMO;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.AdministradorMapper;
 import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.PersonalPMOMapper;
+import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.ProponenteMapper;
+import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.UsuarioMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -50,7 +52,7 @@ public class MyBatisExample {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
 
         SqlSession sqlss = sessionfact.openSession();
-        PersonalPMOMapper u=sqlss.getMapper(PersonalPMOMapper.class);
+        UsuarioMapper u=sqlss.getMapper(UsuarioMapper.class);
         //Administrador usuario = u.consultarInfo();
         System.out.print(u.consultarInfo());
         sqlss.commit();

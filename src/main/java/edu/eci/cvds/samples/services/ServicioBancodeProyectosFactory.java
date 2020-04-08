@@ -21,7 +21,7 @@ public class ServicioBancodeProyectosFactory {
                 install(JdbcHelper.MySQL);
                 setClassPathResource("mybatis-config.xml");
                 bind(ServicioBancodeProyectos.class).to(ServicioBancodeProyectosimpl.class);
-               //bind(DAOAdministrador.class).to(MyBatisDAOAdministrador.class);
+                bind(DAOAdministrador.class).to(MyBatisDAOAdministrador.class);
                 bind(DAOPersonalPMO.class).to(MyBatisDAOPersonalPMO.class);
             }
         });

@@ -18,7 +18,7 @@
          ;
     </select>
 
-    <resultMap type='edu.eci.cvds.samples.entities.PersonalPMO' id='PersonalPMOResult'>
+    <resultMap type='PersonalPMO' id='PersonalPMOResult'>
         <id property='login' column='login'/>
         <result property='nombre' column='nombre'/>
         <result property='appelido' column='apellido'/>

@@ -6,11 +6,10 @@
 
     <typeAliases>
         <typeAlias type="edu.eci.cvds.samples.entities.Administrador" alias="Administrador"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.PersonalPMO" alias="PersonalPMO"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Usuario" alias="Usuario"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Proponente" alias="Proponente"/>
     </typeAliases>
-
-
-
-
 
     <environments default="development">
     <environment id="development">
@@ -23,9 +22,12 @@
         </dataSource>
     </environment>
 </environments>
+
     <mappers>
         <mapper resource="mappers/AdministradorMapper.xml"></mapper>
         <mapper resource="mappers/PersonalPMOMapper.xml"></mapper>
+        <mapper resource="mappers/UsuarioMapper.xml"></mapper>
+        <mapper resource="mappers/ProponenteMapper.xml"></mapper>
     </mappers>
 
 
