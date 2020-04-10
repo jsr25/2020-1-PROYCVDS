@@ -29,12 +29,12 @@
     </p:selectOneMenu>
 
     </h:panelGrid>
-        <p:outputLabel>value="Usuario"</p:outputLabel>
+        <p:outputLabel>Usuario:</p:outputLabel>
         <p:inputText id="Usuario"  required="true" type="String" binding="#{usuario}"/>
-        <p:outputLabel >value="Password"</p:outputLabel>
+        <p:outputLabel >Password:</p:outputLabel>
         <p:inputText id="Password"  required="true" type="String" binding="#{password}"/>
 
-        <p:commandButton id="boton_login" value="Iniciar Sesion" actionListener="#{loginbean.datos(usuario.value,password.value)}"/>
+        <p:commandButton id="boton_login" value="Iniciar Sesion" ajax="true" actionListener="#{loginbean.datos(usuario.value,password.value)}"/>
     </h:form>
 </h:body>
 

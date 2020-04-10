@@ -1,7 +1,8 @@
 package edu.eci.cvds.samples.persistence.mybatisimpl.mappers;
 
 import edu.eci.cvds.samples.entities.PersonalPMO;
+import org.apache.ibatis.annotations.Param;
 
 public interface PersonalPMOMapper {
-    public PersonalPMO consultarInfo();
+    public PersonalPMO consultarInfo(@Param("usuario")String usuario);
 }

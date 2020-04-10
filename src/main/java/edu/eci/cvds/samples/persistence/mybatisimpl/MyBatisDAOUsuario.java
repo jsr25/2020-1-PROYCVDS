@@ -9,7 +9,7 @@ public class MyBatisDAOUsuario implements DAOUsuario {
     @Inject
     private UsuarioMapper pmap=null;
 
-    public Usuario consultarInfo() {
-        return pmap.consultarInfo();
+    public Usuario consultarInfo(String usuario) {
+        return pmap.consultarInfo(usuario);
     }
 }

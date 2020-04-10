@@ -10,6 +10,7 @@ public class MyBatisDAOAdministrador implements DAOAdministrador {
     private AdministradorMapper pmap=null;
 
     public Administrador consultarInfoAdmin(String usuario) {
+
         return pmap.consultarInfoAdmin(usuario);
     }
 }

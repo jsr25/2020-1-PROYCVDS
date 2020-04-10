@@ -14,7 +14,7 @@
         from
          usuario as a
          where
-         a.login='matox99'
+         a.login=#{usuario}
          ;
     </select>
 

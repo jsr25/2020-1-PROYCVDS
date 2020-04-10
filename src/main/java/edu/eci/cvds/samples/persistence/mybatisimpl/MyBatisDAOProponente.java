@@ -8,7 +8,7 @@ import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.ProponenteMapper;
 public class MyBatisDAOProponente implements DAOProponente {
     @Inject
     private ProponenteMapper pmap=null;
-    public Proponente consultarInfo() {
-        return pmap.consultarInfo();
+    public Proponente consultarInfo(String usuario) {
+        return pmap.consultarInfo(usuario);
     }
 }
