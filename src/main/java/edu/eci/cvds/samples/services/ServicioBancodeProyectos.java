@@ -5,6 +5,8 @@ import edu.eci.cvds.samples.entities.PersonalPMO;
 
 public interface ServicioBancodeProyectos {
 
-    public Administrador consultarInfo();
+    public Administrador consultarInfoAdmin();
+    public Administrador consultarInfoAdmin(String usuario);
+
     public PersonalPMO consultarinfo();
 }

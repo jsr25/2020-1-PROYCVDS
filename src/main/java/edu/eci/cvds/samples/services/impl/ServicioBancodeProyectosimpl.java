@@ -13,9 +13,13 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
     @Inject
     private DAOPersonalPMO persDao;
 
-    public Administrador consultarInfo() {
-        Administrador admin= adminDAO.consultarInfo();
+    public Administrador consultarInfoAdmin(String usuario) {
+        Administrador admin= adminDAO.consultarInfoAdmin(usuario);
         return admin;
+    }
+
+    public Administrador consultarInfoAdmin() {
+        return null;
     }
 
     public PersonalPMO consultarinfo() {

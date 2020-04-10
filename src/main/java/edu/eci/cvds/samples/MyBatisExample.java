@@ -52,9 +52,9 @@ public class MyBatisExample {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
 
         SqlSession sqlss = sessionfact.openSession();
-        UsuarioMapper u=sqlss.getMapper(UsuarioMapper.class);
+        AdministradorMapper u=sqlss.getMapper(AdministradorMapper.class);
         //Administrador usuario = u.consultarInfo();
-        System.out.print(u.consultarInfo());
+        System.out.print(u.consultarInfoAdmin("ma"));
         sqlss.commit();
 
 

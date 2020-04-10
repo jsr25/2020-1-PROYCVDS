@@ -4,5 +4,5 @@ import edu.eci.cvds.samples.entities.Administrador;
 
 public interface DAOAdministrador {
 
-    public Administrador consultarInfo();
+    public Administrador consultarInfoAdmin(String usuario);
 }

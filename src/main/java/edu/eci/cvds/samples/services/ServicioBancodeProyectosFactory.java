@@ -1,4 +1,5 @@
 package edu.eci.cvds.samples.services;
+import edu.eci.cvds.samples.beans.LoginBean;
 import edu.eci.cvds.samples.persistence.DAOAdministrador;
 import edu.eci.cvds.samples.persistence.DAOPersonalPMO;
 import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOAdministrador;
@@ -18,9 +19,10 @@ public class ServicioBancodeProyectosFactory {
         injector = createInjector(new XMLMyBatisModule() {
             @Override
             protected void initialize() {
-                install(JdbcHelper.MySQL);
+                install(JdbcHelper.PostgreSQL);
                 setClassPathResource("mybatis-config.xml");
                 bind(ServicioBancodeProyectos.class).to(ServicioBancodeProyectosimpl.class);
+
                 bind(DAOAdministrador.class).to(MyBatisDAOAdministrador.class);
                 bind(DAOPersonalPMO.class).to(MyBatisDAOPersonalPMO.class);
             }

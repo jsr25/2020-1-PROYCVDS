@@ -5,4 +5,14 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class InformeBean {
 
+    private String val="azul";
+
+
+    public String getVal() {
+        return val;
+    }
+
+    public void setVal(String val) {
+        this.val = val;
+    }
 }
