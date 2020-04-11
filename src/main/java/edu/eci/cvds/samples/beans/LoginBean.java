@@ -24,6 +24,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @ManagedBean(name = "loginbean")
 @SessionScoped
@@ -32,15 +34,20 @@ public class LoginBean implements Serializable {
 
     @Inject
     private ServicioBancodeProyectos servicio;
-
+    private List<Usuario> ususarios=new ArrayList<Usuario>();
+    private List<Usuario> usuariosseleccionados=new ArrayList<Usuario>();
     private String usuario;
     private String password;
     private String role;
     private String val="login.xhtml";
 
 
+    public void buscar(){
+        ususarios.add(new Usuario("a","b","c","d","e"));
 
+    }
     public void datos(String usuario, String password) throws IOException {
+
         System.out.println(usuario);
         System.out.println(password);
         System.out.println(role);

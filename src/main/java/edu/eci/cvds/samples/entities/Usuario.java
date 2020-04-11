@@ -3,6 +3,17 @@ package edu.eci.cvds.samples.entities;
 
 public class Usuario {
     private String nombre, apellido, password, login, correo;
+
+    public Usuario(String as, String ad, String af, String ag, String ah)
+    {
+        this.login = as;
+        this.nombre = ad;
+        this.apellido = af;
+        this.correo = ag;
+        this.password = ah;
+    }
+
+
     public void Usuario(String login, String nombre, String apellido, String password, String correo)
     {
         this.login = login;
