@@ -11,6 +11,8 @@ import edu.eci.cvds.samples.persistence.DAOProponente;
 import edu.eci.cvds.samples.persistence.DAOUsuario;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 
+import java.util.List;
+
 public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
     @Inject
     private DAOAdministrador adminDAO;
@@ -35,5 +37,9 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
     }
     public Usuario consultarinfoUsuario(String usuario){
         return usDao.consultarInfo(usuario);
+    }
+
+    public List<Usuario> consultarUsuarios(String usuario) {
+        return adminDAO.consultarUsuarios(usuario);
     }
 }
