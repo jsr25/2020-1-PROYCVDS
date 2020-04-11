@@ -4,10 +4,7 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx"  xmlns:h="http://java.sun.com/jsf/html">
 <head>
     <meta content="" />
     <title>
@@ -29,6 +26,7 @@
     <link rel="stylesheet" href="assets/css/slick.css" />
     <link rel="stylesheet" href="assets/css/nice-select.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
 <h:body>
 <!--  Preloader Start -->
@@ -84,7 +82,7 @@
                                             <a href="elements.xhtml">Element</a>
                                         </li>
                                         <li>
-                                            <a href="case_details.html">Case Details</a>
+                                            <a href="case_details.xhtml">Case Details</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -104,7 +102,7 @@
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-3">
                         <div class="header-right-btn f-right d-none d-lg-block">
-                            <a href="contact.xhtml" class="btn header-btn">Contact Now</a>
+                            <a href="contact.html" class="btn header-btn">Contact Now</a>
                         </div>
                     </div>
                     <!--  Mobile Menu -->
@@ -120,41 +118,14 @@
 <!--  slider Area Start -->
 <div class="slider-area ">
     <!--  Mobile Menu -->
-    <div class="slider-active">
-        <div class="single-slider slider-height d-flex align-items-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-8">
-                        <div class="hero__caption">
-                            <h4>
-                                Welcome to Bank for Initiatives
-                            </h4>
-                            <h1>
-                                we help you to improve your new initiatives
-                            </h1>
-                            <!--  Hero-btn -->
-                            <div class="hero__btn">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-slider slider-height d-flex align-items-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-8">
-                        <div class="hero__caption">
-                            <h4>
-                                Welcome to Bank for Initiatives
-                            </h4>
-                            <h1>
-                                We help you to manage your project
-                            </h1>
-                            <!--  Hero-btn -->
-                            <div class="hero__btn">
-                            </div>
-                        </div>
+    <div class="single-slider slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center">
+                        <h2>
+                            About
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -162,77 +133,13 @@
     </div>
 </div>
 <!--  slider Area End -->
-<!--  Team-profile Start -->
-<div class="team-profile team-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-profile mb-30">
-                    <!--  Front -->
-                    <div class="single-profile-front">
-                        <div class="profile-img">
-                            <img src="assets/img/team/uni2.jpg" width="560" height="315"
-                                 alt="" />
-                        </div>
-                        <div class="profile-caption">
-                            <h4>
-                                <a href="#">What are we looking for?</a>
-                            </h4>
-                            <p>
-                                Achieve not only the realization of projects but a practical
-                                application of the knowledge acquired by students within the
-                                subjects of the School, generating a collaborative learning
-                                environment.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-profile mb-30">
-                    <!--  Front -->
-                    <div class="single-profile-front">
-                        <div class="profile-img">
-                            <img src="assets/img/team/uni1.jpg" width="560" height="315"
-                                 alt="" />
-                        </div>
-                        <div class="profile-caption">
-                            <h4>
-                                <a href="#">Project aimed at</a>
-                            </h4>
-                            <p>
-                                Comunidad universitaria de la Escuela Colombiana de
-                                IngenierÃ­a Julio Garavito
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-profile mb-30">
-                    <!--  Back -->
-                    <div class="single-profile-back-last">
-                        <h2>
-                            What we do for you
-                        </h2>
-                        <p>
-                            We facilitate the registration of your initiatives and project
-                            ideas.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  Team-profile End -->
 <!--  We Trusted Start -->
 <div class="we-trusted-area trusted-padding">
     <div class="container">
         <div class="row d-flex align-items-end">
             <div class="col-xl-7 col-lg-7">
                 <div class="trusted-img">
-                    <img src="assets/img/team/wetrusted.jpg" alt="" />
+                    <img src="assets/img/team/team_4.jpg" alt="" />
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5">
@@ -254,136 +161,69 @@
     </div>
 </div>
 <!--  We Trusted End -->
-<!--  services Area Start -->
-<div class="services-area section-padding2">
+<!--  Team-profile Start -->
+<div class="team-profile team-padding">
     <div class="container">
-        <!--  section tittle -->
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-tittle text-center">
-                    <h2>
-                        Our Services
-                    </h2>
-                </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-services text-center mb-30">
-                    <div class="services-icon">
-                        <span class="flaticon-checklist"></span>
-                    </div>
-                    <div class="services-caption">
-                        <h4>
-                            Strategic Planning
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                            do eiusmod.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-services text-center mb-30">
-                    <div class="services-icon">
-                        <span class="flaticon-audit"></span>
-                    </div>
-                    <div class="services-caption">
-                        <h4>
-                            Trades &amp; stocks
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                            do eiusmod.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-services text-center mb-30">
-                    <div class="services-icon">
-                        <span class="flaticon-checklist-1"></span>
-                    </div>
-                    <div class="services-caption">
-                        <h4>
-                            Audit &amp; Assurance
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                            do eiusmod.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--  button -->
-        <div class="row justify-content-center">
-            <div class="room-btn pt-50">
-                <a href="services.xhtml" class="border-btn">More Services</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  services Area End -->
-<!--  Completed Cases Start -->
-<div class="completed-cases section-padding3">
-    <div class="container-fluid">
-        <div class="row">
-            <!--  slider Heading -->
-            <div class="col-xl-4 col-lg-4 col-md-8">
-                <div class="single-cases-info mb-30">
-                    <h3>
-                        Completed Cases
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna ali quUt
-                        enim ad minim veniam. quis nostrud exercitation ullamco laboris
-                        nierci si ut.
-                    </p>
-                    <a href="gallery.xhtml" class="border-btn border-btn2">See more</a>
-                </div>
-            </div>
-            <!--  OwL -->
-            <div class="col-xl-8 col-lg-8 col-md-col-md-7">
-                <div class=" completed-active owl-carousel">
-                    <div class="single-cases-img">
-                        <img src="assets/img/service/completed_case_1.png" alt="" />
-                        <!--  img hover caption -->
-                        <div class="single-cases-cap">
+                <div class="single-profile mb-30">
+                    <!--  Front -->
+                    <div class="single-profile-front">
+                        <div class="profile-img">
+                            <img src="assets/img/team/team_1.jpg" alt="" />
+                        </div>
+                        <div class="profile-caption">
                             <h4>
-                                <a href="case_details.xhtml">Marketing Strategy</a>
+                                <a href="#">Business Planning</a>
                             </h4>
                             <p>
-                                Completely impact synergistic mindshare whereas premium
-                                services.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed do eiusmod tempor incididunt ut labore .
                             </p>
-                            <span>Advisory</span>
                         </div>
                     </div>
-                    <div class="single-cases-img">
-                        <img src="assets/img/service/completed_case_2.png" alt="" />
-                        <!--  img hover caption -->
-                        <div class="single-cases-cap">
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="single-profile mb-30">
+                    <!--  Front -->
+                    <div class="single-profile-front">
+                        <div class="profile-img">
+                            <img src="assets/img/team/team_2.jpg" alt="" />
+                        </div>
+                        <div class="profile-caption">
                             <h4>
-                                <a href="case_details.xhtml">Marketing Strategy</a>
+                                <a href="#">Financial Projections</a>
                             </h4>
                             <p>
-                                Completely impact synergistic mindshare whereas premium
-                                services.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                sed do eiusmod tempor incididunt ut labore .
                             </p>
-                            <span>Advisory</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <div class="single-profile mb-30">
+                    <!--  Back -->
+                    <div class="single-profile-back-last">
+                        <h2>
+                            What we do for you
+                        </h2>
+                        <p>
+                            Consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore smod tem magna aliqua. Ut enim.
+                        </p>
+                        <a href="#">View profile Â»</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--  Completed Cases end -->
+<!--  Team-profile End -->
 <!--  Testimonial Start -->
-<div class="testimonial-area fix">
+<div class="testimonial-area">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-9 col-lg-9 col-md-9">
@@ -470,8 +310,7 @@
                     <div class="recent-cap">
                         <span>Business planing</span>
                         <h4>
-                            <a href="single-blog.xhtml">Amazing Places To Visit In
-                                Summer</a>
+                            <a href="#">Amazing Places To Visit In Summer</a>
                         </h4>
                         <p>
                             Nov 30, 2020
@@ -487,7 +326,7 @@
                     <div class="recent-cap">
                         <span>Audit</span>
                         <h4>
-                            <a href="single-blog.xhtml">Amazing Places To Visit In
+                            <a href="single-blog.html">Amazing Places To Visit In
                                 Summer</a>
                         </h4>
                         <p>
@@ -504,7 +343,7 @@
                     <div class="recent-cap">
                         <span>Business planing</span>
                         <h4>
-                            <a href="single-blog.xhtml">Amazing Places To Visit In
+                            <a href="single-blog.html">Amazing Places To Visit In
                                 Summer</a>
                         </h4>
                         <p>
@@ -585,7 +424,7 @@
                     <div class="single-footer-caption mb-30">
                         <!--  logo -->
                         <div class="footer-logo">
-                            <a href="index.xhtml"><img
+                            <a href="index.html"><img
                                     src="assets/img/logo/logo2_footer.png" alt="" /></a>
                         </div>
                         <div class="footer-tittle">
@@ -614,19 +453,19 @@
                         </h4>
                         <ul>
                             <li>
-                                <a href="index.xhtml">Home</a>
+                                <a href="index.html">Home</a>
                             </li>
                             <li>
-                                <a href="about.xhtml">About Us</a>
+                                <a href="about.html">About Us</a>
                             </li>
                             <li>
-                                <a href="single-blog.xhtml">Services</a>
+                                <a href="single-blog.html">Services</a>
                             </li>
                             <li>
                                 <a href="#">Cases</a>
                             </li>
                             <li>
-                                <a href="contact.xhtml"> Contact Us</a>
+                                <a href="contact.html"> Contact Us</a>
                             </li>
                         </ul>
                     </div>
@@ -723,8 +562,6 @@
         src="./assets/js/owl.carousel.min.js" type="text/javascript"
         xml:space="preserve"></script> <script
         src="./assets/js/slick.min.js" type="text/javascript" xml:space="preserve"></script>
-<!--  Date Picker --> <script src="./assets/js/gijgo.min.js"
-                              type="text/javascript" xml:space="preserve"></script>
 <!--  One Page, Animated-HeadLin --> <script src="./assets/js/wow.min.js"
                                              type="text/javascript" xml:space="preserve"></script> <script
         src="./assets/js/animated.headline.js" type="text/javascript"

@@ -4,10 +4,7 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
 <head>
     <meta content="" />
     <title>
@@ -29,8 +26,9 @@
     <link rel="stylesheet" href="assets/css/slick.css" />
     <link rel="stylesheet" href="assets/css/nice-select.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
-<h:body>
+<body>
 <!--  Preloader Start -->
 <div id="preloader-active">
     <div class="preloader d-flex align-items-center justify-content-center">
@@ -84,7 +82,7 @@
                                             <a href="elements.xhtml">Element</a>
                                         </li>
                                         <li>
-                                            <a href="case_details.html">Case Details</a>
+                                            <a href="case_details.xhtml">Case Details</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -92,10 +90,10 @@
                                     <a href="#">Login</a>
                                     <ul class="submenu">
                                         <li>
-                                            <a href="faces/Sign_in/login.xhtml">Sign in</a>
+                                            <a href="Sign_in/sign_in.xhtml">Sign in</a>
                                         </li>
                                         <li>
-                                            <a href="faces/Sign_in/sign_up.xhtml">Sign up</a>
+                                            <a href="Sign_in/sign_up.xhtml">Sign up</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -120,41 +118,14 @@
 <!--  slider Area Start -->
 <div class="slider-area ">
     <!--  Mobile Menu -->
-    <div class="slider-active">
-        <div class="single-slider slider-height d-flex align-items-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-8">
-                        <div class="hero__caption">
-                            <h4>
-                                Welcome to Bank for Initiatives
-                            </h4>
-                            <h1>
-                                we help you to improve your new initiatives
-                            </h1>
-                            <!--  Hero-btn -->
-                            <div class="hero__btn">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-slider slider-height d-flex align-items-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-8">
-                        <div class="hero__caption">
-                            <h4>
-                                Welcome to Bank for Initiatives
-                            </h4>
-                            <h1>
-                                We help you to manage your project
-                            </h1>
-                            <!--  Hero-btn -->
-                            <div class="hero__btn">
-                            </div>
-                        </div>
+    <div class="single-slider slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center">
+                        <h2>
+                            Our Services
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -162,98 +133,6 @@
     </div>
 </div>
 <!--  slider Area End -->
-<!--  Team-profile Start -->
-<div class="team-profile team-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-profile mb-30">
-                    <!--  Front -->
-                    <div class="single-profile-front">
-                        <div class="profile-img">
-                            <img src="assets/img/team/uni2.jpg" width="560" height="315"
-                                 alt="" />
-                        </div>
-                        <div class="profile-caption">
-                            <h4>
-                                <a href="#">What are we looking for?</a>
-                            </h4>
-                            <p>
-                                Achieve not only the realization of projects but a practical
-                                application of the knowledge acquired by students within the
-                                subjects of the School, generating a collaborative learning
-                                environment.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-profile mb-30">
-                    <!--  Front -->
-                    <div class="single-profile-front">
-                        <div class="profile-img">
-                            <img src="assets/img/team/uni1.jpg" width="560" height="315"
-                                 alt="" />
-                        </div>
-                        <div class="profile-caption">
-                            <h4>
-                                <a href="#">Project aimed at</a>
-                            </h4>
-                            <p>
-                                Comunidad universitaria de la Escuela Colombiana de
-                                IngenierÃ­a Julio Garavito
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="single-profile mb-30">
-                    <!--  Back -->
-                    <div class="single-profile-back-last">
-                        <h2>
-                            What we do for you
-                        </h2>
-                        <p>
-                            We facilitate the registration of your initiatives and project
-                            ideas.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  Team-profile End -->
-<!--  We Trusted Start -->
-<div class="we-trusted-area trusted-padding">
-    <div class="container">
-        <div class="row d-flex align-items-end">
-            <div class="col-xl-7 col-lg-7">
-                <div class="trusted-img">
-                    <img src="assets/img/team/wetrusted.jpg" alt="" />
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-5">
-                <div class="trusted-caption">
-                    <h2>
-                        We are students of colombian school of engineering Julio
-                        Garavito
-                    </h2>
-                    <p>
-                        We are four students of colombian school of engineering Julio
-                        Garavito, our job is bring this web service that helps a lot of
-                        people around the world to improve their new initiaves in all
-                        the topics.We are in 7 semester and we are grading the course of
-                        software life cycle.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  We Trusted End -->
 <!--  services Area Start -->
 <div class="services-area section-padding2">
     <div class="container">
@@ -326,130 +205,8 @@
     </div>
 </div>
 <!--  services Area End -->
-<!--  Completed Cases Start -->
-<div class="completed-cases section-padding3">
-    <div class="container-fluid">
-        <div class="row">
-            <!--  slider Heading -->
-            <div class="col-xl-4 col-lg-4 col-md-8">
-                <div class="single-cases-info mb-30">
-                    <h3>
-                        Completed Cases
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna ali quUt
-                        enim ad minim veniam. quis nostrud exercitation ullamco laboris
-                        nierci si ut.
-                    </p>
-                    <a href="gallery.xhtml" class="border-btn border-btn2">See more</a>
-                </div>
-            </div>
-            <!--  OwL -->
-            <div class="col-xl-8 col-lg-8 col-md-col-md-7">
-                <div class=" completed-active owl-carousel">
-                    <div class="single-cases-img">
-                        <img src="assets/img/service/completed_case_1.png" alt="" />
-                        <!--  img hover caption -->
-                        <div class="single-cases-cap">
-                            <h4>
-                                <a href="case_details.xhtml">Marketing Strategy</a>
-                            </h4>
-                            <p>
-                                Completely impact synergistic mindshare whereas premium
-                                services.
-                            </p>
-                            <span>Advisory</span>
-                        </div>
-                    </div>
-                    <div class="single-cases-img">
-                        <img src="assets/img/service/completed_case_2.png" alt="" />
-                        <!--  img hover caption -->
-                        <div class="single-cases-cap">
-                            <h4>
-                                <a href="case_details.xhtml">Marketing Strategy</a>
-                            </h4>
-                            <p>
-                                Completely impact synergistic mindshare whereas premium
-                                services.
-                            </p>
-                            <span>Advisory</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  Completed Cases end -->
-<!--  Testimonial Start -->
-<div class="testimonial-area fix">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-9 col-lg-9 col-md-9">
-                <div class="h1-testimonial-active">
-                    <!--  Single Testimonial -->
-                    <div class="single-testimonial pt-65">
-                        <!--  Testimonial tittle -->
-                        <div class="testimonial-icon mb-45">
-                            <img src="assets/img/logo/testimonial.png" class="ani-btn "
-                                 alt="" />
-                        </div>
-                        <!--  Testimonial Content -->
-                        <div class="testimonial-caption text-center">
-                            <p>
-                                You canât succeed if you just do what others do and follow
-                                the well-worn path. You need to create a new and original
-                                path for yourself.
-                            </p>
-                            <!--  Rattion -->
-                            <div class="testimonial-ratting">
-                                <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i> <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i>
-                            </div>
-                            <div class="rattiong-caption">
-                    <span>Clifford Frazier<span> - Colorlib Themes</span>
-                    </span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  Single Testimonial -->
-                    <div class="single-testimonial pt-65">
-                        <!--  Testimonial tittle -->
-                        <div class="testimonial-icon mb-45">
-                            <img src="assets/img/logo/testimonial.png" class="ani-btn"
-                                 alt="" />
-                        </div>
-                        <!--  Testimonial Content -->
-                        <div class="testimonial-caption text-center">
-                            <p>
-                                You canât succeed if you just do what others do and follow
-                                the well-worn path. You need to create a new and original
-                                path for yourself.
-                            </p>
-                            <!--  Rattion -->
-                            <div class="testimonial-ratting">
-                                <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i> <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i> <i
-                                    class="fas fa-star"></i>
-                            </div>
-                            <div class="rattiong-caption">
-                    <span>Clifford Frazier<span> - Colorlib Themes</span>
-                    </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  Testimonial End -->
 <!--  Recent Area Start -->
-<div class="recent-area section-paddingt">
+<div class="recent-area section-paddingt2">
     <div class="container">
         <!--  section tittle -->
         <div class="row">
@@ -470,8 +227,7 @@
                     <div class="recent-cap">
                         <span>Business planing</span>
                         <h4>
-                            <a href="single-blog.xhtml">Amazing Places To Visit In
-                                Summer</a>
+                            <a href="#">Amazing Places To Visit In Summer</a>
                         </h4>
                         <p>
                             Nov 30, 2020
@@ -487,8 +243,7 @@
                     <div class="recent-cap">
                         <span>Audit</span>
                         <h4>
-                            <a href="single-blog.xhtml">Amazing Places To Visit In
-                                Summer</a>
+                            <a href="#">Construction industry as their over draft</a>
                         </h4>
                         <p>
                             Nov 30, 2020
@@ -504,8 +259,7 @@
                     <div class="recent-cap">
                         <span>Business planing</span>
                         <h4>
-                            <a href="single-blog.xhtml">Amazing Places To Visit In
-                                Summer</a>
+                            <a href="#">Construction industry as their over draft</a>
                         </h4>
                         <p>
                             Nov 30, 2020
@@ -749,5 +503,5 @@
 <!--  Jquery Plugins, main Jquery --> <script
         src="./assets/js/plugins.js" type="text/javascript" xml:space="preserve"></script><script
         src="./assets/js/main.js" type="text/javascript" xml:space="preserve"></script>
-</h:body>
+</body>
 </html>

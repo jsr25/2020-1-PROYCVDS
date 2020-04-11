@@ -10,7 +10,7 @@
       xmlns:p="http://primefaces.org/ui">
 <head>
     <title>
-        Sign in
+        Sign up
     </title>
     <meta content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,10 +44,24 @@
             <form class="login100-form validate-form" action="">
             <span class="login100-form-logo"> <img
                     src="images/icons/logo.png" width="80" height="70" alt="" /> </span>
-                <span class="login100-form-title p-b-34 p-t-27"> Sign in </span>
+                <span class="login100-form-title p-b-34 p-t-27"> Sign Up </span>
                 <div class="wrap-input100 validate-input">
-                    <h:outputLabel style="color:white;" for="User" value="Username"/>
-                    <h:inputText class="input100" id="User"  required="true" type="String" binding="#{usuario}" />
+                    <h:outputLabel style="color:white;" for="Firstname" value="Firstmane"/>
+                    <h:inputText class="input100" id="Firstname" required="true" type="String" binding="#{firtsname}" />
+
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <h:outputLabel style="color:white;" for="Surname" value="Surname"/>
+                    <h:inputText class="input100" id="Surname"  required="true" type="String" binding="#{surname}" />
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <h:outputLabel style="color:white;" for="Mail" value="Mail"/>
+                    <h:inputText class="input100" id="Mail"  required="true" type="String" binding="#{mail}" />
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <h:outputLabel style="color:white;" for="username" value="Username"/>
+                    <h:inputText class="input100" id="username"  required="true" type="String" binding="#{username}" />
+                    <input class="input100" type="text" name="username" />
                 </div>
                 <div class="wrap-input100 validate-input">
                     <h:outputLabel style="color:white;" for="Password" value="Pasword"/>
@@ -55,25 +69,23 @@
                 </div>
                 <h:form style="color:black;">
                 <h:selectOneMenu class="input100" id="console" value="#{loginbean.role}" style="width:250px " >
-                    <f:selectItem  itemValue="Select type user" />
-                    <f:selectItem itemLabel="Administrator" itemValue="Administrador" style="color:black;"   />
+                    <f:selectItem  itemValue="Select type user"  />
+                    <f:selectItem style="color:black;" itemLabel="Administrator" itemValue="Administrador"  />
                     <f:selectItem itemLabel="Personal PMO" itemValue="PersonalPMO" style="color:black;" />
                     <f:selectItem itemLabel="Proponent" itemValue="Proponente" style="color:black;" />
                     <f:selectItem itemLabel="User" itemValue="Usuario" style="color:black;" />
                 </h:selectOneMenu>
-
-            <br/>
-                <div class="container-login100-form-btn">
-                    <p:commandButton class="login100-form-btn" value="Login" actionListener="#{loginbean.datos(usuario.value,password.value)}" ajax="true"> </p:commandButton>
-
-                </div>
+                <br/>
+                <br/>
+                    <div class="container-login100-form-btn">
+                        <p:commandButton class="login100-form-btn" value="Create" actionListener="#{loginbean.datos(usuario.value,password.value)}" ajax="true"> </p:commandButton>
+                    </div>
                 </h:form>
                 <div class="text-center p-t-90">
                     <a class="txt1" href="http://localhost:8080/index.xhtml">
                         Cancel </a>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
@@ -103,6 +115,5 @@
         xml:space="preserve"></script>
 <!-- =============================================================================================== --><script
         src="js/main.js" type="text/javascript" xml:space="preserve"></script>
-
 </h:body>
 </html>
