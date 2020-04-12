@@ -18,6 +18,24 @@
          ;
     </select>
 
+    <select id='consultarUsuarios' parameterType='map' resultMap='UsuarioResult'>
+         select a.login,
+               a.nombre,
+               a.apellido,
+               a.password,
+               a.correo
+        from
+         usuario as a
+         where
+         a.login=#{usuario}
+         ;
+    </select>
+
+    <insert id="registrarUsuario" parameterType='map'>
+        insert into usuario(login,nombre,apellido,password,correo) values (#{usuario.login},#{usuario.nombre},#{usuario.apellido},#{usuario.password},#{usuario.correo});
+    </insert>
+
+
     <resultMap type='Usuario' id='UsuarioResult'>
         <id property='login' column='login'/>
         <result property='nombre' column='nombre'/>

@@ -39,7 +39,11 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
         return usDao.consultarInfo(usuario);
     }
 
-    public List<Usuario> consultarUsuarios(String usuario) {
-        return adminDAO.consultarUsuarios(usuario);
+    public List<Usuario> consultarUsuarios(String pClave) {
+        return usDao.consultarUsuarios(pClave);
+    }
+
+    public void registarUsuario(Usuario usuario) {
+        usDao.registrarUsuario(usuario);
     }
 }

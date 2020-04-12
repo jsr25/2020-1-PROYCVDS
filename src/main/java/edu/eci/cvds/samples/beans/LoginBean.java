@@ -35,24 +35,15 @@ public class LoginBean  extends BaseBean{
     @Inject
     private ServicioBancodeProyectos servicio;
 
-    private List<Usuario> ususarios=new ArrayList<Usuario>();
-    private List<Usuario> usuariosseleccionados=new ArrayList<Usuario>();
+
     private String usuario;
     private String password;
     private String role;
     private String val="login.xhtml";
 
 
-    public void buscar(){
-        ususarios.add(new Usuario("a","b","c","d","e"));
 
-    }
     public void datos(String usuario, String password) throws IOException {
-
-        System.out.println(usuario);
-        System.out.println(password);
-        System.out.println(role);
-        Administrador admin = servicio.consultarInfoAdmin("ma");
         if (role.equals("Administrador")) {comproAd(usuario,password);}
         else if(role.equals("PersonalPMO")){comproPerso(usuario,password);}
         else if(role.equals("Proponente")){comproPropo(usuario,password);}
@@ -62,14 +53,12 @@ public class LoginBean  extends BaseBean{
 
     public void comproAd(String usuario,String password){
         Administrador admin = servicio.consultarInfoAdmin("ma");
-        System.out.println(admin.toString());
         if(admin.getPasword().equals(password)){
             val = "administrador.xhtml";
         }
     }
     public void comproPropo(String usuario,String password){
         Proponente proponente= servicio.consultarinfoPro(usuario);
-        System.out.println(proponente.toString());
         if(proponente.getPassword().equals(password)){
             val = "proponente.xhtml";
         }

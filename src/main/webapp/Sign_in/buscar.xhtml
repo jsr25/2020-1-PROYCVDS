@@ -37,7 +37,7 @@
 <h:form id="form">
 <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
 
-<p:dataTable id="checkboxDT" var="Usuario" value="#{loginbean.ususarios}" selection="#{loginbean.usuariosseleccionados}" rowKey="#{car.id}" style="margin-bottom:0">
+<p:dataTable id="checkboxDT" var="Usuario" value="#{asignarPerfil.usuarios}" selection="#{asignarPerfil.usuariosSeleccionados}" rowKey="#{car.id}" style="margin-bottom:0">
     <f:facet name="header">
         Checkbox
     </f:facet>

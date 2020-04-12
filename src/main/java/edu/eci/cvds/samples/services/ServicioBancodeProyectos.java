@@ -15,5 +15,6 @@ public interface ServicioBancodeProyectos {
     public PersonalPMO consultarinfo(String usuario);
     public Proponente consultarinfoPro(String usuario);
     public Usuario consultarinfoUsuario(String usuario);
-    public List<Usuario> consultarUsuarios(String usuario);
+    public List<Usuario> consultarUsuarios(String pClave);
+    public void registarUsuario(Usuario usuario);
 }
