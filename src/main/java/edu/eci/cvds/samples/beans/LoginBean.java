@@ -30,10 +30,11 @@ import java.util.List;
 @ManagedBean(name = "loginbean")
 @SessionScoped
 
-public class LoginBean implements Serializable {
+public class LoginBean  extends BaseBean{
 
     @Inject
     private ServicioBancodeProyectos servicio;
+
     private List<Usuario> ususarios=new ArrayList<Usuario>();
     private List<Usuario> usuariosseleccionados=new ArrayList<Usuario>();
     private String usuario;
@@ -51,7 +52,7 @@ public class LoginBean implements Serializable {
         System.out.println(usuario);
         System.out.println(password);
         System.out.println(role);
-
+        Administrador admin = servicio.consultarInfoAdmin("ma");
         if (role.equals("Administrador")) {comproAd(usuario,password);}
         else if(role.equals("PersonalPMO")){comproPerso(usuario,password);}
         else if(role.equals("Proponente")){comproPropo(usuario,password);}
@@ -60,54 +61,28 @@ public class LoginBean implements Serializable {
     }
 
     public void comproAd(String usuario,String password){
-        SqlSessionFactory sessionfact =MyBatisExample.getSqlSessionFactory();
-        SqlSession sqlss = sessionfact.openSession();
-        Administrador admin;
-        AdministradorMapper u = sqlss.getMapper(AdministradorMapper.class);
-        admin = u.consultarInfoAdmin(usuario);
+        Administrador admin = servicio.consultarInfoAdmin("ma");
         System.out.println(admin.toString());
-        sqlss.commit();
-        sqlss.close();
         if(admin.getPasword().equals(password)){
             val = "administrador.xhtml";
         }
     }
     public void comproPropo(String usuario,String password){
-        SqlSessionFactory sessionfact =MyBatisExample.getSqlSessionFactory();
-        SqlSession sqlss = sessionfact.openSession();
-        Proponente proponente;
-        ProponenteMapper u = sqlss.getMapper(ProponenteMapper.class);
-        proponente = u.consultarInfo(usuario);
+        Proponente proponente= servicio.consultarinfoPro(usuario);
         System.out.println(proponente.toString());
-        sqlss.commit();
-        sqlss.close();
         if(proponente.getPassword().equals(password)){
             val = "proponente.xhtml";
         }
     }
     public void comproUsu(String usuario,String password){
-        SqlSessionFactory sessionfact =MyBatisExample.getSqlSessionFactory();
-        SqlSession sqlss = sessionfact.openSession();
-        Usuario user;
-        UsuarioMapper u = sqlss.getMapper(UsuarioMapper.class);
-        user = u.consultarInfo(usuario);
-        System.out.println(user.toString());
-        sqlss.commit();
-        sqlss.close();
+        Usuario user= servicio.consultarinfoUsuario(usuario);
         if(user.getPassword().equals(password)){
             val = "usuario.xhtml";
         }
     }
 
     public void comproPerso(String usuario,String password){
-        SqlSessionFactory sessionfact =MyBatisExample.getSqlSessionFactory();
-        SqlSession sqlss = sessionfact.openSession();
-        PersonalPMO personalPMO;
-        PersonalPMOMapper u = sqlss.getMapper(PersonalPMOMapper.class);
-        personalPMO = u.consultarInfo(usuario);
-        System.out.println(personalPMO.toString());
-        sqlss.commit();
-        sqlss.close();
+        PersonalPMO personalPMO=servicio.consultarinfo(usuario);
         if(personalPMO.getPasword().equals(password)){
             val = "personal.xhtml";
         }
