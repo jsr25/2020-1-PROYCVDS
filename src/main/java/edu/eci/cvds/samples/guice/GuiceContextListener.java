@@ -14,18 +14,30 @@ import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 import edu.eci.cvds.samples.services.impl.ServicioBancodeProyectosimpl;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+/**
+ * Clase GuiceContextListener de la aplicación.
+ * @author Juan Ramos, Mateo Quintero, Brayan Jimenez, Maria Hernandez.
+ * @version 1.0
+ */
 public class GuiceContextListener implements ServletContextListener {
 
+    /**
+     * Método del guice.
+     * @param servletContextEvent Argumentos del programa.
+     */
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
         ServletContext servletContext = servletContextEvent.getServletContext();
         servletContext.removeAttribute(Injector.class.getName());
     }
 
+    /**
+     * Método del guice.
+     * @param servletContextEvent Argumentos del programa.
+     */
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         Injector injector = Guice.createInjector(new XMLMyBatisModule() {
             @Override
@@ -43,7 +55,6 @@ public class GuiceContextListener implements ServletContextListener {
                 bind(ServicioBancodeProyectos.class).to(ServicioBancodeProyectosimpl.class);
             }
         });
-
         servletContextEvent.getServletContext().setAttribute(Injector.class.getName(), injector);
     }
 }

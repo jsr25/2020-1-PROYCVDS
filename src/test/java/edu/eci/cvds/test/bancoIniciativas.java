@@ -4,8 +4,6 @@ import edu.eci.cvds.samples.entities.PersonalPMO;
 import edu.eci.cvds.samples.entities.Administrador ;
 import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.samples.entities.Proponente;
-
-
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.AdministradorMapper;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.PersonalPMOMapper;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.ProponenteMapper;
@@ -16,19 +14,15 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Assert;
 import org.junit.Test;
-import org.quicktheories.core.Gen;
-import org.quicktheories.generators.Generate;
-
-import static org.quicktheories.QuickTheory.qt;
-import static org.quicktheories.generators.Generate.*;
-import static org.quicktheories.generators.SourceDSL.*;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 
+/**
+ * Clase bancoIniciativas de la aplicación.
+ * @author Juan Ramos, Mateo Quintero, Brayan Jimenez, Maria Hernandez.
+ * @version 1.0
+ */
 public class bancoIniciativas {
-
 
     public static SqlSessionFactory getSqlSessionFactory() {
         SqlSessionFactory sqlSessionFactory = null;
@@ -43,7 +37,6 @@ public class bancoIniciativas {
         }
         return sqlSessionFactory;
     }
-
 
     @Test
     public void DeberiaBuscarAdministradorQueNoExiste() {
@@ -179,6 +172,4 @@ public class bancoIniciativas {
         Assert.assertEquals(usuario.getPassword(),"Ramios");
 
     }
-
 }
-

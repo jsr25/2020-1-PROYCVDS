@@ -4,13 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.text.ParseException;
-
-import edu.eci.cvds.samples.entities.Administrador;
-import edu.eci.cvds.samples.entities.PersonalPMO;
-import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.AdministradorMapper;
-import edu.eci.cvds.samples.entities.Usuario;
-import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.PersonalPMOMapper;
-import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.ProponenteMapper;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.UsuarioMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -18,15 +11,15 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 /**
- *
- * @author hcadavid
+ * Clase MyBatisExample de la aplicación.
+ * @author Juan Ramos, Mateo Quintero, Brayan Jimenez, Maria Hernandez.
+ * @version 1.0
  */
 public class MyBatisExample {
 
     /**
      * Método que construye una fábrica de sesiones de MyBatis a partir del
      * archivo de configuración ubicado en src/main/resources
-     *
      * @return instancia de SQLSessionFactory
      */
     public static SqlSessionFactory getSqlSessionFactory() {
@@ -50,19 +43,10 @@ public class MyBatisExample {
      */
     public static void main(String args[]) throws SQLException, ParseException {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
-
         SqlSession sqlss = sessionfact.openSession();
         UsuarioMapper u=sqlss.getMapper(UsuarioMapper.class);
-        //Administrador usuario = u.consultarInfo();
         System.out.print(u.consultarUsuarios("jsr25"));
         sqlss.commit();
-
-
         sqlss.close();
-
-
-
     }
-
-
 }

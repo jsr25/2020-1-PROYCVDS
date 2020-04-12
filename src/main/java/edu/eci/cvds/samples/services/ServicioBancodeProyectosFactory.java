@@ -1,5 +1,5 @@
 package edu.eci.cvds.samples.services;
-import edu.eci.cvds.samples.beans.LoginBean;
+
 import edu.eci.cvds.samples.persistence.DAOAdministrador;
 import edu.eci.cvds.samples.persistence.DAOPersonalPMO;
 import edu.eci.cvds.samples.persistence.DAOProponente;
@@ -10,19 +10,27 @@ import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOProponente;
 import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOUsuario;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
-
 import static com.google.inject.Guice.createInjector;
 import com.google.inject.Injector;
 import edu.eci.cvds.samples.services.impl.ServicioBancodeProyectosimpl;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 
+/**
+ * Clase ServicioBancodeProyectosFactory de la aplicación.
+ * @author Juan Ramos, Mateo Quintero, Brayan Jimenez, Maria Hernandez.
+ * @version 1.0
+ */
 public class ServicioBancodeProyectosFactory {
     private static ServicioBancodeProyectosFactory instance = new ServicioBancodeProyectosFactory();
-
     private static Injector injector;
     private static Injector testingInjector;
+
+    /**
+     * Método constructor de la clase
+     */
     private  ServicioBancodeProyectosFactory() {
         injector = createInjector(new XMLMyBatisModule() {
             @Override
@@ -65,6 +73,13 @@ public class ServicioBancodeProyectosFactory {
         {
             return instance;
         }
+
+    /**
+     * Método que da retorno de la implementacion.
+     * @param args Argumentos del programa.
+     * @throws SQLException lanza excepcion si no coincide.
+     * @throws ParseException lanza excepcion si no coincide.
+     */
     public static void main(String args[]) throws SQLException, ParseException {
         System.out.println(ServicioBancodeProyectosFactory.getInstance().getServicioBancodeProyectos().consultarInfoAdmin("ma"));
     }
