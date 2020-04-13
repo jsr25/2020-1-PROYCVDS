@@ -22,4 +22,10 @@ public class MyBatisDAOProponente implements DAOProponente {
     public Proponente consultarInfo(String usuario) {
         return pmap.consultarInfo(usuario);
     }
+
+    public void registrarProponente(Proponente proponente) {
+        pmap.registrarProponente(proponente);
+    }
+
+
 }

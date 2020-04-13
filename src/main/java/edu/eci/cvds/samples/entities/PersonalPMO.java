@@ -6,7 +6,17 @@ package edu.eci.cvds.samples.entities;
  * @version 1.0
  */
 public class PersonalPMO {
-    private String nombre,appelido,pasword,login,correo;
+    private String nombre,apellido,password,login,correo;
+
+    public PersonalPMO(String login, String nombre, String apellido, String password, String correo) {
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.password=password;
+        this.login=login;
+        this.correo=correo;
+    }
+
+    public PersonalPMO(){}
 
     /**
      * Método constructor de la clase.
@@ -19,8 +29,8 @@ public class PersonalPMO {
     public void PersonalPMO(String login,String nombre,String apellido,String pasword,String correo)
     {
         this.nombre=nombre;
-        this.appelido=apellido;
-        this.pasword=pasword;
+        this.apellido=apellido;
+        this.password=pasword;
         this.login=login;
         this.correo=correo;
     }
@@ -35,13 +45,13 @@ public class PersonalPMO {
      * Método que retorna el apellido.
      * @return appelido retorno del programa.
      */
-    public String getAppelido(){ return appelido; }
+    public String getApellido(){ return apellido; }
 
     /**
      * Método que retorna la contrasena.
      * @return pasword retorno del programa.
      */
-    public String getPasword(){ return pasword; }
+    public String getPassword(){ return password; }
 
     /**
      * Método que retorna el correo.
@@ -63,7 +73,7 @@ public class PersonalPMO {
      * Método que guarda el apellido.
      * @param appelido Argumento del programa.
      */
-    public void setAppelido(String appelido) { this.appelido = appelido; }
+    public void setApellido(String appelido) { this.apellido = appelido; }
 
     /**
      * Método que guarda el nombre.
@@ -75,7 +85,7 @@ public class PersonalPMO {
      * Método que guarda la contrasena.
      * @param pasword Argumento del programa.
      */
-    public void setPasword(String pasword) { this.pasword = pasword; }
+    public void setPassword(String pasword) { this.password = pasword; }
 
     /**
      * Método que guarda el correo.
@@ -93,11 +103,12 @@ public class PersonalPMO {
         this.login = login;
     }
 
+
     /**
      * Método que retorna el login exitoso.
      * @return string retorno del programa.
      */
     public String toString(){
-        return "PersonalPMO{"+ "usuario= "+ login + ", nombre=" + nombre + ", apellido=" + appelido + ", password=" + pasword + ", correo=" + correo +'}';
+        return "PersonalPMO{"+ "usuario= "+ login + ", nombre=" + nombre + ", apellido=" + apellido + ", password=" + password + ", correo=" + correo +'}';
     }
 }

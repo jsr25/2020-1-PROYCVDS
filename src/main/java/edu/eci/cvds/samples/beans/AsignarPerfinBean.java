@@ -1,6 +1,9 @@
 package edu.eci.cvds.samples.beans;
 
 import com.google.inject.Inject;
+import edu.eci.cvds.samples.entities.Administrador;
+import edu.eci.cvds.samples.entities.PersonalPMO;
+import edu.eci.cvds.samples.entities.Proponente;
 import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 import javax.faces.bean.ManagedBean;
@@ -84,6 +87,21 @@ public class AsignarPerfinBean extends BaseBean {
     }
 
     public void cambiar(){
-        servicio.deleteUsuario(usuario.getLogin());
+        if(!role.equals("")){
+            servicio.deleteUsuario(usuario.getLogin());
+            if(role.equals("Administrador")){
+                Administrador admin=new Administrador(usuario.getLogin(),usuario.getNombre(),usuario.getApellido(),usuario.getPassword(),usuario.getCorreo());
+                servicio.registrarAdministrador(admin);
+            }
+            else if (role.equals("PersonalPMO")){
+                PersonalPMO personalPMO=new PersonalPMO(usuario.getLogin(),usuario.getNombre(),usuario.getApellido(),usuario.getPassword(),usuario.getCorreo());
+                servicio.registrarPersonalPMO(personalPMO);
+            }
+            else if (role.equals("Proponente")){
+                Proponente proponente= new Proponente(usuario.getLogin(),usuario.getNombre(),usuario.getApellido(),usuario.getPassword(),usuario.getCorreo());
+                servicio.registrarProponente(proponente);
+            }
+        }
+
     }
 }

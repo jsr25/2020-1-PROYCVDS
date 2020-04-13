@@ -15,4 +15,6 @@ public interface ProponenteMapper {
      * @param usuario Argumentos del programa.
      */
     public Proponente consultarInfo(@Param("usuario")String usuario);
+
+    public void registrarProponente(@Param("usuario")Proponente proponente);
 }

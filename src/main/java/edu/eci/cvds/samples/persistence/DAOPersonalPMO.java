@@ -14,4 +14,6 @@ public interface DAOPersonalPMO {
      * @param usuario Argumentos del programa.
      */
     public PersonalPMO consultarInfo(String usuario);
+
+    public void registrarPersonalPMO(PersonalPMO personalPMO);
 }

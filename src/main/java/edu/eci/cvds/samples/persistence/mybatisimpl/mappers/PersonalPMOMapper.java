@@ -15,4 +15,10 @@ public interface PersonalPMOMapper {
      * @param usuario Argumentos del programa.
      */
     public PersonalPMO consultarInfo(@Param("usuario")String usuario);
+
+    /**
+     *
+     * @param personalPMO
+     */
+    public void registrarPersonalPMO(@Param("usuario")PersonalPMO personalPMO);
 }

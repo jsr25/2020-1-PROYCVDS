@@ -18,12 +18,16 @@
          ;
     </select>
 
+    <insert id="registrarPersonalPMO" parameterType='map'>
+        insert into personalpmo(login,nombre,apellido,password,correo) values (#{usuario.login},#{usuario.nombre},#{usuario.apellido},#{usuario.password},#{usuario.correo});
+    </insert>
+
     <resultMap type='PersonalPMO' id='PersonalPMOResult'>
         <id property='login' column='login'/>
         <result property='nombre' column='nombre'/>
         <result property='apellido' column='apellido'/>
         <result property='correo' column='correo'/>
-        <result property='pasword' column='password'/>
+        <result property='password' column='password'/>
     </resultMap>
 
 

@@ -33,4 +33,9 @@ public class MyBatisDAOAdministrador implements DAOAdministrador {
     public List<Usuario> consultarUsuarios(String usuario) {
         return  pmap.consultarUsuarios(usuario);
     }
+
+    public void registrarAdministrador(Administrador administrador) {
+        pmap.registrarAdministrador(administrador);
+
+    }
 }

@@ -85,4 +85,16 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
     public void deleteUsuario(String usuario) {
         usDao.deleteUsuario(usuario);
     }
+
+    public void registrarProponente(Proponente proponente) {
+        propoDao.registrarProponente(proponente);
+    }
+
+    public void registrarPersonalPMO(PersonalPMO personalPMO) {
+        persDao.registrarPersonalPMO(personalPMO);
+    }
+
+    public void registrarAdministrador(Administrador administrador) {
+        adminDAO.registrarAdministrador(administrador);
+    }
 }

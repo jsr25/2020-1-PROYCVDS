@@ -104,7 +104,7 @@ public class bancoIniciativas {
         PersonalPMO personal = PersonalMapper.consultarInfo("matox99");
         sqlss.commit();
         sqlss.close();
-        Assert.assertEquals(personal.getPasword(), "asdfqwerty");
+        Assert.assertEquals(personal.getPassword(), "asdfqwerty");
 
     }
 

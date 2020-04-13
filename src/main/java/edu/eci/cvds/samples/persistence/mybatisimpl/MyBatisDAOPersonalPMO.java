@@ -22,4 +22,8 @@ public class MyBatisDAOPersonalPMO implements DAOPersonalPMO {
     public PersonalPMO consultarInfo(String usuario) {
         return pmap.consultarInfo(usuario);
     }
+
+    public void registrarPersonalPMO(PersonalPMO personalPMO) {
+        pmap.registrarPersonalPMO(personalPMO);
+    }
 }

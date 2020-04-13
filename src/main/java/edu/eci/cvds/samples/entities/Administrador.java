@@ -8,6 +8,15 @@ package edu.eci.cvds.samples.entities;
 public class Administrador {
     private String nombre,apellido,pasword,login,correo;
 
+    public Administrador(String login, String nombre, String apellido, String password, String correo) {
+
+        this.login=login;
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.pasword=password;
+        this.correo=correo;
+    }
+    public Administrador(){}
     /**
      * Método constructor de la clase.
      * @param login Argumentos del programa.

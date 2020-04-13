@@ -16,7 +16,9 @@
          a.login=#{usuario}
          ;
     </select>
-
+    <insert id="registrarAdministrador" parameterType='map'>
+        insert into admnistrador(login,nombre,apellido,password,correo) values (#{usuario.login},#{usuario.nombre},#{usuario.apellido},#{usuario.password},#{usuario.correo});
+    </insert>
 
     <resultMap type='Administrador' id='AdministradorResult'>
         <id property='login' column='login'/>

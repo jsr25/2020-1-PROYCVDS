@@ -23,4 +23,10 @@ public interface AdministradorMapper{
      * @param usuario Argumentos del programa.
      */
     public List<Usuario> consultarUsuarios(@Param("usuario") String usuario);
+
+    /**
+     *
+     * @param administrador
+     */
+    public void registrarAdministrador(@Param("usuario") Administrador administrador);
 }

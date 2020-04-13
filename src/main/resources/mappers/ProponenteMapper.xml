@@ -18,6 +18,10 @@
          ;
     </select>
 
+    <insert id="registrarProponente" parameterType='map'>
+        insert into proponente(login,nombre,apellido,password,correo) values (#{usuario.login},#{usuario.nombre},#{usuario.apellido},#{usuario.password},#{usuario.correo});
+    </insert>
+
     <resultMap type='Proponente' id='ProponenteResult'>
         <id property='login' column='login'/>
         <result property='nombre' column='nombre'/>

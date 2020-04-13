@@ -22,4 +22,6 @@ public interface DAOAdministrador {
      * @param usuario Argumentos del programa.
      */
     public List<Usuario> consultarUsuarios(String usuario);
+
+    public void registrarAdministrador(Administrador administrador);
 }

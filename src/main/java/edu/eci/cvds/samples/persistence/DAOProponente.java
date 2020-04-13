@@ -1,6 +1,7 @@
 package edu.eci.cvds.samples.persistence;
 
 import edu.eci.cvds.samples.entities.Proponente;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * Clase DAOProponente de la aplicación.
@@ -14,4 +15,6 @@ public interface DAOProponente {
      * @param usuario Argumentos del programa.
      */
     public Proponente consultarInfo(String usuario);
+
+    public void registrarProponente(Proponente proponente);
 }

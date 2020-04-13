@@ -85,7 +85,7 @@ public class LoginBean extends BaseBean{
      */
     public void comproPerso(String usuario,String password){
         PersonalPMO personalPMO=servicio.consultarinfo(usuario);
-        if(personalPMO.getPasword().equals(password)){
+        if(personalPMO.getPassword().equals(password)){
             val = "personal.xhtml";
         }
     }

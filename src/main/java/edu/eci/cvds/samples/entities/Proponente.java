@@ -8,6 +8,16 @@ package edu.eci.cvds.samples.entities;
 public class Proponente {
     private String nombre, apellido, password, login, correo;
 
+    public Proponente(String login, String nombre, String apellido, String password, String correo) {
+        this.login = login;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.password = password;
+    }
+
+    public Proponente(){}
+
     /**
      * Método constructor de la clase.
      * @param login Argumentos del programa.

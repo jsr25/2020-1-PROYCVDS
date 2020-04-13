@@ -49,5 +49,23 @@ public interface ServicioBancodeProyectos {
      */
     public void registarUsuario(Usuario usuario);
 
+    /**
+     *
+     * @param usuario
+     */
     public void deleteUsuario(String usuario);
+
+    /**
+     *
+     * @param proponente
+     */
+    public void registrarProponente(Proponente proponente);
+
+    /**
+     *
+     * @param personalPMO
+     */
+    public void registrarPersonalPMO(PersonalPMO personalPMO);
+
+    public void registrarAdministrador(Administrador administrador);
 }
