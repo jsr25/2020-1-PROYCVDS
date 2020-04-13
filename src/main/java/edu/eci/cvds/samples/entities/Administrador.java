@@ -49,7 +49,7 @@ public class Administrador {
      * Método que retorna la contrasena.
      * @return pasword retorno del programa.
      */
-    public String getPasword(){ return pasword; }
+    public String getPassword(){ return pasword; }
 
     /**
      * Método que retorna el login.
@@ -87,7 +87,7 @@ public class Administrador {
      * Método que guarda la contrasena.
      * @param pasword Argumento del programa.
      */
-    public void setPasword(String pasword) { this.pasword = pasword; }
+    public void setPassword(String pasword) { this.pasword = pasword; }
 
     /**
      * Método que guarda el correo.

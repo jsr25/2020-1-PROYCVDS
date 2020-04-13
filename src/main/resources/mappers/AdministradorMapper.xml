@@ -17,14 +17,14 @@
          ;
     </select>
     <insert id="registrarAdministrador" parameterType='map'>
-        insert into admnistrador(login,nombre,apellido,password,correo) values (#{usuario.login},#{usuario.nombre},#{usuario.apellido},#{usuario.password},#{usuario.correo});
+        insert into administrador(login,nombre,apellido,password,correo) values (#{usuario.login},#{usuario.nombre},#{usuario.apellido},#{usuario.password},#{usuario.correo});
     </insert>
 
     <resultMap type='Administrador' id='AdministradorResult'>
         <id property='login' column='login'/>
         <result property='nombre' column='nombre'/>
         <result property='apellido' column='apellido'/>
-        <result property='pasword' column='password'/>
+        <result property='password' column='password'/>
         <result property='correo' column='correo'/>
 
     </resultMap>

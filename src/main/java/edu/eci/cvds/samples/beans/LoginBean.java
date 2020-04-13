@@ -49,7 +49,7 @@ public class LoginBean extends BaseBean{
      */
     public void comproAd(String usuario,String password){
         Administrador admin = servicio.consultarInfoAdmin("ma");
-        if(admin.getPasword().equals(password)){
+        if(admin.getPassword().equals(password)){
             val = "administrador.xhtml";
         }
     }

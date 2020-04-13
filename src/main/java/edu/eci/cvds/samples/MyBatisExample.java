@@ -5,9 +5,11 @@ import java.io.InputStream;
 import java.sql.SQLException;
 import java.text.ParseException;
 
+import edu.eci.cvds.samples.entities.Administrador;
 import edu.eci.cvds.samples.entities.PersonalPMO;
 import edu.eci.cvds.samples.entities.Proponente;
 import edu.eci.cvds.samples.entities.Usuario;
+import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.AdministradorMapper;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.PersonalPMOMapper;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.ProponenteMapper;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.UsuarioMapper;
@@ -50,9 +52,9 @@ public class MyBatisExample {
     public static void main(String args[]) throws SQLException, ParseException {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
-        ProponenteMapper u=sqlss.getMapper(ProponenteMapper.class);
-        //u.registrarUsuario(new Usuario("a","av","asda","asdads","asda@asdasd.com"));
-        System.out.print(u.consultarInfo("a"));
+         AdministradorMapper u=sqlss.getMapper(AdministradorMapper.class);
+        //u.registrarUsuario(new Usuario("i","av","asda","asdads","asda@asdasd.com"));
+        System.out.print(u.consultarInfoAdmin("i"));
         sqlss.commit();
         sqlss.close();
     }
