@@ -48,4 +48,6 @@ public interface ServicioBancodeProyectos {
      * @param usuario Argumentos del programa.
      */
     public void registarUsuario(Usuario usuario);
+
+    public void deleteUsuario(String usuario);
 }

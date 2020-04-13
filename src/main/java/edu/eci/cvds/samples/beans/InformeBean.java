@@ -1,4 +1,7 @@
 package edu.eci.cvds.samples.beans;
+import com.google.inject.Inject;
+import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -10,6 +13,8 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "js")
 @SessionScoped
 public class InformeBean {
+    @Inject
+    private ServicioBancodeProyectos servicio;
     private String val="azul";
 
     /**

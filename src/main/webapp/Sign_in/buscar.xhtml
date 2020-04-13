@@ -9,81 +9,55 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-<style type="text/css">
-    .value {
-        font-weight: bold;
-    }
 
-    .ui-datatable {
-        margin-bottom: 25px
-    }
 
-    .ui-datatable .ui-datatable-footer {
-        text-align:left;
-    }
-
-    .ui-datalist ul {
-        padding: 0 0 0 10px;
-        margin: 5px 0;
-    }
-
-    .ui-datatable .ui-button-icon-only .ui-button-text {
-        padding: 0;
-        line-height: 1.2;
-    }
-</style>
-
+<h:form>
+    <p:outputLabel value="Busque el usuario"></p:outputLabel>
+</h:form>
 
 <h:form id="form">
 <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
+<p:inputText id="Busqueda"  required="true" type="String" binding="#{usuario}"></p:inputText>
+    <p:commandButton class="login100-form-btn" value="Login" actionListener="#{asignarPerfil.consultar(usuario.value)}" ajax="true"> </p:commandButton>
+</h:form>
 
-<p:dataTable id="checkboxDT" var="Usuario" value="#{asignarPerfil.usuarios}" selection="#{asignarPerfil.usuariosSeleccionados}" rowKey="#{car.id}" style="margin-bottom:0">
+<h:form>
+    <p:dataTable id="basicDT" var="usuario" value="#{asignarPerfil.usuarios}">
     <f:facet name="header">
-        Checkbox
+        Basic
     </f:facet>
-    <p:column selectionMode="multiple" style="width:16px;text-align:center"/>
-    <p:column headerText="Id">
-        <h:outputText value="#{Usuario.login}" />
+    <p:column headerText="Usuario">
+        <h:outputText value="#{usuario.login}" />
     </p:column>
-    <p:column headerText="Year">
-        <h:outputText value="#{Usuario.nombre}" />
+    <p:column headerText="Nombre">
+        <h:outputText value="#{usuario.nombre}" />
     </p:column>
-    <p:column headerText="Brand">
-        <h:outputText value="#{Usuario.apellido}" />
+    <p:column headerText="apellido">
+        <h:outputText value="#{usuario.apellido}" />
     </p:column>
-    <f:facet name="footer">
-        <p:commandButton process="checkboxDT" update=":form:multiCarDetail" icon="pi pi-search" value="View" oncomplete="PF('multiCarDialog').show()" />
-    </f:facet>
+    <p:column headerText="Password">
+        <h:outputText value="#{usuario.password}" />
+    </p:column>
+        <p:column style="width:32px;text-align: center">
+            <p:commandButton  title="View">
+                <f:setPropertyActionListener value="#{usuario}" target="#{asignarPerfil.usuario}" />
+            </p:commandButton>
+        </p:column>
+
 </p:dataTable>
 
-<p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-    <p:outputPanel id="carDetail" style="text-align:center;">
-        <p:panelGrid  columns="2" rendered="#{not empty dtSelectionView.selectedCar}" columnClasses="label,value">
-            <f:facet name="header">
-                <p:graphicImage name="demo/images/car/#{dtSelectionView.selectedCar.brand}-big.gif"/>
-            </f:facet>
+</h:form>
 
-            <h:outputText value="Id:" />
-            <h:outputText value="#{dtSelectionView.selectedCar.id}" />
+<h:form>
+    <h:selectOneMenu class="input100" id="console" value="#{asignarPerfil.role}" style="width:250px " >
+        <f:selectItem  itemValue="Select type user" />
+        <f:selectItem itemLabel="Administrator" itemValue="Administrador" style="color:black;"   />
+        <f:selectItem itemLabel="Personal PMO" itemValue="PersonalPMO" style="color:black;" />
+        <f:selectItem itemLabel="Proponent" itemValue="Proponente" style="color:black;" />
+        <f:selectItem itemLabel="User" itemValue="Usuario" style="color:black;" />
+    </h:selectOneMenu>
+    <p:commandButton  title="Cambiar" actionListener="#{asignarPerfil.cambiar}"/>
 
-            <h:outputText value="Year" />
-            <h:outputText value="#{dtSelectionView.selectedCar.year}" />
 
-            <h:outputText value="Color:" />
-            <h:outputText value="#{dtSelectionView.selectedCar.color}" style="color:#{dtSelectionView.selectedCar.color}"/>
-
-            <h:outputText value="Price" />
-            <h:outputText value="$#{dtSelectionView.selectedCar.price}" />
-        </p:panelGrid>
-    </p:outputPanel>
-</p:dialog>
-
-<p:dialog header="Selected Cars" widgetVar="multiCarDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false" width="220">
-    <p:outputPanel id="multiCarDetail" style="text-align:center;">
-        <ui:repeat value="#{dtSelectionView.selectedCars}" var="car">
-            <h:outputText value="#{car.id} - #{car.brand}" style="display:block"/>
-        </ui:repeat>
-    </p:outputPanel>
-</p:dialog>
 </h:form>
 </html>

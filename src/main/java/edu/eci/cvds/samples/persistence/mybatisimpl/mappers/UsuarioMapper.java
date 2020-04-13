@@ -28,4 +28,6 @@ public interface UsuarioMapper {
      * @param usuario Argumentos del programa.
      */
     public void registrarUsuario(@Param("usuario") Usuario usuario);
+
+    public void deleteUsuario(@Param("user") String usuario );
 }

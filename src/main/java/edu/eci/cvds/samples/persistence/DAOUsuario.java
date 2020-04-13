@@ -27,4 +27,6 @@ public interface DAOUsuario {
      * @param usuario Argumentos del programa.
      */
     public void registrarUsuario(Usuario usuario);
+
+    public void deleteUsuario(String usuario);
 }

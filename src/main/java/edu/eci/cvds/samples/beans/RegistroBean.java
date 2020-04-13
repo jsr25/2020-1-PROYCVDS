@@ -11,7 +11,7 @@ import javax.faces.bean.SessionScoped;
  * @author Juan Ramos, Mateo Quintero, Brayan Jimenez, Maria Hernandez.
  * @version 1.0
  */
-@ManagedBean(name = "loginbean")
+@ManagedBean(name = "registarbean")
 @SessionScoped
 
 public class RegistroBean extends BaseBean{

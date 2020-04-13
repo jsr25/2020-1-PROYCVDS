@@ -49,14 +49,13 @@
                     <br/>
                     <div class="wrap-input100 validate-input">
                         <h:form>
-                        <h:outputLabel style="color:white;" for="User" value="Bienvenido Administrador"/>
-                        <h:inputText class="input100" id="User"  required="true" type="String" binding="#{User}" />
-                    </h:form>
+                        <h:outputLabel style="color:white;"  value="#{loginbean.role}"/>
+                        </h:form>
                     </div>
                     <div class="container-login100-form-btn ">
                         <p:commandButton class="login100-form-btn" value="Back"  href="https://proyecto-cvds-2020-1.herokuapp.com/" ajax="true"> </p:commandButton>
                         <h:form>
-                        <p:commandButton class="login100-form-btn" value="Buscar"  actionListener="#{asignarPerfil.consultar(User.value)}" ajax="true"> </p:commandButton>
+                        <p:commandButton class="login100-form-btn" value="Buscar"  actionListener="#{adminbean.asignarRole}" ajax="true"> </p:commandButton>
                         </h:form>
                     </div>
 

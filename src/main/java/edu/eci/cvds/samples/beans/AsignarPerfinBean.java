@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,8 +20,12 @@ import java.util.List;
 public class AsignarPerfinBean extends BaseBean {
     @Inject
     private ServicioBancodeProyectos servicio;
-    private List<Usuario> usuarios=servicio.consultarUsuarios("jsr25");
+
+    private List<Usuario> usuarios;
     private List<Usuario> usuariosSeleccionados;
+    private Usuario usuario;
+    private String role;
+
 
     /**
      * Método que consulta los usuarios de la base de datos.
@@ -28,15 +33,15 @@ public class AsignarPerfinBean extends BaseBean {
      * @throws IOException lanza excepcion si el usuario no coincide.
      */
     public void consultar(String pClave) throws IOException {
-              //usuarios=servicio.consultarUsuarios(pClave);
-        FacesContext.getCurrentInstance().getExternalContext().redirect("buscar.xhtml");
+              usuarios=servicio.consultarUsuarios(pClave);
+
     }
 
     /**
      * Método que obtiene los usuarios de la base de datos que han sido seleccionados.
      * @return usuariosSeleccioandos retorno del programa.
      */
-    public List<Usuario> getUsuariosSeleccionados() {return usuariosSeleccionados;}
+   public List<Usuario> getUsuariosSeleccionados() {return usuariosSeleccionados;}
 
     /**
      * Método que guarda los usuarios de la base de datos que han sido seleccionados.
@@ -59,6 +64,26 @@ public class AsignarPerfinBean extends BaseBean {
      * @param usuarios Argumentos del programa.
      */
     public void setUsuarios(List<Usuario> usuarios) {
-        this.usuarios = usuarios;
+       this.usuarios = usuarios;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void cambiar(){
+        servicio.deleteUsuario(usuario.getLogin());
     }
 }

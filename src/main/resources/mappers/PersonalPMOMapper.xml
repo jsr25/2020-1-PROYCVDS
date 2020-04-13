@@ -21,7 +21,7 @@
     <resultMap type='PersonalPMO' id='PersonalPMOResult'>
         <id property='login' column='login'/>
         <result property='nombre' column='nombre'/>
-        <result property='appelido' column='apellido'/>
+        <result property='apellido' column='apellido'/>
         <result property='correo' column='correo'/>
         <result property='pasword' column='password'/>
     </resultMap>

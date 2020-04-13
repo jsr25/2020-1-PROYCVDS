@@ -35,6 +35,10 @@
         insert into usuario(login,nombre,apellido,password,correo) values (#{usuario.login},#{usuario.nombre},#{usuario.apellido},#{usuario.password},#{usuario.correo});
     </insert>
 
+    <delete id="deleteUsuario">
+        delete from usuario where login=#{user}
+    </delete>
+
 
     <resultMap type='Usuario' id='UsuarioResult'>
         <id property='login' column='login'/>

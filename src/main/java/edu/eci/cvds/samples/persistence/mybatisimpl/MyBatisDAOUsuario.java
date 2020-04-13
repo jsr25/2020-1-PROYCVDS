@@ -41,4 +41,8 @@ public class MyBatisDAOUsuario implements DAOUsuario {
         pmap.registrarUsuario(usuario);
     }
 
+    public void deleteUsuario(String usuario) {
+        pmap.deleteUsuario(usuario);
+    }
+
 }
