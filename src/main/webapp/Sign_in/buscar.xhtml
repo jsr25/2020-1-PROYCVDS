@@ -43,8 +43,8 @@
 <h:body>
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-            <div class="wrap-login100">
-                <form class="login100-form validate-form" action="">
+            <div class="wrap-login100" style= "width: 600px " >
+                <form class="login100-form validate-form"   action="">
                     <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" /></span>
                     <br/>
                     <h:form>
@@ -52,7 +52,7 @@
                     </h:form>
                     <h:form id="form">
                         <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
-                        <p:inputText class="login100-form" id="Busqueda"  required="true" type="String" binding="#{usuario}"></p:inputText>
+                        <p:inputText class="login100-form" id="Busqueda" style= "width: 390px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
                         <br/>
                         <br/>
                         <p:commandButton  class="login100-form-btn" style= "width: 390px; height:30px "   value="Search" actionListener="#{asignarPerfil.consultar(usuario.value)}" ajax="true"> </p:commandButton>
