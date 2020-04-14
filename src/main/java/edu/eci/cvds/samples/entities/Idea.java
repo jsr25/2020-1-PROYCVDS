@@ -28,7 +28,7 @@ public class Idea {
         this.loginProponente = loginProponente;
         this.iD = iD;
         this.palabras = palabras;
-        this.clave = clave;
+        this.area = clave;
         this.fecha = fecha;
         this.estado=estado;
     }
@@ -98,21 +98,7 @@ public class Idea {
         this.palabras = palabras;
     }
 
-    /**
-     * Método que retorna clave.
-     * @return clave retorno del programa.
-     */
-    public String getClave() {
-        return clave;
-    }
 
-    /**
-     * Método que guarda clave.
-     * @param clave Argumentos del programa.
-     */
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
 
     /**
      * Método que retorna fecha.
@@ -138,6 +124,14 @@ public class Idea {
         this.estado = estado;
     }
 
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
     @Override
     public String toString() {
         return "Idea{" +
@@ -145,7 +139,7 @@ public class Idea {
                 ", loginProponente='" + loginProponente + '\'' +
                 ", iD='" + iD + '\'' +
                 ", palabras='" + palabras + '\'' +
-                ", clave='" + clave + '\'' +
+                ", area='" + area + '\'' +
                 ", estado='" + estado + '\'' +
                 ", fecha=" + fecha +
                 '}';
