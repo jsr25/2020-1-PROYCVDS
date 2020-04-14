@@ -28,7 +28,4 @@
         <result property='correo' column='correo'/>
 
     </resultMap>
-
-
-
 </mapper>

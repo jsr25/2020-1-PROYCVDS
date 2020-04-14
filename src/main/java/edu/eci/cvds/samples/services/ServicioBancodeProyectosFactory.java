@@ -1,13 +1,7 @@
 package edu.eci.cvds.samples.services;
 
-import edu.eci.cvds.samples.persistence.DAOAdministrador;
-import edu.eci.cvds.samples.persistence.DAOPersonalPMO;
-import edu.eci.cvds.samples.persistence.DAOProponente;
-import edu.eci.cvds.samples.persistence.DAOUsuario;
-import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOAdministrador;
-import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOPersonalPMO;
-import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOProponente;
-import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOUsuario;
+import edu.eci.cvds.samples.persistence.*;
+import edu.eci.cvds.samples.persistence.mybatisimpl.*;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 import static com.google.inject.Guice.createInjector;
@@ -43,6 +37,7 @@ public class ServicioBancodeProyectosFactory {
                 bind(DAOPersonalPMO.class).to(MyBatisDAOPersonalPMO.class);
                 bind(DAOUsuario.class).to(MyBatisDAOUsuario.class);
                 bind(DAOProponente.class).to(MyBatisDAOProponente.class);
+                bind(DAOIdea.class).to(MyBatisDAOIdea.class);
             }
         });
         testingInjector = createInjector(new XMLMyBatisModule() {
@@ -56,6 +51,7 @@ public class ServicioBancodeProyectosFactory {
                 bind(DAOPersonalPMO.class).to(MyBatisDAOPersonalPMO.class);
                 bind(DAOUsuario.class).to(MyBatisDAOUsuario.class);
                 bind(DAOProponente.class).to(MyBatisDAOProponente.class);
+                bind(DAOIdea.class).to(MyBatisDAOIdea.class);
             }
         });
     }
