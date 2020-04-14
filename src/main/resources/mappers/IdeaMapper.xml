@@ -8,7 +8,7 @@
          select a.descripcion,
                a.login_Prop,
                a.palabrasClave,
-               a.AreaTrabajo,
+               a.area,
                a.fecha,
                a.estado
         from
@@ -17,21 +17,23 @@
          a.palabrasClave=#{idea}
          ;
     </select>
+
     <update id="cambiarEstado" parameterType="map" >
         update idea
         set estado= #{estado}
         where #{idea.descripcion}=descripcion and #{idea.loginProponente}=login_Prop
     </update>
     <insert id="Idea" parameterType='map'>
-        insert into idea(descripcion,fecha,login_Prop,id,palabrasClave,AreaTrabajo,estado)  values (#{usuario.descripcion},#{usuario.login_Prop},#{usuario.id},#{usuario.palabrasClave},#{usuario.AreaTrabajo}, #{usuario.fecha}, #{usuario.estado});
+        insert into idea(descripcion,fecha,login_Prop,id,palabrasClave,area,estado)  values (#{usuario.descripcion},#{usuario.login_Prop},#{usuario.id},#{usuario.palabrasClave},#{usuario.AreaTrabajo}, #{usuario.fecha}, #{usuario.estado});
     </insert>
 
     <resultMap type='Idea' id='IdeaResult'>
         <id property='descripcion' column='descripcion'/>
         <result property='loginProponente' column='login_Prop'/>
         <result property='palabras' column='palabrasClave'/>
-        <result property='clave' column='AreaTrabajo'/>
+        <result property='area' column='area'/>
         <result property='fecha' column='fecha'/>
         <result property='estado' column='estado'/>
     </resultMap>
+
 </mapper>
