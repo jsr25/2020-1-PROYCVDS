@@ -1,9 +1,7 @@
 package edu.eci.cvds.samples.services;
 
-import edu.eci.cvds.samples.entities.Administrador;
-import edu.eci.cvds.samples.entities.PersonalPMO;
-import edu.eci.cvds.samples.entities.Proponente;
-import edu.eci.cvds.samples.entities.Usuario;
+import edu.eci.cvds.samples.entities.*;
+
 import java.util.List;
 
 /**
@@ -68,4 +66,6 @@ public interface ServicioBancodeProyectos {
     public void registrarPersonalPMO(PersonalPMO personalPMO);
 
     public void registrarAdministrador(Administrador administrador);
+    public void registrarIDea(Idea idea);
+    public List<Idea>  consultarIDea(String idea);
 }

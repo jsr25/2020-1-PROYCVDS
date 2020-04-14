@@ -4,10 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.eci.cvds.samples.persistence.mybatisimpl.mappers.IdeaMapper">
-    <select id='idea' parameterType='map' resultMap='IdeaResult'>
+    <select id='consultarIdea' parameterType='map' resultMap='IdeaResult'>
          select a.descripcion,
                a.login_Prop,
-               a.id,
                a.palabrasClave,
                a.AreaTrabajo,
                a.fecha,
@@ -15,7 +14,7 @@
         from
          Idea as a
          where
-         a.login=#{idea}
+         a.palabrasClave=#{idea}
          ;
     </select>
     <insert id="Idea" parameterType='map'>
@@ -24,10 +23,9 @@
 
     <resultMap type='Idea' id='IdeaResult'>
         <id property='descripcion' column='descripcion'/>
-        <result property='login_Prop' column='login_Prop'/>
-        <result property='id' column='apellido'/>
-        <result property='palabrasClave' column='palabrasClave'/>
-        <result property='AreaTrabajo' column='AreaTrabajo'/>
+        <result property='loginProponente' column='login_Prop'/>
+        <result property='palabras' column='palabrasClave'/>
+        <result property='clave' column='AreaTrabajo'/>
         <result property='fecha' column='fecha'/>
         <result property='estado' column='estado'/>
     </resultMap>

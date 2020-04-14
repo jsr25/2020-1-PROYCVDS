@@ -3,6 +3,8 @@ package edu.eci.cvds.samples.persistence.mybatisimpl.mappers;
 import org.apache.ibatis.annotations.Param;
 import edu.eci.cvds.samples.entities.Idea;
 
+import java.util.List;
+
 /**
  * Clase IdeaMapper de la aplicación.
  * @author Juan Ramos, Mateo Quintero, Brayan Jimenez, Maria Hernandez.
@@ -13,7 +15,7 @@ public interface IdeaMapper {
      * Método que consulta informacion de la idea.
      * @param idea Argumentos del programa.
      */
-    public Idea consultarIdea(@Param("idea")String idea);
+    public List<Idea> consultarIdea(@Param("idea")String idea);
 
     /**
      * Método que registra la idea.

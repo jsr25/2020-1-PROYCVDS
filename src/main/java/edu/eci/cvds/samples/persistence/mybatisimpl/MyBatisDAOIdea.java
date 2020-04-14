@@ -5,6 +5,8 @@ import edu.eci.cvds.samples.entities.Idea;
 import edu.eci.cvds.samples.persistence.DAOIdea;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.IdeaMapper;
 
+import java.util.List;
+
 /**
  * Clase MyBatisDAOIdea de la aplicación.
  * @author Juan Ramos, Mateo Quintero, Brayan Jimenez, Maria Hernandez.
@@ -28,7 +30,7 @@ public class MyBatisDAOIdea implements DAOIdea {
      * @param idea Argumentos del programa.
      * @return idea Retorno del programa.
      */
-    public Idea consultarIDea(String idea) {
+    public List<Idea> consultarIDea(String idea) {
         return pmap.consultarIdea(idea);
     }
 

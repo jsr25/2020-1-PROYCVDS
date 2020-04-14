@@ -7,7 +7,7 @@ import java.util.Date;
  * @version 1.0
  */
 public class Idea {
-    private String descripcion, loginProponente, iD, palabras, clave;
+    private String descripcion, loginProponente, iD, palabras, clave,estado;
     private Date fecha;
 
     /**
@@ -18,14 +18,16 @@ public class Idea {
      * @param palabras Argumentos del programa.
      * @param clave Argumentos del programa.
      */
-    public Idea(String descripcion, String loginProponente, String iD, String palabras, String clave, Date fecha) {
+    public Idea(String descripcion, String loginProponente, String iD, String palabras, String clave, Date fecha, String estado) {
         this.descripcion = descripcion;
         this.loginProponente = loginProponente;
         this.iD = iD;
         this.palabras = palabras;
         this.clave = clave;
         this.fecha = fecha;
+        this.estado=estado;
     }
+    public Idea(){}
 
     /**
      * Método que retorna descripcion.
@@ -121,5 +123,26 @@ public class Idea {
      */
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Idea{" +
+                "descripcion='" + descripcion + '\'' +
+                ", loginProponente='" + loginProponente + '\'' +
+                ", iD='" + iD + '\'' +
+                ", palabras='" + palabras + '\'' +
+                ", clave='" + clave + '\'' +
+                ", estado='" + estado + '\'' +
+                ", fecha=" + fecha +
+                '}';
     }
 }

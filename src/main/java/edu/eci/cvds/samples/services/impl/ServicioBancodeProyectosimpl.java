@@ -96,7 +96,7 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
 
     public void registrarIDea(Idea idea){      daoIdea.registrarIDea(idea);      }
 
-    public Idea consultarIDea(String idea){
+    public List<Idea>  consultarIDea(String idea){
         return daoIdea.consultarIDea(idea);
     }
 }
