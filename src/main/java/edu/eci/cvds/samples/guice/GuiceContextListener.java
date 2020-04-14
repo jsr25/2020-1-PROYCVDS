@@ -5,7 +5,9 @@ import com.google.inject.Injector;
 import edu.eci.cvds.samples.persistence.*;
 import edu.eci.cvds.samples.persistence.mybatisimpl.*;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
+import edu.eci.cvds.samples.services.ServicioUsuario;
 import edu.eci.cvds.samples.services.impl.ServicioBancodeProyectosimpl;
+import edu.eci.cvds.samples.services.impl.ServicioUsuarioimpl;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 import javax.servlet.ServletContext;
@@ -41,14 +43,13 @@ public class GuiceContextListener implements ServletContextListener {
                 setClassPathResource("mybatis-config.xml");
 
                 // TODO Add service class associated to Stub implementation
-                bind(DAOAdministrador.class).to(MyBatisDAOAdministrador.class);
-                bind(DAOPersonalPMO.class).to(MyBatisDAOPersonalPMO.class);
                 bind(DAOUsuario.class).to(MyBatisDAOUsuario.class);
-                bind(DAOProponente.class).to(MyBatisDAOProponente.class);
+
                 bind(DAOIdea.class).to(MyBatisDAOIdea.class);
 
                 //
                 bind(ServicioBancodeProyectos.class).to(ServicioBancodeProyectosimpl.class);
+                bind(ServicioUsuario.class).to(ServicioUsuarioimpl.class);
             }
         });
         servletContextEvent.getServletContext().setAttribute(Injector.class.getName(), injector);

@@ -69,6 +69,15 @@
                             <p:column  headerText="apellido" style="min-width: 90px;">
                                 <h:outputText value="#{usuario.apellido}" />
                             </p:column>
+                            <p:column  headerText="Area" style="min-width: 90px;">
+                                <h:outputText value="#{usuario.area}" />
+                            </p:column>
+                            <p:column  headerText="Correo" style="min-width: 90px;">
+                                <h:outputText value="#{usuario.correo}" />
+                            </p:column>
+                            <p:column  headerText="Role" style="min-width: 90px;">
+                                <h:outputText value="#{usuario.role}" />
+                            </p:column>
                             <p:column style="width:32px;text-align: center">
                                 <p:commandButton  class="login100-form-btn"  title="Select" style= "width: 10px; height:20px " >
                                     <f:setPropertyActionListener value="#{usuario}" target="#{asignarPerfil.usuario}" />
@@ -84,6 +93,7 @@
                             <f:selectItem itemLabel="Administrator" itemValue="Administrador" style="color:black;"   />
                             <f:selectItem itemLabel="Personal PMO" itemValue="PersonalPMO" style="color:black;" />
                             <f:selectItem itemLabel="Proponente" itemValue="Proponente" style="color:black;" />
+                            <f:selectItem itemLabel="Usuario" itemValue="Usuario" style="color:black;" />
                         </h:selectOneMenu>
                         <br/>
                         <div class="container-login100-form-btn ">

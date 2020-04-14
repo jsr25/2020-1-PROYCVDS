@@ -1,16 +1,16 @@
 package edu.eci.cvds.samples.beans;
 
 import com.google.inject.Inject;
-import edu.eci.cvds.samples.entities.Administrador;
-import edu.eci.cvds.samples.entities.PersonalPMO;
-import edu.eci.cvds.samples.entities.Proponente;
 import edu.eci.cvds.samples.entities.Usuario;
+import edu.eci.cvds.samples.persistence.PersistenceException;
+import edu.eci.cvds.samples.services.BancoDeProyectosException;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
+import edu.eci.cvds.samples.services.ServicioUsuario;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,7 +22,7 @@ import java.util.List;
 @SessionScoped
 public class AsignarPerfinBean extends BaseBean {
     @Inject
-    private ServicioBancodeProyectos servicio;
+    private ServicioUsuario servicio;
 
     private List<Usuario> usuarios;
     private List<Usuario> usuariosSeleccionados;
@@ -36,7 +36,13 @@ public class AsignarPerfinBean extends BaseBean {
      * @throws IOException lanza excepcion si el usuario no coincide.
      */
     public void consultar(String pClave) throws IOException {
-              usuarios=servicio.consultarUsuarios(pClave);
+        try {
+            usuarios=servicio.consultarUsuarios(pClave);
+        } catch (BancoDeProyectosException e) {
+
+        } catch (PersistenceException e) {
+
+        }
 
     }
 
@@ -88,20 +94,17 @@ public class AsignarPerfinBean extends BaseBean {
 
     public void cambiar(){
         if(!role.equals("")){
-            servicio.deleteUsuario(usuario.getLogin());
-            if(role.equals("Administrador")){
-                Administrador admin=new Administrador(usuario.getLogin(),usuario.getNombre(),usuario.getApellido(),usuario.getPassword(),usuario.getCorreo());
-                servicio.registrarAdministrador(admin);
-            }
-            else if (role.equals("PersonalPMO")){
-                PersonalPMO personalPMO=new PersonalPMO(usuario.getLogin(),usuario.getNombre(),usuario.getApellido(),usuario.getPassword(),usuario.getCorreo());
-                servicio.registrarPersonalPMO(personalPMO);
-            }
-            else if (role.equals("Proponente")){
-                Proponente proponente= new Proponente(usuario.getLogin(),usuario.getNombre(),usuario.getApellido(),usuario.getPassword(),usuario.getCorreo());
-                servicio.registrarProponente(proponente);
+            try {
+                servicio.carbiarRole(role,usuario);
+                FacesContext.getCurrentInstance().getExternalContext().redirect("administrador.xhtml");
+            } catch (BancoDeProyectosException e) {
+
+            } catch (PersistenceException e) {
+
+            } catch (IOException e) {
+
             }
         }
-
     }
+
 }

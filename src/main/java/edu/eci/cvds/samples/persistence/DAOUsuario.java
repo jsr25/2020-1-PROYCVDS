@@ -14,19 +14,25 @@ public interface DAOUsuario {
      * Método que consulta informacion del usuario.
      * @param usuario Argumentos del programa.
      */
-    public Usuario consultarInfo(String usuario);
+    public Usuario consultarUsuario(String usuario) throws PersistenceException;
 
     /**
      * Método que guarda informacion del usuario.
      * @param pClave Argumentos del programa.
      */
-    public List<Usuario> consultarUsuarios(String pClave);
+    public List<Usuario> consultarUsuarios(String pClave) throws PersistenceException;
 
     /**
      * Método que registra informacion del usuario.
      * @param usuario Argumentos del programa.
      */
-    public void registrarUsuario(Usuario usuario);
+    public void registrarUsuario(Usuario usuario) throws PersistenceException;
 
-    public void deleteUsuario(String usuario);
+    /**
+     *
+     * @param usuario
+     */
+    public void deleteUsuario(String usuario) throws PersistenceException;
+
+    public void carbiarRole(String estado, Usuario usuario) throws PersistenceException;
 }

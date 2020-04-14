@@ -1,12 +1,12 @@
 package edu.eci.cvds.samples.beans;
 
 import com.google.inject.Inject;
-import edu.eci.cvds.samples.MyBatisExample;
-import edu.eci.cvds.samples.entities.Administrador;
-import edu.eci.cvds.samples.entities.PersonalPMO;
-import edu.eci.cvds.samples.entities.Proponente;
 import edu.eci.cvds.samples.entities.Usuario;
+import edu.eci.cvds.samples.persistence.PersistenceException;
+import edu.eci.cvds.samples.services.BancoDeProyectosException;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
+import edu.eci.cvds.samples.services.ServicioUsuario;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -22,9 +22,8 @@ import java.io.IOException;
 
 public class LoginBean extends BaseBean{
     @Inject
-    private ServicioBancodeProyectos servicio;
-    private String usuario;
-    private String password;
+    private ServicioUsuario servicio;
+    private Usuario usuario;
     private String role;
     private String val="login.xhtml";
 
@@ -34,61 +33,35 @@ public class LoginBean extends BaseBean{
      * @param usuario Argumentos del programa.
      * @throws IOException lanza excepcion si no es correcto algun dato ingresado.
      */
-    public void datos(String usuario, String password) throws IOException {
-        if (role.equals("Administrador")) {comproAd(usuario,password);}
-        else if(role.equals("PersonalPMO")){comproPerso(usuario,password);}
-        else if(role.equals("Proponente")){comproPropo(usuario,password);}
-        else if(role.equals("Usuario")){comproUsu(usuario,password);}
-        FacesContext.getCurrentInstance().getExternalContext().redirect(val);
-    }
+    public void datos(String usuario, String password)  {
+        try {
+            this.usuario=servicio.consultarUsuario(usuario);
+            comprobacion( password);
+            FacesContext.getCurrentInstance().getExternalContext().redirect(val);
+        } catch (BancoDeProyectosException e) {
 
-    /**
-     * Método que comprueba datos del administrador.
-     * @param password Argumentos del programa.
-     * @param usuario Argumentos del programa.
-     */
-    public void comproAd(String usuario,String password){
-        Administrador admin = servicio.consultarInfoAdmin("ma");
-        if(admin.getPassword().equals(password)){
-            val = "administrador.xhtml";
+        } catch (PersistenceException e) {
+        }
+        catch (IOException e) {
+
         }
     }
 
-    /**
-     * Método que comprueba datos del proponente.
-     * @param password Argumentos del programa.
-     * @param usuario Argumentos del programa.
-     */
-    public void comproPropo(String usuario,String password){
-        Proponente proponente= servicio.consultarinfoPro(usuario);
-        if(proponente.getPassword().equals(password)){
-            val = "proponente.xhtml";
+   public void comprobacion(String password){
+        if(usuario.getRole().equals("Administrador")){
+            val="administrador.xhtml";
         }
-    }
+        else if(usuario.getRole().equals("Proponente")){
+            val="Proponente.xhtml";
+        }
+        else if(usuario.getRole().equals("PersonalPMO")){
+            val="PersonalPMO.xhtml";
+        }
+        else if(usuario.getRole().equals("Usuario")){
+            val="Usuario.xhtml";
+        }
+   }
 
-    /**
-     * Método que comprueba datos del usuario.
-     * @param password Argumentos del programa.
-     * @param usuario Argumentos del programa.
-     */
-    public void comproUsu(String usuario,String password){
-        Usuario user= servicio.consultarinfoUsuario(usuario);
-        if(user.getPassword().equals(password)){
-            val = "usuario.xhtml";
-        }
-    }
-
-    /**
-     * Método que comprueba datos del personal.
-     * @param password Argumentos del programa.
-     * @param usuario Argumentos del programa.
-     */
-    public void comproPerso(String usuario,String password){
-        PersonalPMO personalPMO=servicio.consultarinfo(usuario);
-        if(personalPMO.getPassword().equals(password)){
-            val = "personal.xhtml";
-        }
-    }
 
     /**
      * Método que retorna el rol ingresado.

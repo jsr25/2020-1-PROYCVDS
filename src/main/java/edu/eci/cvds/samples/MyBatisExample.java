@@ -5,10 +5,6 @@ import java.io.InputStream;
 import java.sql.SQLException;
 import java.text.ParseException;
 
-import edu.eci.cvds.samples.entities.Administrador;
-import edu.eci.cvds.samples.entities.PersonalPMO;
-import edu.eci.cvds.samples.entities.Proponente;
-import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.*;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

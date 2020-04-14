@@ -15,7 +15,7 @@ public interface UsuarioMapper {
      * Método que consulta informacion del usuario.
      * @param usuario Argumentos del programa.
      */
-    public Usuario consultarInfo(@Param("usuario")String usuario);
+    public Usuario consultarUsuario(@Param("usuario")String usuario);
 
     /**
      * Método que consulta los usuarios del usuario.
@@ -30,4 +30,6 @@ public interface UsuarioMapper {
     public void registrarUsuario(@Param("usuario") Usuario usuario);
 
     public void deleteUsuario(@Param("user") String usuario );
+
+    public void carbiarRole(@Param("estado")String estado,@Param("usuario") Usuario usuario );
 }

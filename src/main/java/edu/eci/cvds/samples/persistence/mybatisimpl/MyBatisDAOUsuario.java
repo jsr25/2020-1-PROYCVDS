@@ -3,6 +3,7 @@ package edu.eci.cvds.samples.persistence.mybatisimpl;
 import com.google.inject.Inject;
 import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.samples.persistence.DAOUsuario;
+import edu.eci.cvds.samples.persistence.PersistenceException;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.UsuarioMapper;
 import java.util.List;
 
@@ -20,8 +21,15 @@ public class MyBatisDAOUsuario implements DAOUsuario {
      * @param usuario Argumentos del programa.
      * @return usuario Retorno del programa.
      */
-    public Usuario consultarInfo(String usuario) {
-        return pmap.consultarInfo(usuario);
+    public Usuario consultarUsuario(String usuario) throws PersistenceException {
+        Usuario user=null;
+        try{
+            user=pmap.consultarUsuario(usuario);
+        }
+        catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("No se pudo consulatar al usuario",e);
+        }
+        return user;
     }
 
     /**
@@ -29,20 +37,48 @@ public class MyBatisDAOUsuario implements DAOUsuario {
      * @param pClave Argumentos del programa.
      * @return usuario Retorno del programa.
      */
-    public List<Usuario> consultarUsuarios(String pClave) {
-        return pmap.consultarUsuarios(pClave);
+    public List<Usuario> consultarUsuarios(String pClave) throws PersistenceException {
+        List<Usuario> users=null;
+        try{
+            users=pmap.consultarUsuarios(pClave);
+        }
+        catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("No se pudo consulatar a los usuarios",e);
+        }
+        return users;
     }
 
     /**
      * Método que registra informacion del usuario.
      * @param usuario Argumentos del programa.
      */
-    public void registrarUsuario(Usuario usuario) {
-        pmap.registrarUsuario(usuario);
+    public void registrarUsuario(Usuario usuario) throws PersistenceException {
+        try{
+            pmap.registrarUsuario(usuario);
+        }
+        catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("No se pudo registrar al usuario",e);
+        }
+
     }
 
-    public void deleteUsuario(String usuario) {
-        pmap.deleteUsuario(usuario);
+    public void deleteUsuario(String usuario) throws PersistenceException {
+        try{
+            pmap.deleteUsuario(usuario);
+        }
+        catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("No se pudo borrar al usuario",e);
+        }
+
+    }
+
+    public void carbiarRole(String estado, Usuario usuario) throws PersistenceException {
+        try{
+            pmap.carbiarRole(estado,usuario);
+        }
+        catch(org.apache.ibatis.exceptions.PersistenceException e){
+            throw new PersistenceException("No se pudo actualizar al usuario",e);
+        }
     }
 
 }

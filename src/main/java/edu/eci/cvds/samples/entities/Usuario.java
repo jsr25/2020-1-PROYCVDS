@@ -6,7 +6,16 @@ package edu.eci.cvds.samples.entities;
  * @version 1.0
  */
 public class Usuario {
-    private String nombre, apellido, password, login, correo;
+
+    private String nombre;
+    private String apellido;
+    private String password;
+    private String login;
+    private String correo;
+    private String role;
+    private String area;
+
+
 
     /**
      * Método constructor de la clase.
@@ -16,12 +25,14 @@ public class Usuario {
      * @param password Argumentos del programa.
      * @param correo Argumentos del programa.
      */
-    public Usuario(String login, String nombre, String apellido, String password, String correo) {
+    public Usuario(String login, String nombre, String apellido, String password, String correo, String role,String area ) {
         this.login = login;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.password = password;
+        this.role=role;
+        this.area=area;
     }
     /**
      * Método constructor de la clase.
@@ -109,10 +120,52 @@ public class Usuario {
     }
 
     /**
+     *
+     * @return
+     */
+    public String getRole() {
+        return role;
+    }
+
+    /**
+     *
+     * @param role
+     */
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getArea() {
+        return area;
+    }
+
+    /**
+     *
+     * @param area
+     */
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    /**
      * Método que retorna el login exitoso.
      * @return string retorno del programa.
      */
-    public String toString(){
-        return "PersonalPMO{"+ "usuario= "+ login + ", nombre=" + nombre + ", apellido=" + apellido + ", password=" + password + ", correo=" + correo +'}';
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", password='" + password + '\'' +
+                ", login='" + login + '\'' +
+                ", correo='" + correo + '\'' +
+                ", role='" + role + '\'' +
+                ", area='" + area + '\'' +
+                '}';
     }
 }
