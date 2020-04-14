@@ -2,14 +2,8 @@ package edu.eci.cvds.samples.guice;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import edu.eci.cvds.samples.persistence.DAOAdministrador;
-import edu.eci.cvds.samples.persistence.DAOPersonalPMO;
-import edu.eci.cvds.samples.persistence.DAOProponente;
-import edu.eci.cvds.samples.persistence.DAOUsuario;
-import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOAdministrador;
-import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOPersonalPMO;
-import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOProponente;
-import edu.eci.cvds.samples.persistence.mybatisimpl.MyBatisDAOUsuario;
+import edu.eci.cvds.samples.persistence.*;
+import edu.eci.cvds.samples.persistence.mybatisimpl.*;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 import edu.eci.cvds.samples.services.impl.ServicioBancodeProyectosimpl;
 import org.mybatis.guice.XMLMyBatisModule;
@@ -51,6 +45,8 @@ public class GuiceContextListener implements ServletContextListener {
                 bind(DAOPersonalPMO.class).to(MyBatisDAOPersonalPMO.class);
                 bind(DAOUsuario.class).to(MyBatisDAOUsuario.class);
                 bind(DAOProponente.class).to(MyBatisDAOProponente.class);
+                bind(DAOIdea.class).to(MyBatisDAOIdea.class);
+
                 //
                 bind(ServicioBancodeProyectos.class).to(ServicioBancodeProyectosimpl.class);
             }

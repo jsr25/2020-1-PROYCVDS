@@ -1,14 +1,8 @@
 package edu.eci.cvds.samples.services.impl;
 
 import com.google.inject.Inject;
-import edu.eci.cvds.samples.entities.Administrador;
-import edu.eci.cvds.samples.entities.PersonalPMO;
-import edu.eci.cvds.samples.entities.Proponente;
-import edu.eci.cvds.samples.entities.Usuario;
-import edu.eci.cvds.samples.persistence.DAOAdministrador;
-import edu.eci.cvds.samples.persistence.DAOPersonalPMO;
-import edu.eci.cvds.samples.persistence.DAOProponente;
-import edu.eci.cvds.samples.persistence.DAOUsuario;
+import edu.eci.cvds.samples.entities.*;
+import edu.eci.cvds.samples.persistence.*;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 import java.util.List;
 
@@ -26,6 +20,8 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
     private DAOProponente propoDao;
     @Inject
     private DAOUsuario usDao;
+    @Inject
+    private DAOIdea daoIdea;
 
     /**
      * Método que consulta informacion del administrador.
@@ -96,5 +92,11 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
 
     public void registrarAdministrador(Administrador administrador) {
         adminDAO.registrarAdministrador(administrador);
+    }
+
+    public void registrarIDea(Idea idea){      daoIdea.registrarIDea(idea);      }
+
+    public Idea consultarIDea(String idea){
+        return daoIdea.consultarIDea(idea);
     }
 }

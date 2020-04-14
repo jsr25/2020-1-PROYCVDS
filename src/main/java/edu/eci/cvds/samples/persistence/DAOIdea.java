@@ -12,7 +12,7 @@ public interface DAOIdea {   /**
      * Método que consulta la idea que fue registrada.
      * @param idea Argumentos del programa.
      */
-    public DAOIdea consultarIDea(String idea);
+    public Idea consultarIDea(String idea);
 
     public void registrarIDea(Idea idea);
 }

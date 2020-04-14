@@ -14,16 +14,23 @@ public class MyBatisDAOIdea implements DAOIdea {
     @Inject
     private IdeaMapper pmap = null;
 
+
+    /**
+     *
+     * @param idea
+     */
+    public void registrarIDea(Idea idea) {
+        pmap.registrarIdea(idea);
+    }
+
     /**
      * Método que consulta informacion de la idea.
      * @param idea Argumentos del programa.
      * @return idea Retorno del programa.
      */
-    public IdeaMapper consultarIdea(String idea) {
+    public Idea consultarIDea(String idea) {
         return pmap.consultarIdea(idea);
     }
 
-    public void registrarPersonalPMO(Idea idea) {
-        pmap.registrarIdea(idea);
-    }
+
 }

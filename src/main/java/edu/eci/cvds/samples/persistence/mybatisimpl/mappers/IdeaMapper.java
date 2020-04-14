@@ -13,7 +13,7 @@ public interface IdeaMapper {
      * Método que consulta informacion de la idea.
      * @param idea Argumentos del programa.
      */
-    public IdeaMapper consultarIdea(@Param("idea")String idea);
+    public Idea consultarIdea(@Param("idea")String idea);
 
     /**
      * Método que registra la idea.
