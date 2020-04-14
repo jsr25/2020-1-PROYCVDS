@@ -69,7 +69,7 @@ public class bancoIniciativas {
         Administrador admin = adminMapper.consultarInfoAdmin("ma");
         sqlss.commit();
         sqlss.close();
-        Assert.assertEquals(admin.getPasword(), "asdfty");
+        Assert.assertEquals(admin.getPassword(), "asdfty");
 
     }
 
