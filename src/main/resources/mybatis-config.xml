@@ -9,6 +9,7 @@
         <typeAlias type="edu.eci.cvds.samples.entities.PersonalPMO" alias="PersonalPMO"/>
         <typeAlias type="edu.eci.cvds.samples.entities.Usuario" alias="Usuario"/>
         <typeAlias type="edu.eci.cvds.samples.entities.Proponente" alias="Proponente"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Idea" alias="Idea"/>
     </typeAliases>
 
     <environments default="development">
@@ -28,6 +29,7 @@
         <mapper resource="mappers/PersonalPMOMapper.xml"></mapper>
         <mapper resource="mappers/UsuarioMapper.xml"></mapper>
         <mapper resource="mappers/ProponenteMapper.xml"></mapper>
+        <mapper resource="mappers/IdeaMapper.xml"></mapper>
     </mappers>
 
 
