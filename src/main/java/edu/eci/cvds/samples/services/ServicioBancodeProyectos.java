@@ -65,7 +65,29 @@ public interface ServicioBancodeProyectos {
      */
     public void registrarPersonalPMO(PersonalPMO personalPMO);
 
+    /**
+     *
+     * @param administrador
+     */
     public void registrarAdministrador(Administrador administrador);
+
+    /**
+     *
+     * @param idea
+     */
     public void registrarIDea(Idea idea);
+
+    /**
+     *
+     * @param idea
+     * @return
+     */
     public List<Idea>  consultarIDea(String idea);
+
+    /**
+     *
+     * @param estado
+     * @param idea
+     */
+    public void cambiarEstado(String estado,Idea idea);
 }

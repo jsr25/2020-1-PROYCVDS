@@ -26,6 +26,15 @@ public class MyBatisDAOIdea implements DAOIdea {
     }
 
     /**
+     *
+     * @param estado
+     * @param idea
+     */
+    public void cambiarEstado(String estado, Idea idea) {
+        pmap.cambiarEstado(estado,idea);
+    }
+
+    /**
      * Método que consulta informacion de la idea.
      * @param idea Argumentos del programa.
      * @return idea Retorno del programa.

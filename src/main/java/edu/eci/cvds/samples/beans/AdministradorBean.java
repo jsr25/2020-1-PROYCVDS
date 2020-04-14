@@ -16,7 +16,13 @@ public class AdministradorBean extends BaseBean{
     @Inject
     private ServicioBancodeProyectos servicio;
 
+    public void cambiarEstado() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("estado_idea.xhtml");
+    }
     public void asignarRole() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("buscar.xhtml");
+    }
+    public void volver() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("administrador.xhtml");
     }
 }

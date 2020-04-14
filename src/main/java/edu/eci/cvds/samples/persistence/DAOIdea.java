@@ -17,4 +17,6 @@ public interface DAOIdea {   /**
     public List<Idea> consultarIDea(String idea);
 
     public void registrarIDea(Idea idea);
+
+    public void cambiarEstado(String estado,Idea idea);
 }

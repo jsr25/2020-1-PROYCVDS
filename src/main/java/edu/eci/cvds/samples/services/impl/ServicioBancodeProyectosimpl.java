@@ -99,4 +99,6 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
     public List<Idea>  consultarIDea(String idea){
         return daoIdea.consultarIDea(idea);
     }
+
+    public void cambiarEstado(String estado, Idea idea) {daoIdea.cambiarEstado(estado,idea); }
 }

@@ -22,4 +22,11 @@ public interface IdeaMapper {
      * @param idea
      */
     public void registrarIdea(@Param("idea")Idea idea);
+
+    /**
+     * Método que cambia el estado de una idea
+     * @param estado
+     * @param idea
+     */
+    public void cambiarEstado(@Param("estado")String estado,@Param("idea")Idea idea);
 }

@@ -17,6 +17,11 @@
          a.palabrasClave=#{idea}
          ;
     </select>
+    <update id="cambiarEstado" parameterType="map" >
+        update idea
+        set estado= #{estado}
+        where #{idea.descripcion}=descripcion and #{idea.loginProponente}=login_Prop
+    </update>
     <insert id="Idea" parameterType='map'>
         insert into idea(descripcion,fecha,login_Prop,id,palabrasClave,AreaTrabajo,estado)  values (#{usuario.descripcion},#{usuario.login_Prop},#{usuario.id},#{usuario.palabrasClave},#{usuario.AreaTrabajo}, #{usuario.fecha}, #{usuario.estado});
     </insert>

@@ -38,40 +38,41 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <!-- =============================================================================================== -->
 </head>
-
-
 <h:body>
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-            <div class="wrap-login100" style= "width: 500px " >
+            <div class="wrap-login100" style= "width: 700px " >
                 <form class="login100-form validate-form"   action="">
                     <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" /></span>
                     <br/>
                     <h:form>
-                        <p:outputLabel class="login100-form" style="color: white" value="Search for user"></p:outputLabel>
+                        <p:outputLabel class="login100-form" style="color: white" value="Search for ideas"></p:outputLabel>
                     </h:form>
                     <h:form id="form">
                         <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
-                        <p:inputText class="login100-form" id="Busqueda" style= "width: 390px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
+                        <p:inputText class="login100-form" id="Busqueda" style= "width: 590px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
                         <br/>
                         <br/>
-                        <p:commandButton  class="login100-form-btn" style= "width: 390px; height:30px "   value="Search" actionListener="#{asignarPerfil.consultar(usuario.value)}" ajax="true"> </p:commandButton>
+                        <p:commandButton  class="login100-form-btn" style= "width: 590px; height:30px "   value="Search" actionListener="#{ConsultBean.consultar(usuario.value)}" ajax="true"> </p:commandButton>
                     </h:form>
                     <br/>
                     <h:form>
-                        <p:dataTable id="basicDT"  var="usuario" value="#{asignarPerfil.usuarios}">
-                            <p:column  headerText="Usuario"  style="min-width: 90px;">
-                                <h:outputText value="#{usuario.login}" />
+                        <p:dataTable id="basicDT"  var="idea" value="#{ConsultBean.ideas}">
+                            <p:column  headerText="Descripción"  style="min-width: 200px;">
+                                <h:outputText value="#{idea.descripcion}" />
                             </p:column>
-                            <p:column headerText="Nombre" style="min-width: 90px;" >
-                                <h:outputText value="#{usuario.nombre}" />
+                            <p:column headerText="LoginProponente" style="min-width: 150px;" >
+                                <h:outputText value="#{idea.loginProponente}" />
                             </p:column>
-                            <p:column  headerText="apellido" style="min-width: 90px;">
-                                <h:outputText value="#{usuario.apellido}" />
+                            <p:column  headerText="Clave" style="min-width: 100px;">
+                                <h:outputText value="#{idea.clave}" />
+                            </p:column>
+                            <p:column  headerText="Estado" style="min-width: 100px;">
+                                <h:outputText value="#{idea.estado}" />
                             </p:column>
                             <p:column style="width:32px;text-align: center">
                                 <p:commandButton  class="login100-form-btn"  title="Select" style= "width: 10px; height:20px " >
-                                    <f:setPropertyActionListener value="#{usuario}" target="#{asignarPerfil.usuario}" />
+                                    <f:setPropertyActionListener value="#{idea}" target="#{ConsultBean.idea}" />
                                 </p:commandButton>
                             </p:column>
                         </p:dataTable>
@@ -79,16 +80,16 @@
                     <br/>
                     <br/>
                     <h:form>
-                        <h:selectOneMenu class="input100" id="console" value="#{asignarPerfil.role}" style="width:390px;color:black; " >
-                            <f:selectItem  itemValue="Select type user" />
-                            <f:selectItem itemLabel="Administrator" itemValue="Administrador" style="color:black;"   />
-                            <f:selectItem itemLabel="Personal PMO" itemValue="PersonalPMO" style="color:black;" />
-                            <f:selectItem itemLabel="Proponente" itemValue="Proponente" style="color:black;" />
+                        <h:selectOneMenu class="input100" id="console" value="#{ConsultBean.estado}" style="width:590px;color:black; " >
+                            <f:selectItem  itemValue="Select type state" />
+                            <f:selectItem itemLabel="En espera" itemValue="En espera" style="color:black;"   />
+                            <f:selectItem itemLabel="En proceso" itemValue="En proceso" style="color:black;" />
+                            <f:selectItem itemLabel="Finalizado" itemValue="Finalizado" style="color:black;" />
                         </h:selectOneMenu>
                         <br/>
                         <div class="container-login100-form-btn ">
                             <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{adminbean.volver}" ajax="true"/>
-                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Cambiar" actionListener="#{asignarPerfil.cambiar}"/>
+                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Cambiar" actionListener="#{ConsultBean.cambiarEstado}"/>
                         </div>
                     </h:form>
                 </form>
