@@ -1,30 +1,29 @@
 package edu.eci.cvds.samples.beans;
 
-import com.google.inject.Inject;
-import edu.eci.cvds.samples.entities.Usuario;
-import edu.eci.cvds.samples.persistence.PersistenceException;
-import edu.eci.cvds.samples.services.BancoDeProyectosException;
-import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
-import edu.eci.cvds.samples.services.ServicioUsuario;
 
+import com.google.inject.Inject;
+import edu.eci.cvds.samples.entities.Idea;
+import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
+
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-import java.io.IOException;
+import java.util.List;
 
-/**
- * Clase que da informacion de la idea  de la aplicación.
- * @author Juan Ramos, Mateo Quintero, Brayan Jimenez, Maria Hernandez.
- * @version 1.0
- */
 @ManagedBean(name = "infoIdeaBean")
 @SessionScoped
-
-public class LoginBean extends BaseBean {
+public class InfoIdeaBean extends BaseBean{
     @Inject
     private ServicioBancodeProyectos servicio;
-   private List<Idea> Lidea;
+    private List<Idea> Lidea;
+    private List<Idea> Lidea2;
     private String val = "login.xhtml";
+
+    @PostConstruct
+    public void init() {
+        super.init();
+        Lidea = servicio.consultarIDea("a");
+    }
 
     public void consultar (String palabrasClave ){
         Lidea= servicio.consultarIDea(palabrasClave);
@@ -37,4 +36,13 @@ public class LoginBean extends BaseBean {
     public void setLidea(List<Idea> lidea) {
         Lidea = lidea;
     }
+
+    public List<Idea> getLidea2() {
+        return Lidea2;
+    }
+
+    public void setLidea2(List<Idea> lidea2) {
+        Lidea2 = lidea2;
+    }
 }
+
