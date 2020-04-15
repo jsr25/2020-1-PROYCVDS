@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import edu.eci.cvds.samples.entities.Idea;
 import edu.eci.cvds.samples.persistence.PersistenceException;
 import edu.eci.cvds.samples.services.BancoDeProyectosException;
+import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 import edu.eci.cvds.samples.services.ServicioUsuario;
 
 import javax.faces.bean.ManagedBean;
@@ -20,7 +21,7 @@ import java.util.Date;
 @SessionScoped
 public class RegistrarIdeaBean {
     @Inject
-    private ServicioUsuario servicio;
+    private ServicioBancodeProyectos servicio;
 
     /**
      * Método que registra la idea.
@@ -35,13 +36,8 @@ public class RegistrarIdeaBean {
 
     public void registroIdea(String descripcion, String loginProponente, String iD, String palabras, String clave, Date fecha, String estado) {
         Idea idea = new Idea(descripcion,loginProponente,iD,palabras,clave,fecha,estado);
-        try {
-            servicio.registrarIDea(idea);
-        } catch (BancoDeProyectosException e) {
-
-        } catch (PersistenceException e) {
-
-        }
+        try{servicio.registrarIDea(idea);}
+        catch (Exception e){}
     }
 
 }

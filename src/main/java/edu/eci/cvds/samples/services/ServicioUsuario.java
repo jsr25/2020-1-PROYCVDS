@@ -13,5 +13,5 @@ public interface ServicioUsuario {
     public void registrarUsuario(Usuario usuario) throws BancoDeProyectosException, PersistenceException;
     public List<Usuario> consultarUsuarios(String usuario) throws BancoDeProyectosException, PersistenceException;
     public void carbiarRole(String estado, Usuario usuario) throws BancoDeProyectosException, PersistenceException;
-    public void registrarIDea(Idea idea) throws BancoDeProyectosException, PersistenceException;
+    
 }
