@@ -4,11 +4,11 @@ import com.google.inject.Inject;
 import edu.eci.cvds.samples.entities.Idea;
 import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.io.IOException;
 import java.util.List;
+
 @ManagedBean(name = "ConsultBean")
 @SessionScoped
 public class ConsultIdeaBean extends BaseBean {
@@ -23,8 +23,6 @@ public class ConsultIdeaBean extends BaseBean {
      * @throws IOException lanza excepcion si el usuario no coincide.*/
     public void consultar(String pClave) throws IOException {
         ideas=servicio.consultarIDea(pClave);
-
-
     }
     public void cambiarEstado(){
         if (!estado.equals("")) { servicio.cambiarEstado(estado, idea); }

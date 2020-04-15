@@ -29,8 +29,8 @@ public class RegistroBean extends BaseBean{
      * @param password Argumentos del programa.
      * @param correo Argumentos del programa.
      */
-    public void registroUsuario(String login,String nombre, String apellido , String password, String correo,String role, String area){
-        Usuario usuario=new Usuario(login,nombre,apellido,password,correo,role,area);
+    public void registroUsuario (String login,String nombre, String apellido , String password, String correo,String role, String area){
+        Usuario usuario = new Usuario(login,nombre,apellido,password,correo,role,area);
         try {
             servicio.registrarUsuario(usuario);
         } catch (BancoDeProyectosException e) {
