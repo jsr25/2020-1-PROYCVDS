@@ -7,29 +7,25 @@ import java.util.Date;
  * @version 1.0
  */
 public class Idea {
-    private String descripcion;
-    private String loginProponente;
-    private String iD;
-    private String palabras;
-    private String area;
-    private String estado;
+    private String descripcion, login_Prop, id, palabrasClave, area, estado;
     private Date fecha;
 
     /**
      * Método constructor de la clase.
      * @param descripcion Argumentos del programa.
-     * @param loginProponente Argumentos del programa.
-     * @param iD Argumentos del programa.
-     * @param palabras Argumentos del programa.
-     * @param clave Argumentos del programa.
+     * @param login_Prop Argumentos del programa.
+     * @param id Argumentos del programa.
+     * @param palabrasClave Argumentos del programa.
+     * @param area Argumentos del programa.
+     * @param estado Argumentos del programa.
      */
-    public Idea(String descripcion, String loginProponente, String iD, String palabras, String clave, Date fecha, String estado) {
+    public Idea(String descripcion,Date fecha, String login_Prop,String id,String palabrasClave, String area,String estado) {
         this.descripcion = descripcion;
-        this.loginProponente = loginProponente;
-        this.iD = iD;
-        this.palabras = palabras;
-        this.area = clave;
         this.fecha = fecha;
+        this.login_Prop = login_Prop;
+        this.id = id;
+        this.palabrasClave = palabrasClave;
+        this.area = area;
         this.estado=estado;
     }
     public Idea(){}
@@ -55,7 +51,7 @@ public class Idea {
      * @return login retorno del programa.
      */
     public String getLoginProponente() {
-        return loginProponente;
+        return login_Prop;
     }
 
     /**
@@ -63,7 +59,7 @@ public class Idea {
      * @param loginProponente Argumentos del programa.
      */
     public void setLoginProponente(String loginProponente) {
-        this.loginProponente = loginProponente;
+        this.login_Prop = loginProponente;
     }
 
     /**
@@ -71,7 +67,7 @@ public class Idea {
      * @return iD retorno del programa.
      */
     public String getiD() {
-        return iD;
+        return id;
     }
 
     /**
@@ -79,7 +75,7 @@ public class Idea {
      * @param iD Argumentos del programa.
      */
     public void setiD(String iD) {
-        this.iD = iD;
+        this.id = iD;
     }
 
     /**
@@ -87,7 +83,7 @@ public class Idea {
      * @return palabras retorno del programa.
      */
     public String getPalabras() {
-        return palabras;
+        return palabrasClave;
     }
 
     /**
@@ -95,9 +91,8 @@ public class Idea {
      * @param palabras Argumentos del programa.
      */
     public void setPalabras(String palabras) {
-        this.palabras = palabras;
+        this.palabrasClave = palabras;
     }
-
 
 
     /**
@@ -116,18 +111,34 @@ public class Idea {
         this.fecha = fecha;
     }
 
+    /**
+     * Método que retorna estado.
+     * @return estado Argumentos del programa.
+     */
     public String getEstado() {
         return estado;
     }
 
+    /**
+     * Método que guarda estado.
+     * @param estado Argumentos del programa.
+     */
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
+    /**
+     * Método que retorna area.
+     * @return area Argumentos del programa.
+     */
     public String getArea() {
         return area;
     }
 
+    /**
+     * Método que guarda area.
+     * @param area Argumentos del programa.
+     */
     public void setArea(String area) {
         this.area = area;
     }
@@ -136,9 +147,9 @@ public class Idea {
     public String toString() {
         return "Idea{" +
                 "descripcion='" + descripcion + '\'' +
-                ", loginProponente='" + loginProponente + '\'' +
-                ", iD='" + iD + '\'' +
-                ", palabras='" + palabras + '\'' +
+                ", loginProponente='" + login_Prop + '\'' +
+                ", iD='" + id + '\'' +
+                ", palabras='" + palabrasClave + '\'' +
                 ", area='" + area + '\'' +
                 ", estado='" + estado + '\'' +
                 ", fecha=" + fecha +
