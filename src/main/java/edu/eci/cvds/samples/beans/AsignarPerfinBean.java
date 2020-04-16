@@ -38,6 +38,7 @@ public class AsignarPerfinBean extends BaseBean {
     public void consultar(String pClave) throws IOException {
         try {
             usuarios=servicio.consultarUsuarios(pClave);
+            System.out.println(usuarios);
         } catch (BancoDeProyectosException e) {
 
         } catch (PersistenceException e) {
@@ -96,7 +97,11 @@ public class AsignarPerfinBean extends BaseBean {
         if(!role.equals("")){
             try {
                 servicio.carbiarRole(role,usuario);
+                usuario=null;
+                usuarios=null;
+                role=null;
                 FacesContext.getCurrentInstance().getExternalContext().redirect("administrador.xhtml");
+
             } catch (BancoDeProyectosException e) {
 
             } catch (PersistenceException e) {

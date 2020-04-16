@@ -38,13 +38,8 @@ public class MyBatisDAOUsuario implements DAOUsuario {
      * @return usuario Retorno del programa.
      */
     public List<Usuario> consultarUsuarios(String pClave) throws PersistenceException {
-        List<Usuario> users=null;
-        try{
-            users=pmap.consultarUsuarios(pClave);
-        }
-        catch(org.apache.ibatis.exceptions.PersistenceException e){
-            throw new PersistenceException("No se pudo consulatar a los usuarios",e);
-        }
+        List<Usuario> users;
+        users=pmap.consultarUsuarios(pClave);
         return users;
     }
 

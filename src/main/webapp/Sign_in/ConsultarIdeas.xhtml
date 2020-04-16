@@ -40,39 +40,44 @@
 </head>
 
 <h:body>
+    <div class="limiter">
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+    <div class="wrap-login100" style= "width: 750px " >
+    <form class="login100-form validate-form"   action="">
+    <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" /></span>
+    <br/>
+    <h:form id="form">
+        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
+        <p:inputText class="login100-form" id="Busqueda" style= "width: 590px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
+        <br/>
+        <br/>
+        <p:commandButton  class="login100-form-btn" style= "width: 590px; height:30px "   value="Search" actionListener="#{infoIdeaBean.consultar(usuario.value)}" ajax="true"> </p:commandButton>
+    </h:form>
     <h:form>
-        <p:dataTable var="idea" value="#{infoIdeaBean.Lidea}" widgetVar="Ideastable"
-                     emptyMessage="No cars found with given criteria" filteredValue="#{infoIdeaBean.Lidea2}"
-                     >
-            <f:facet name="header">
-                <p:outputPanel>
-                    <h:outputText value="Search all fields using globalFilterFunction:" />
-                    <p:inputText id="globalFilter" onkeyup="PF('Ideastable').filter()" style="width:150px" placeholder="Enter keyword"/>
-                </p:outputPanel>
-            </f:facet>
-
-            <p:column headerText="descripcion">
+        <p:dataTable id="basicDT"  var="idea" value="#{infoIdeaBean.ideas}">
+            <p:column  headerText="Descripción"  style="min-width: 200px;">
                 <h:outputText value="#{idea.descripcion}" />
             </p:column>
-
-            <p:column headerText="loginProponente">
+            <p:column headerText="LoginProponente" style="min-width: 150px;" >
                 <h:outputText value="#{idea.loginProponente}" />
             </p:column>
-
-            <p:column headerText="palabras">
-                <h:outputText value="#{idea.palabras}" />
-            </p:column>
-
-            <p:column headerText="area">
+            <p:column  headerText="Area" style="min-width: 100px;">
                 <h:outputText value="#{idea.area}" />
             </p:column>
-
-            <p:column headerText="estado">
-                <h:outputText value="#{estado.estado}" />
+            <p:column  headerText="Estado" style="min-width: 100px;">
+                <h:outputText value="#{idea.estado}" />
             </p:column>
-
         </p:dataTable>
     </h:form>
+        <h:form>
+        <div class="container-login100-form-btn ">
+            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{infoIdeaBean.volver}" ajax="true"/>
+        </div>
+        </h:form>
+    </form>
+    </div>
+    </div>
+    </div>
 
 
 

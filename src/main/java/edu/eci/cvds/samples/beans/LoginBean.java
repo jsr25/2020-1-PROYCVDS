@@ -6,6 +6,7 @@ import edu.eci.cvds.samples.persistence.PersistenceException;
 import edu.eci.cvds.samples.services.BancoDeProyectosException;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 import edu.eci.cvds.samples.services.ServicioUsuario;
+import org.h2.value.ValueStringIgnoreCase;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -24,8 +25,9 @@ public class LoginBean extends BaseBean{
     @Inject
     private ServicioUsuario servicio;
     private Usuario usuario;
-    private String role;
     private String val="login.xhtml";
+    private String login;
+
 
     /**
      * Método que revisa usuario con contrasena correcta.
@@ -37,6 +39,7 @@ public class LoginBean extends BaseBean{
         try {
             this.usuario=servicio.consultarUsuario(usuario);
             comprobacion( password);
+            login=this.usuario.getLogin();
             FacesContext.getCurrentInstance().getExternalContext().redirect(val);
         } catch (BancoDeProyectosException e) {
 
@@ -52,30 +55,32 @@ public class LoginBean extends BaseBean{
             val="administrador.xhtml";
         }
         else if(usuario.getRole().equals("Proponente")){
-            val="Proponente.xhtml";
+            val="proponente.xhtml";
         }
         else if(usuario.getRole().equals("PersonalPMO")){
-            val="PersonalPMO.xhtml";
+            val="personal.xhtml";
         }
         else if(usuario.getRole().equals("Usuario")){
-            val="Usuario.xhtml";
+            val="usuario.xhtml";
         }
    }
+    public void reinicio(){
+        usuario=null;
+        val="index.xhtml";
+        login=null;
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect(val);
+        } catch (IOException e) {
 
+        }
 
-    /**
-     * Método que retorna el rol ingresado.
-     * @return role retorno del programa.
-     */
-    public String getRole() {
-        return role;
     }
 
-    /**
-     * Método que guarda el rol ingresado.
-     * @return role retorno del programa.
-     */
-    public void setRole(String role) {
-        this.role = role;
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 }

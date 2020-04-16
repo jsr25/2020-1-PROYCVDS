@@ -39,7 +39,7 @@ public class ServicioUsuarioimpl implements ServicioUsuario {
     public List<Usuario> consultarUsuarios(String usuario) throws BancoDeProyectosException, PersistenceException {
         List<Usuario> usuarios=null;
         try{
-            usDao.consultarUsuarios(usuario);
+            usuarios=usDao.consultarUsuarios(usuario);
         }
         catch(NullPointerException e){
 

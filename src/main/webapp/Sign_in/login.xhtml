@@ -52,24 +52,16 @@
                     <h:outputLabel style="color:white;" for="Password" value="Pasword"/>
                     <h:inputSecret class="input100" id="Password"  required="true" type="String" binding="#{password}" />
                 </div>
-                <h:form style="color:black;">
-                <h:selectOneMenu class="input100" id="console" value="#{loginbean.role}" style="width:250px;color:black " >
-                    <f:selectItem  itemValue="Select type user" />
-                    <f:selectItem itemLabel="Administrator" itemValue="Administrador" style="color:black;"   />
-                    <f:selectItem itemLabel="Personal PMO" itemValue="PersonalPMO" style="color:black;" />
-                    <f:selectItem itemLabel="Proponent" itemValue="Proponente" style="color:black;" />
-                    <f:selectItem itemLabel="User" itemValue="Usuario" style="color:black;" />
-                </h:selectOneMenu>
+
 
             <br/>
                 <div class="container-login100-form-btn">
-                    <p:commandButton class="login100-form-btn" value="Login" actionListener="#{loginbean.datos(usuario.value,password.value)}" ajax="true"> </p:commandButton>
-
-                </div>
-                </h:form>
-                <div class="text-center p-t-90">
-                    <a class="txt1" href="https://proyecto-cvds-2020-1.herokuapp.com/">
-                        Cancel </a>
+                    <h:form>
+                        <p:commandButton class="login100-form-btn" value="Login" actionListener="#{loginbean.datos(usuario.value,password.value)}" ajax="true"> </p:commandButton>
+                    </h:form>
+                    <h:form>
+                        <p:commandButton class="login100-form-btn" value="Cancel" actionListener="#{loginbean.reinicio}" ajax="true"> </p:commandButton>
+                    </h:form>
                 </div>
             </form>
 

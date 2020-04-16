@@ -43,7 +43,7 @@
 <h:body>
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-            <div class="wrap-login100" style= "width: 500px " >
+            <div class="wrap-login100" style= "width: 850px " >
                 <form class="login100-form validate-form"   action="">
                     <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" /></span>
                     <br/>
@@ -52,10 +52,10 @@
                     </h:form>
                     <h:form id="form">
                         <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
-                        <p:inputText class="login100-form" id="Busqueda" style= "width: 390px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
+                        <p:inputText class="login100-form" id="Busqueda" style= "width: 750px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
                         <br/>
                         <br/>
-                        <p:commandButton  class="login100-form-btn" style= "width: 390px; height:30px "   value="Search" actionListener="#{asignarPerfil.consultar(usuario.value)}" ajax="true"> </p:commandButton>
+                        <p:commandButton  class="login100-form-btn" style= "width: 750px; height:30px "   value="Search" actionListener="#{asignarPerfil.consultar(usuario.value)}" ajax="true"> </p:commandButton>
                     </h:form>
                     <br/>
                     <h:form>
@@ -88,7 +88,7 @@
                     <br/>
                     <br/>
                     <h:form>
-                        <h:selectOneMenu class="input100" id="console" value="#{asignarPerfil.role}" style="width:390px;color:black; " >
+                        <h:selectOneMenu class="input100" id="console" value="#{asignarPerfil.role}" style="width:750px;color:black; " >
                             <f:selectItem  itemValue="Select type user" />
                             <f:selectItem itemLabel="Administrator" itemValue="Administrador" style="color:black;"   />
                             <f:selectItem itemLabel="Personal PMO" itemValue="PersonalPMO" style="color:black;" />

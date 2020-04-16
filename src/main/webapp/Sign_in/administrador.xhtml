@@ -49,12 +49,12 @@
                     <br/>
                     <div class="wrap-input100 validate-input">
                         <h:form>
-                        <h:outputLabel style="color:white;"  value="#{loginbean.role}"/>
+                        <h:outputLabel style="color:white;"  value="#{loginbean.login}"/>
                         </h:form>
                     </div>
                     <div class="container-login100-form-btn ">
                         <h:form>
-                            <p:commandButton class="login100-form-btn" value="Back"   ajax="true"> </p:commandButton>
+                            <p:commandButton class="login100-form-btn" value="Back" actionListener="#{loginbean.reinicio}"   ajax="true"> </p:commandButton>
                         </h:form>
                         <h:form>
                             <p:commandButton class="login100-form-btn" value="Search"  actionListener="#{adminbean.asignarRole}" ajax="true"> </p:commandButton>

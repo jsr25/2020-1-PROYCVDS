@@ -64,8 +64,8 @@
                             <p:column headerText="LoginProponente" style="min-width: 150px;" >
                                 <h:outputText value="#{idea.loginProponente}" />
                             </p:column>
-                            <p:column  headerText="Clave" style="min-width: 100px;">
-                                <h:outputText value="#{idea.clave}" />
+                            <p:column  headerText="Area" style="min-width: 100px;">
+                                <h:outputText value="#{idea.area}" />
                             </p:column>
                             <p:column  headerText="Estado" style="min-width: 100px;">
                                 <h:outputText value="#{idea.estado}" />
@@ -88,7 +88,7 @@
                         </h:selectOneMenu>
                         <br/>
                         <div class="container-login100-form-btn ">
-                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{adminbean.volver}" ajax="true"/>
+                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{ConsultBean.volver}" ajax="true"/>
                             <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Cambiar" actionListener="#{ConsultBean.cambiarEstado}"/>
                         </div>
                     </h:form>

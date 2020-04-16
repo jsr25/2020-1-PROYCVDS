@@ -45,9 +45,9 @@ public class MyBatisExample {
     public static void main(String args[]) throws SQLException, ParseException {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
-         IdeaMapper u=sqlss.getMapper(IdeaMapper.class);
+        UsuarioMapper u=sqlss.getMapper(UsuarioMapper.class);
         //u.registrarUsuario(new Usuario("i","av","asda","asdads","asda@asdasd.com"));
-        System.out.print(u.consultarIdea("sistema"));
+        System.out.print(u.consultarUsuarios("LuffyMD"));
 
         sqlss.commit();
         sqlss.close();
