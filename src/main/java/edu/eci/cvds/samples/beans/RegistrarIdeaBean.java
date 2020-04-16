@@ -35,7 +35,7 @@ public class RegistrarIdeaBean {
      */
 
     public void registroIdea(String descripcion, String loginProponente, String iD, String palabras, String clave, Date fecha, String estado) {
-        Idea idea = new Idea(descripcion,loginProponente,iD,palabras,clave,fecha,estado);
+        Idea idea = new Idea(descripcion,fecha ,iD,palabras,clave,loginProponente,estado);
         try{servicio.registrarIDea(idea);}
         catch (Exception e){}
     }

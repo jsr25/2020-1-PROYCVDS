@@ -7,7 +7,12 @@ import java.util.Date;
  * @version 1.0
  */
 public class Idea {
-    private String descripcion, login_Prop, id, palabrasClave, area, estado;
+    private String descripcion;
+    private String login_Prop;
+    private String id;
+    private String palabrasClave;
+    private String area;
+    private String estado;
     private Date fecha;
 
     /**
