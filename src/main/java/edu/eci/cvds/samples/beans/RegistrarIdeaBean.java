@@ -34,10 +34,10 @@ public class RegistrarIdeaBean {
      * @param estado Argumentos del programa.
      */
 
-    public void registroIdea(String descripcion, String loginProponente, String iD, String palabras, String clave, Date fecha, String estado) {
+   public void registroIdea(String descripcion, String loginProponente, String iD, String palabras, String clave, Date fecha, String estado) {
         Idea idea = new Idea(descripcion,fecha ,iD,palabras,clave,loginProponente,estado);
-        try{servicio.registrarIDea(idea);}
-        catch (Exception e){}
+       try{servicio.registrarIDea(idea);}
+         catch (Exception e){}
     }
 
 }
