@@ -36,4 +36,13 @@
         <result property='fecha' column='fecha'/>
         <result property='estado' column='estado'/>
     </resultMap>
+
+    <resultMap type='Idea' id='IdeaResult2'>
+        <id property="nombreIdea" column=""/>
+        <result property='descripcion' column='descripcion'/>
+        <result property='loginProponente' column='login_Prop'/>
+        <result property='area' column='area'/>
+        <result property='fecha' column='fecha'/>
+        <result property='estado' column='estado'/>
+    </resultMap>
 </mapper>

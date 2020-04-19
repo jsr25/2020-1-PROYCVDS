@@ -7,6 +7,7 @@
     <typeAliases>
         <typeAlias type="edu.eci.cvds.samples.entities.Usuario" alias="Usuario"/>
         <typeAlias type="edu.eci.cvds.samples.entities.Idea" alias="Idea"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.PalabraClave" alias="palabraClave"/>
     </typeAliases>
 
     <environments default="development">
