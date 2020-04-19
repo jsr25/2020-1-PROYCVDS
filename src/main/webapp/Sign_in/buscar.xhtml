@@ -52,7 +52,7 @@
                     </h:form>
                     <h:form id="form">
                         <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
-                        <p:inputText class="login100-form" id="Busqueda" style= "width: 750px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
+                        <p:outputLabel class="login100-form" value="#{loginbean.login}" type="String" binding="#{usuario}"></p:outputLabel>
                         <br/>
                         <br/>
                         <p:commandButton  class="login100-form-btn" style= "width: 750px; height:30px "   value="Search" actionListener="#{asignarPerfil.consultar(usuario.value)}" ajax="true"> </p:commandButton>

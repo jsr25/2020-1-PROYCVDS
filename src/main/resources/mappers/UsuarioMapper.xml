@@ -30,6 +30,7 @@
                a.area
         from
          usuario as a
+         where (login=#{usuario})=false;
          ;
     </select>
 
