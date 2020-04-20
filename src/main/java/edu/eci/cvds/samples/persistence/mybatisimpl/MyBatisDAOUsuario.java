@@ -27,7 +27,7 @@ public class MyBatisDAOUsuario implements DAOUsuario {
             user=pmap.consultarUsuario(usuario);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
-            throw new PersistenceException("No se pudo consulatar al usuario",e);
+            throw new PersistenceException("No se pudo consultar al usuario",e);
         }
         return user;
     }

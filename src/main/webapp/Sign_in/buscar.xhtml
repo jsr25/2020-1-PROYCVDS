@@ -47,15 +47,11 @@
                 <form class="login100-form validate-form"   action="">
                     <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" /></span>
                     <br/>
-                    <h:form>
-                        <p:outputLabel class="login100-form" style="color: white" value="Search for user"></p:outputLabel>
-                    </h:form>
                     <h:form id="form">
                         <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
-                        <p:inputText class="login100-form" id="Busqueda" style= "width: 750px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
                         <br/>
                         <br/>
-                        <p:commandButton  class="login100-form-btn" style= "width: 750px; height:30px "   value="Search" actionListener="#{asignarPerfil.consultar(usuario.value)}" ajax="true"> </p:commandButton>
+                        <p:commandButton  class="login100-form-btn" style= "width: 750px; height:30px "   value="Search" actionListener="#{asignarPerfil.consultar(loginbean.login)}" ajax="true"> </p:commandButton>
                     </h:form>
                     <br/>
                     <h:form>
@@ -97,7 +93,7 @@
                         </h:selectOneMenu>
                         <br/>
                         <div class="container-login100-form-btn ">
-                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{adminbean.volver}" ajax="true"/>
+                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{asignarPerfil.volver}" ajax="true"/>
                             <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Cambiar" actionListener="#{asignarPerfil.cambiar}"/>
                         </div>
                     </h:form>

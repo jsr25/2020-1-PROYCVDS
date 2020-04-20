@@ -37,8 +37,11 @@ public class LoginBean extends BaseBean{
      */
     public void datos(String usuario, String password)  {
         try {
+
             this.usuario=servicio.consultarUsuario(usuario);
-            comprobacion( password);
+            if (password.equals(this.usuario.getPassword())) {
+                comprobacion(password);
+            }
             login=this.usuario.getLogin();
             FacesContext.getCurrentInstance().getExternalContext().redirect(val);
         } catch (BancoDeProyectosException e) {

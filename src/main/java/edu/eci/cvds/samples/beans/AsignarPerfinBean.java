@@ -111,5 +111,15 @@ public class AsignarPerfinBean extends BaseBean {
             }
         }
     }
+    public void volver(){
+        usuario=null;
+        usuarios=null;
+        role=null;
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("administrador.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
 
 }

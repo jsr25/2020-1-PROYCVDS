@@ -5,19 +5,17 @@
 
 <mapper namespace="edu.eci.cvds.samples.persistence.mybatisimpl.mappers.IdeaMapper">
     <select id='consultarIdea' parameterType='map' resultMap='IdeaResult'>
-         select a.descripcion,
-               a.login_Prop,
-               a.palabrasClave,
-               a.area,
-               a.fecha,
-               a.estado
-        from
-         Idea as a
-         where
-         a.palabrasClave=#{idea}
-         ;
+    select a.nombreidea,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado
+    FROM idea as a
+    LEFT JOIN palabrasclave as b
+    ON a.nombreidea = b.nombreidea
+    where b.palabrasclave =#{idea};
     </select>
-
     <update id="cambiarEstado" parameterType="map" >
         update idea
         set estado= #{estado}
@@ -29,11 +27,12 @@
     </insert>
 
     <resultMap type='Idea' id='IdeaResult'>
-        <id property='descripcion' column='descripcion'/>
+        <id property='nombreIdea' column='nombreidea'/>
+        <result property="descripcion" column="descripcion"/>
         <result property='loginProponente' column='login_Prop'/>
-        <result property='palabras' column='palabrasClave'/>
         <result property='area' column='area'/>
         <result property='fecha' column='fecha'/>
         <result property='estado' column='estado'/>
+
     </resultMap>
 </mapper>

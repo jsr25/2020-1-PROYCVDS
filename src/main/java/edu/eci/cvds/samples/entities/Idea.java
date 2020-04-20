@@ -1,5 +1,6 @@
 package edu.eci.cvds.samples.entities;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Clase Idea de la aplicación.
@@ -9,27 +10,26 @@ import java.util.Date;
 public class Idea {
     private String descripcion;
     private String login_Prop;
-    private String id;
-    private String palabrasClave;
+    private String nombreIdea;
     private String area;
     private String estado;
     private Date fecha;
+    private List<PalabraClave> palabraClaves;
 
     /**
-     * Método constructor de la clase.
-     * @param descripcion Argumentos del programa.
-     * @param login_Prop Argumentos del programa.
-     * @param id Argumentos del programa.
-     * @param palabrasClave Argumentos del programa.
-     * @param area Argumentos del programa.
-     * @param estado Argumentos del programa.
+     *
+     * @param nombreidea
+     * @param descripcion
+     * @param fecha
+     * @param login_Prop
+     * @param area
+     * @param estado
      */
-    public Idea(String descripcion,Date fecha, String login_Prop,String id,String palabrasClave, String area,String estado) {
+    public Idea(String nombreidea,String descripcion,Date fecha, String login_Prop, String area,String estado) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.login_Prop = login_Prop;
-        this.id = id;
-        this.palabrasClave = palabrasClave;
+        this.nombreIdea = nombreidea;
         this.area = area;
         this.estado=estado;
     }
@@ -67,38 +67,22 @@ public class Idea {
         this.login_Prop = loginProponente;
     }
 
-    /**
-     * Método que retorna iD.
-     * @return iD retorno del programa.
-     */
-    public String getiD() {
-        return id;
+
+    public String getNombreIdea() {
+        return nombreIdea;
     }
 
-    /**
-     * Método que guarda iD.
-     * @param iD Argumentos del programa.
-     */
-    public void setiD(String iD) {
-        this.id = iD;
+    public void setNombreIdea(String nombreIdea) {
+        this.nombreIdea = nombreIdea;
     }
 
-    /**
-     * Método que retorna palabras.
-     * @return palabras retorno del programa.
-     */
-    public String getPalabras() {
-        return palabrasClave;
+    public String getLogin_Prop() {
+        return login_Prop;
     }
 
-    /**
-     * Método que guarda palabras.
-     * @param palabras Argumentos del programa.
-     */
-    public void setPalabras(String palabras) {
-        this.palabrasClave = palabras;
+    public void setLogin_Prop(String login_Prop) {
+        this.login_Prop = login_Prop;
     }
-
 
     /**
      * Método que retorna fecha.
@@ -152,9 +136,8 @@ public class Idea {
     public String toString() {
         return "Idea{" +
                 "descripcion='" + descripcion + '\'' +
-                ", loginProponente='" + login_Prop + '\'' +
-                ", iD='" + id + '\'' +
-                ", palabras='" + palabrasClave + '\'' +
+                ", login_Prop='" + login_Prop + '\'' +
+                ", nombreIdea='" + nombreIdea + '\'' +
                 ", area='" + area + '\'' +
                 ", estado='" + estado + '\'' +
                 ", fecha=" + fecha +

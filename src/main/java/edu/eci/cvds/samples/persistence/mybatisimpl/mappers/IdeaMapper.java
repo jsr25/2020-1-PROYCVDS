@@ -29,4 +29,5 @@ public interface IdeaMapper {
      * @param idea
      */
     public void cambiarEstado(@Param("estado")String estado,@Param("idea")Idea idea);
+
 }

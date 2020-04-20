@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:color="http://java.sun.com/jsf/html" lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+    <title>
+        Sign up
+    </title>
+    <meta content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- =============================================================================================== -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/icons/icon.png" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- =============================================================================================== -->
+</head>
+<h:body>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" action="">
+            <span class="login100-form-logo"> <img
+                    src="images/icons/logo.png" width="80" height="70" alt="" /> </span>
+                    <span class="login100-form-title p-b-34 p-t-27"> Sign Up </span>
+                    <div class="wrap-input100 validate-input">
+                        <h:outputLabel style="color:white;" for="Ideaname" value="Idea name"/>
+                        <h:inputText class="input100" id="Ideaname" required="true" type="String" binding="#{ideaname}" />
+
+                    </div>
+                    <div>
+                        <h:outputLabel style="color:white;" for="Description" value="Description"/>
+                        <p:inputTextarea id="Description" rows="5" cols="30" counter="display" maxlength="100" counterTemplate="{0} characters remaining." autoResize="false" />
+                        <br />
+                        <h:outputText id="display" />
+                    </div>
+                    <h:form id="form">
+                        <p:growl id="msgs" />
+
+                        <p:panel header="Create a new book" style="margin-bottom:20px">
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputLabel value="Keyword : *" for="Keyword"></h:outputLabel>
+                                <p:inputText id="Keyword" value="#{registrarIDea.palabraClave.valor}" required="true"/>
+                                <p:commandButton id="btn_reset" value="Reset" type="reset"/>
+                                <p:commandButton id="btn_add" value="Add" update="Keyword msgs @parent" action="#{registrarIDea.reinit}" >
+                                    <p:collector value="#{registrarIDea.palabraClave}" addTo="#{registrarIDea.palabraClaves}" unique="true"/>
+                                </p:commandButton>
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:dataTable value="#{registrarIDea.palabraClaves}" var="palabraclave" id="palabraClavesTable">
+
+                            <p:column headerText="Keyword">
+                                <h:outputText value="#{palabraclave.valor}" />
+                            </p:column>
+                        </p:dataTable>
+
+
+                    </h:form>
+                    <h:form style="color:black;">
+                        <br/>
+                        <br/>
+                        <div class="container-login100-form-btn">
+                            <p:commandButton class="login100-form-btn" value="Create" actionListener="#{registarbean.registroUsuario(username.value,firtsname.value,surname.value,password.value,corre.value,area.value)}" ajax="true"> </p:commandButton>
+                        </div>
+                    </h:form>
+                    <div class="text-center p-t-90">
+                        <a class="txt1" href="https://proyecto-cvds-2020-1.herokuapp.com/">
+                            Cancel </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="dropDownSelect1"></div>
+    <!--
+      =============================================================================================== --><script
+        src="vendor/jquery/jquery-3.2.1.min.js" type="text/javascript"
+        xml:space="preserve"></script>
+    <!-- =============================================================================================== --><script
+        src="vendor/animsition/js/animsition.min.js" type="text/javascript"
+        xml:space="preserve"></script>
+    <!-- =============================================================================================== --><script
+        src="vendor/bootstrap/js/popper.js" type="text/javascript"
+        xml:space="preserve"></script> <script
+        src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"
+        xml:space="preserve"></script>
+    <!-- =============================================================================================== --><script
+        src="vendor/select2/select2.min.js" type="text/javascript"
+        xml:space="preserve"></script>
+    <!-- =============================================================================================== --><script
+        src="vendor/daterangepicker/moment.min.js" type="text/javascript"
+        xml:space="preserve"></script> <script
+        src="vendor/daterangepicker/daterangepicker.js" type="text/javascript"
+        xml:space="preserve"></script>
+    <!-- =============================================================================================== --><script
+        src="vendor/countdowntime/countdowntime.js" type="text/javascript"
+        xml:space="preserve"></script>
+    <!-- =============================================================================================== --><script
+        src="js/main.js" type="text/javascript" xml:space="preserve"></script>
+</h:body>
+</html>

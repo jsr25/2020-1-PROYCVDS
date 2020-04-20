@@ -68,9 +68,9 @@ public class bancoIniciativas {
         Assert.assertEquals(usuario.getPassword(),"Ramios");
     }
 
-    @Test
+   /*   @Test
     public void DeberianRegistrarIdea(){
-        Idea idea = new Idea("Iniciativa CVDS", new Date(), "Maria", "001", "CVDS", "Desarrollo", "Pendiente");
+      Idea idea = new Idea("Iniciativa CVDS", new Date(), "Maria", "001", "CVDS", "Desarrollo", "Pendiente");
         SqlSessionFactory conectDB = getSqlSessionFactory();
         SqlSession sqlss = conectDB.openSession();
         IdeaMapper IdMapper = sqlss.getMapper(IdeaMapper.class);
@@ -88,5 +88,5 @@ public class bancoIniciativas {
         sqlss.commit();
         sqlss.close();
         Assert.assertEquals(idea.getPalabras(), "Desarrollo");
-    }
+    }*/
 }
