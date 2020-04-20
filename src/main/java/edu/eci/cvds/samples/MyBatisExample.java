@@ -47,7 +47,7 @@ public class MyBatisExample {
         SqlSession sqlss = sessionfact.openSession();
         UsuarioMapper u=sqlss.getMapper(UsuarioMapper.class);
         //u.registrarUsuario(new Usuario("i","av","asda","asdads","asda@asdasd.com"));
-        System.out.print(u.consultarUsuario("jsr25"));
+        System.out.print(u.consultarUsuarios("LuffyMD"));
 
         sqlss.commit();
         sqlss.close();

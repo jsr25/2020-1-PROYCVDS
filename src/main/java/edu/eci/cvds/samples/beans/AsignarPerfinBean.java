@@ -38,7 +38,7 @@ public class AsignarPerfinBean extends BaseBean {
     public void consultar(String pClave) throws IOException {
         try {
             usuarios=servicio.consultarUsuarios(pClave);
-
+            System.out.println(usuarios);
         } catch (BancoDeProyectosException e) {
 
         } catch (PersistenceException e) {

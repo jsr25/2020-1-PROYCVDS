@@ -34,12 +34,12 @@ public class MyBatisDAOUsuario implements DAOUsuario {
 
     /**
      * Método que consulta informacion del usuario.
-     * @param usuario Argumentos del programa.
+     * @param pClave Argumentos del programa.
      * @return usuario Retorno del programa.
      */
-    public List<Usuario> consultarUsuarios(String usuario) throws PersistenceException {
+    public List<Usuario> consultarUsuarios(String pClave) throws PersistenceException {
         List<Usuario> users;
-        users=pmap.consultarUsuarios(usuario);
+        users=pmap.consultarUsuarios(pClave);
         return users;
     }
 

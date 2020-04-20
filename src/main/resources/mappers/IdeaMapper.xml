@@ -17,20 +17,7 @@
          a.palabrasClave=#{idea}
          ;
     </select>
-    <select id='consultarIdea2' parameterType='map' resultMap='IdeaResult'>
-        select a.nombreidea,
-               a.descripcion,
-               a.login_Prop,
-               a.area,
-               a.fecha,
-               a.estado
-        FROM idea as a
-        LEFT JOIN palabrasclave as b
-        ON a.nombreidea = b.nombreidea;
-        where
-        b.palabrasclave = #{idea}
-        ;
-    </select>
+
     <update id="cambiarEstado" parameterType="map" >
         update idea
         set estado= #{estado}
@@ -42,26 +29,11 @@
     </insert>
 
     <resultMap type='Idea' id='IdeaResult'>
-        <id property="nombreIdea" column="nombreidea"/>
-        <result property='descripcion' column='descripcion'/>
+        <id property='descripcion' column='descripcion'/>
         <result property='loginProponente' column='login_Prop'/>
+        <result property='palabras' column='palabrasClave'/>
         <result property='area' column='area'/>
         <result property='fecha' column='fecha'/>
         <result property='estado' column='estado'/>
     </resultMap>
-
-    <resultMap type='Idea' id='IdeaResult2'>
-        <id property="nombreIdea" column="nombreidea"/>
-        <result property='descripcion' column='descripcion'/>
-        <result property='loginProponente' column='login_Prop'/>
-        <result property='area' column='area'/>
-        <result property='fecha' column='fecha'/>
-        <result property='estado' column='estado'/>
-        <collection property="palabrasClave" ofType="palabraClave">
-            <id property="nombreIdea" column="nombreidea"/>
-            <result property="valor" column="palabrasclave"/>
-
-        </collection>
-    </resultMap>
-
 </mapper>

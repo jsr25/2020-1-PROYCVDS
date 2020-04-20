@@ -1,6 +1,5 @@
 package edu.eci.cvds.samples.entities;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Clase Idea de la aplicación.
@@ -8,10 +7,10 @@ import java.util.List;
  * @version 1.0
  */
 public class Idea {
-    private String nombreIdea;
     private String descripcion;
     private String login_Prop;
-    private List<PalabraClave> palabrasClave;
+    private String id;
+    private String palabrasClave;
     private String area;
     private String estado;
     private Date fecha;
@@ -20,18 +19,19 @@ public class Idea {
      * Método constructor de la clase.
      * @param descripcion Argumentos del programa.
      * @param login_Prop Argumentos del programa.
+     * @param id Argumentos del programa.
      * @param palabrasClave Argumentos del programa.
      * @param area Argumentos del programa.
      * @param estado Argumentos del programa.
      */
-    public Idea(String nombreIdea,String descripcion,Date fecha, String login_Prop, String area,String estado) {
+    public Idea(String descripcion,Date fecha, String login_Prop,String id,String palabrasClave, String area,String estado) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.login_Prop = login_Prop;
+        this.id = id;
         this.palabrasClave = palabrasClave;
         this.area = area;
         this.estado=estado;
-        this.nombreIdea=nombreIdea;
     }
     public Idea(){}
 
@@ -67,8 +67,37 @@ public class Idea {
         this.login_Prop = loginProponente;
     }
 
+    /**
+     * Método que retorna iD.
+     * @return iD retorno del programa.
+     */
+    public String getiD() {
+        return id;
+    }
 
+    /**
+     * Método que guarda iD.
+     * @param iD Argumentos del programa.
+     */
+    public void setiD(String iD) {
+        this.id = iD;
+    }
 
+    /**
+     * Método que retorna palabras.
+     * @return palabras retorno del programa.
+     */
+    public String getPalabras() {
+        return palabrasClave;
+    }
+
+    /**
+     * Método que guarda palabras.
+     * @param palabras Argumentos del programa.
+     */
+    public void setPalabras(String palabras) {
+        this.palabrasClave = palabras;
+    }
 
 
     /**
@@ -119,37 +148,13 @@ public class Idea {
         this.area = area;
     }
 
-    public String getNombreIdea() {
-        return nombreIdea;
-    }
-
-    public void setNombreIdea(String nombreIdea) {
-        this.nombreIdea = nombreIdea;
-    }
-
-    public String getLogin_Prop() {
-        return login_Prop;
-    }
-
-    public void setLogin_Prop(String login_Prop) {
-        this.login_Prop = login_Prop;
-    }
-
-    public List<PalabraClave> getPalabrasClave() {
-        return palabrasClave;
-    }
-
-    public void setPalabrasClave(List<PalabraClave> palabrasClave) {
-        this.palabrasClave = palabrasClave;
-    }
-
     @Override
     public String toString() {
         return "Idea{" +
-                "nombreIdea='" + nombreIdea + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", login_Prop='" + login_Prop + '\'' +
-                ", palabrasClave=" + palabrasClave +
+                "descripcion='" + descripcion + '\'' +
+                ", loginProponente='" + login_Prop + '\'' +
+                ", iD='" + id + '\'' +
+                ", palabras='" + palabrasClave + '\'' +
                 ", area='" + area + '\'' +
                 ", estado='" + estado + '\'' +
                 ", fecha=" + fecha +
