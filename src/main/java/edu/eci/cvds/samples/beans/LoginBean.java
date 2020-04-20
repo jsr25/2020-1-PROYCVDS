@@ -36,21 +36,28 @@ public class LoginBean extends BaseBean{
      * @throws IOException lanza excepcion si no es correcto algun dato ingresado.
      */
     public void datos(String usuario, String password)  {
-        try {
-            this.usuario=servicio.consultarUsuario(usuario);
-            comprobacion( password);
+        System.out.println(usuario);
+        System.out.println(password);
+        /*try {
+            try {
+                this.usuario=servicio.consultarUsuario(usuario);
+            } catch (PersistenceException e) {
+
+            }
+            System.out.println(val);
+            if(this.usuario.getPassword().equals(password))
+            {
+                comprobacion();
+            }
+            System.out.println(val);
             login=this.usuario.getLogin();
             FacesContext.getCurrentInstance().getExternalContext().redirect(val);
-        } catch (BancoDeProyectosException e) {
+        } catch (BancoDeProyectosException | IOException e) {
+        }*/
 
-        } catch (PersistenceException e) {
-        }
-        catch (IOException e) {
-
-        }
     }
 
-   public void comprobacion(String password){
+   public void comprobacion(){
         if(usuario.getRole().equals("Administrador")){
             val="administrador.xhtml";
         }
@@ -83,4 +90,6 @@ public class LoginBean extends BaseBean{
     public void setLogin(String login) {
         this.login = login;
     }
+
+
 }

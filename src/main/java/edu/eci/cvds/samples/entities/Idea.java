@@ -24,7 +24,7 @@ public class Idea {
      * @param area Argumentos del programa.
      * @param estado Argumentos del programa.
      */
-    public Idea(String nombreIdea,String descripcion,Date fecha, String login_Prop, String area,String estado,List<PalabraClave> palabrasClave) {
+    public Idea(String nombreIdea,String descripcion,Date fecha, String login_Prop, String area,String estado) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.login_Prop = login_Prop;
