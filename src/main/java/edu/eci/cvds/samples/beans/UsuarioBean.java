@@ -14,4 +14,18 @@ public class UsuarioBean extends BaseBean {
 
         }
     }
+    public void graphic(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("estadistica.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
+    public void volver(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
 }
