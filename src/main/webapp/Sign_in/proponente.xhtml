@@ -47,10 +47,16 @@
                     <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" />
                     </span>
                     <br/>
-                    <div class="wrap-input100 validate-input">
+                    <h:form>
+                    <h:outputLabel style="color:white;"  value="#{loginbean.login}"/>
+                    </h:form>
+                    <div class="container-login100-form-btn ">
+
                         <h:form>
-                            <h:outputLabel style="color:white;"  value="#{loginbean.login}"/>
-                            <p:commandButton actionListener="#{proponentebean.registroIdea}"/>
+                            <p:commandButton class="login100-form-btn" value="Back" actionListener="#{loginbean.volverLogin}"   ajax="true"> </p:commandButton>
+                        </h:form>
+                        <h:form>
+                            <p:commandButton class="login100-form-btn" value="Add Idea" actionListener="#{proponentebean.registroIdea}" ajax="true"/>
                         </h:form>
                     </div>
 

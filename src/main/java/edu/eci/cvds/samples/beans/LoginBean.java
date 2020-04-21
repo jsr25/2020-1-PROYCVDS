@@ -69,6 +69,17 @@ public class LoginBean extends BaseBean{
             val="usuario.xhtml";
         }
    }
+    public void volverLogin(){
+        usuario=null;
+        val="login.xhtml";
+        login=null;
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect(val);
+        } catch (IOException e) {
+
+        }
+
+    }
     public void reinicio(){
         usuario=null;
         val="index.xhtml";

@@ -1,34 +1,39 @@
 package edu.eci.cvds.samples.beans;
 
-import edu.eci.cvds.samples.entities.Idea;
 
+import org.primefaces.model.chart.PieChartModel;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import java.util.List;
 
-@ManagedBean(name = "estadisticaBean")
-@SessionScoped
-public class EstadisticaBean extends  BaseBean{
-    private List<Idea> ideaLis;
-    private int enProceso;
-    private int enEspera;
-    private int finalizado;
+@ManagedBean
+public class EstadisticaBean extends BaseBean {
+    private PieChartModel model;
 
-    public void generar(){
-        for(int i=0;i<ideaLis.size();i++){
-            if(ideaLis.get(i).getEstado().equals("En proceso")){
-                enProceso++;
-            }
-            else if(ideaLis.get(i).getEstado().equals("En espera")){
-                enEspera++;
+    @PostConstruct
+    public void init() {
+        model = new PieChartModel();
+        model.set("En Espera", 62);//jobs in thousands
+        model.set("En Proceso", 46);
+        model.set("Finalizado", 38);
 
-            }
-            else if(ideaLis.get(i).getEstado().equals("Finalizado")){
-                finalizado++;
-
-            }
-        }
+        //followings are some optional customizations:
+        //set title
+        model.setTitle("States Ideas");
+        //set legend position to 'e' (east), other values are 'w', 's' and 'n'
+        model.setLegendPosition("e");
+        //enable tooltips
+        model.setShowDatatip(true);
+        //show labels inside pie chart
+        model.setShowDataLabels(true);
+        //show label text  as 'value' (numeric) , others are 'label', 'percent' (default). Only one can be used.
+        model.setDataFormat("value");
+        //format: %d for 'value', %s for 'label', %d%% for 'percent'
+        model.setDataLabelFormatString("%dK");
+        //pie sector colors
+        model.setSeriesColors("aaf,afa,faa,ffa,aff,faf,ddd");
     }
 
-
+    public PieChartModel getModel() {
+        return model;
+    }
 }
