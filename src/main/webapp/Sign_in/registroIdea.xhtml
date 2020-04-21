@@ -52,7 +52,7 @@
                     </div>
                     <div>
                         <h:outputLabel style="color:white;" for="Description" value="Description"/>
-                        <p:inputTextarea id="Description" rows="5" cols="30" counter="display" maxlength="100" counterTemplate="{0} characters remaining." autoResize="false" />
+                        <p:inputTextarea id="Description" rows="5" cols="30" counter="display" maxlength="100" counterTemplate="{0} characters remaining." autoResize="false" binding="#{description}"/>
                         <br />
                         <h:outputText id="display" />
                     </div>
@@ -82,7 +82,7 @@
                         <br/>
                         <br/>
                         <div class="container-login100-form-btn">
-                            <p:commandButton class="login100-form-btn" value="Create" actionListener="#{registrarIDea.registroIdea(ideaname.value,Description.value,loginbean.login,loginbean.area,loginbean.value)}" ajax="true"> </p:commandButton>
+                            <p:commandButton class="login100-form-btn" value="Create" actionListener="#{registrarIDea.registroIdea(ideaname.value,description.value,loginbean.login,loginbean.area)}" ajax="true"> </p:commandButton>
                         </div>
                     </h:form>
                     <div class="text-center p-t-90">

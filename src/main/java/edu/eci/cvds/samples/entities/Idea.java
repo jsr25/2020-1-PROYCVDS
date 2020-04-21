@@ -25,13 +25,14 @@ public class Idea {
      * @param area
      * @param estado
      */
-    public Idea(String nombreidea,String descripcion,Date fecha, String login_Prop, String area,String estado) {
+    public Idea(String nombreidea,String descripcion,Date fecha, String login_Prop, String area,String estado,List<PalabraClave> palabraClaves) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.login_Prop = login_Prop;
         this.nombreIdea = nombreidea;
         this.area = area;
         this.estado=estado;
+        this.palabraClaves=palabraClaves;
     }
     public Idea(){}
 
@@ -130,6 +131,14 @@ public class Idea {
      */
     public void setArea(String area) {
         this.area = area;
+    }
+
+    public List<PalabraClave> getPalabraClaves() {
+        return palabraClaves;
+    }
+
+    public void setPalabraClaves(List<PalabraClave> palabraClaves) {
+        this.palabraClaves = palabraClaves;
     }
 
     @Override

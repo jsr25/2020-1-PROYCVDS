@@ -27,6 +27,7 @@ public class LoginBean extends BaseBean{
     private Usuario usuario;
     private String val="login.xhtml";
     private String login;
+    private String area;
 
 
     /**
@@ -39,6 +40,7 @@ public class LoginBean extends BaseBean{
         try {
 
             this.usuario=servicio.consultarUsuario(usuario);
+            this.area=this.usuario.getArea();
             if (password.equals(this.usuario.getPassword())) {
                 comprobacion(password);
             }
@@ -85,5 +87,13 @@ public class LoginBean extends BaseBean{
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
     }
 }

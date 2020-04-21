@@ -50,7 +50,7 @@ public class MyBatisExample {
         SqlSession sqlss = sessionfact.openSession();
         IdeaMapper u=sqlss.getMapper(IdeaMapper.class);
         System.out.println(u.consultarIdea2("prueba"));
-        u.registrarPalabraClave(new PalabraClave("mariahv9","dasdasdadd"));
+        u.registrarPalabraClave(new PalabraClave("prueba","dasdasdadd"));
         //System.out.print(u.consultarIdea2("prueba"));
         //u.registrarIdea(new Idea("prueba","asdadsadasdasdasda",new Date(),"mariahv9","prueba","En espera"));
         //u.registrarUsuario(new Usuario("i","av","asda","asdads","asda@asdasd.com"));

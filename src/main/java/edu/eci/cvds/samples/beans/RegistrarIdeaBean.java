@@ -37,9 +37,15 @@ public class RegistrarIdeaBean extends BaseBean{
 
     public void registroIdea(String nombre,String descripcion, String loginProponente, String area) {
         Date fecha2=new Date();
-        Idea idea = new Idea(nombre,descripcion,fecha2,loginProponente,area,"En espera");
+        asignarIdea(nombre);
+        Idea idea = new Idea(nombre,descripcion,fecha2,loginProponente,area,"En espera",palabraClaves);
         try{servicio.registrarIDea(idea);}
         catch (Exception e){}
+    }
+    private void asignarIdea(String nombreIdea){
+        for(int i=0;i<palabraClaves.size();i++){
+            palabraClaves.get(i).setNombreIdea(nombreIdea);
+        }
     }
     @PostConstruct
     public void init() {
@@ -67,7 +73,6 @@ public class RegistrarIdeaBean extends BaseBean{
     }
     public void reinit(String nombre){
         palabraClave=new PalabraClave();
-        palabraClave.setNombreIdea(nombre);
         System.out.println(palabraClaves);
     }
 }
