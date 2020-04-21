@@ -45,5 +45,8 @@
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.2.7" level="project" />
     <orderEntry type="library" name="Maven: com.h2database:h2:1.4.184" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi:3.16" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.1" level="project" />
   </component>
 </module>

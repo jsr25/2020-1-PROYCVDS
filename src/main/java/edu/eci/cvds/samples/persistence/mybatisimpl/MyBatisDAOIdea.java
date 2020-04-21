@@ -19,7 +19,6 @@ public class MyBatisDAOIdea implements DAOIdea {
 
 
     /**
-     *
      * @param idea
      */
     public void registrarIDea(Idea idea) {
@@ -31,7 +30,6 @@ public class MyBatisDAOIdea implements DAOIdea {
     }
 
     /**
-     *
      * @param estado
      * @param idea
      */

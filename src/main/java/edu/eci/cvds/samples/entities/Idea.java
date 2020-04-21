@@ -68,11 +68,18 @@ public class Idea {
         this.login_Prop = loginProponente;
     }
 
-
+    /**
+     * Método que retorna nombre de la idea.
+     * @return nombreIdea retorno del programa.
+     */
     public String getNombreIdea() {
         return nombreIdea;
     }
 
+    /**
+     * Método que guarda nombre de la idea.
+     * @param nombreIdea Argumentos del programa.
+     */
     public void setNombreIdea(String nombreIdea) {
         this.nombreIdea = nombreIdea;
     }

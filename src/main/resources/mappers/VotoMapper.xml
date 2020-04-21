@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.cvds.samples.persistence.mybatisimpl.mappers.IdeaMapper">
+    <select id='Votos' parameterType='map' resultMap='IdeaResult'>
+    select a.nombreIdea,
+    a.login_Prop,
+
+    FROM voto as a
+
+    </select>
+
+    <insert id="registrarPalabraClave" parameterType='map'>
+        insert into voto(login_Prop, nombreIdea) values(#{palabra.login_Prop},#{palabra.nombreIdea})
+    </insert>
+
+    <resultMap type='Votos' id='IdeaResult'>
+        <id property='login_Prop' column='login_Prop'/>
+        <result property="nombreIdea" column="nombreIdea"/>
+    </resultMap>
+</mapper>

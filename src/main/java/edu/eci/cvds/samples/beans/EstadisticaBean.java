@@ -1,9 +1,9 @@
 package edu.eci.cvds.samples.beans;
 
-
 import org.primefaces.model.chart.PieChartModel;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+
 
 @ManagedBean
 public class EstadisticaBean extends BaseBean {
@@ -36,4 +36,5 @@ public class EstadisticaBean extends BaseBean {
     public PieChartModel getModel() {
         return model;
     }
+
 }
