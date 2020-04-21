@@ -30,7 +30,7 @@ public class EstadisticaBean extends BaseBean {
         //format: %d for 'value', %s for 'label', %d%% for 'percent'
         model.setDataLabelFormatString("%dK");
         //pie sector colors
-        model.setSeriesColors("aaf,afa,faa,ffa,aff,faf,ddd");
+        model.setSeriesColors("f5ce61,82f8d3,f787a4");
     }
 
     public PieChartModel getModel() {

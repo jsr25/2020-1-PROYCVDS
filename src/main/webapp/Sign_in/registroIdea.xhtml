@@ -58,21 +58,18 @@
                     </div>
                     <h:form id="form">
                         <p:growl id="msgs" />
-
-                        <p:panel header="Create a new book" style="margin-bottom:20px">
-                            <h:panelGrid columns="2" cellpadding="5">
-                                <h:outputLabel value="Keyword : *" for="Keyword"></h:outputLabel>
-                                <p:inputText id="Keyword" value="#{registrarIDea.palabraClave.valor}" required="true"/>
-                                <p:commandButton id="btn_reset" value="Reset" type="reset"/>
-                                <p:commandButton id="btn_add" value="Add" update="Keyword msgs @parent" action="#{registrarIDea.reinit(loginbean.login)}" >
-                                    <p:collector value="#{registrarIDea.palabraClave}" addTo="#{registrarIDea.palabraClaves}" unique="true"/>
-                                </p:commandButton>
-                            </h:panelGrid>
-                        </p:panel>
+                        <div class="wrap-input100 validate-input">
+                            <h:outputLabel value="Keyword : " style="color: white" id="keyword" for="Keyword"/>
+                            <h:inputText  class="input100" id="Keyword" value="#{registrarIDea.palabraClave.valor}" required="true" type="String"/>
+                        </div>
+                        <div class="container-login100-form-btn ">
+                            <p:commandButton class="login100-form-btn"  id="btn_add" style="height: 20px; width: 400px; size: B4" value="Add"  update="Keyword msgs @parent" action="#{registrarIDea.reinit(loginbean.login)}" ><p:collector value="#{registrarIDea.palabraClave}" addTo="#{registrarIDea.palabraClaves}" unique="true"/>
+                            </p:commandButton>
+                        </div>
+                        <br/>
                         <p:dataTable value="#{registrarIDea.palabraClaves}" var="palabraclave" id="palabraClavesTable">
-
-                            <p:column headerText="Keyword">
-                                <h:outputText value="#{palabraclave.valor}" />
+                            <p:column headerText="Keyword" style="color: white">
+                                <h:outputText value="#{palabraclave.valor} " style="color: white"/>
                             </p:column>
                         </p:dataTable>
 
@@ -82,13 +79,14 @@
                         <br/>
                         <br/>
                         <div class="container-login100-form-btn">
+                            <h:form>
+                                <p:commandButton class="login100-form-btn" value="Back" actionListener="#{proponentebean.volver}"   ajax="true"> </p:commandButton>
+                            </h:form>
+                            <h:form>
                             <p:commandButton class="login100-form-btn" value="Create" actionListener="#{registrarIDea.registroIdea(ideaname.value,description.value,loginbean.login,loginbean.area)}" ajax="true"> </p:commandButton>
+                            </h:form>
                         </div>
                     </h:form>
-                    <div class="text-center p-t-90">
-                        <a class="txt1" href="https://proyecto-cvds-2020-1.herokuapp.com/">
-                            Cancel </a>
-                    </div>
                 </form>
             </div>
         </div>

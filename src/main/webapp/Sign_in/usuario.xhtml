@@ -53,12 +53,16 @@
                         </h:form>
                     </div>
                     <div class="container-login100-form-btn ">
-                    <h:form>
-                        <p:commandButton class="login100-form-btn" value="Consultar"  actionListener="#{usuariobean.consultar}"  ajax="true"> </p:commandButton>
-                    </h:form>
-                    <h:form>
-                        <p:commandButton class="login100-form-btn" value="Back" actionListener="#{loginbean.volverLogin}"   ajax="true"> </p:commandButton>
-                    </h:form>
+                        <h:form>
+                            <p:commandButton class="login100-form-btn" value="Back" actionListener="#{loginbean.volverLogin}"   ajax="true"> </p:commandButton>
+                        </h:form>
+                        <h:form>
+                            <p:commandButton class="login100-form-btn" value="Consultar"  actionListener="#{usuariobean.consultar}"  ajax="true"> </p:commandButton>
+                        </h:form>
+                        <h:form>
+                            <p:commandButton class="login100-form-btn" value="Graphic"  actionListener="#{usuariobean.graphic}"  ajax="true"> </p:commandButton>
+                        </h:form>
+
                     </div>
 
                 </form>

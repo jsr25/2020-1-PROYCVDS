@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
-<h:head></h:head>
-<h:body style="margin:50px;">
-    <h2>Graphic</h2>
-    <p:chart type="pie"
-             responsive="true"
-             model="#{estadisticaBean.model}" />
-
+<h:head>
+    <title>
+        Sign in
+    </title>
+    <meta content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- =============================================================================================== -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/icons/icon.png" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- =============================================================================================== -->
+</h:head>
+<h:body  >
+    <div class="limiter">
+    <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+    <h:form style="alignment: center">
+        <div class="limiter">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" action="">
+                    <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" />
+                    </span>
+                    <center>
+                    <h:outputLabel style="color:white;size: B4" value="Graphic" />
+                    </center>
+                    <p:chart type="pie" responsive="true" model="#{estadisticaBean.model}" style="height: 400px;width: 400px"/>
+                </form>
+                <div class="container-login100-form-btn ">
+                    <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{usuariobean.volver}" ajax="true"/>
+                </div>
+            </div>
+        </div>
+    </h:form>
+    </div>
+    </div>
 </h:body>
 </html>

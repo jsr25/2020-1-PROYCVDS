@@ -17,4 +17,7 @@ public class PorponenteBean extends BaseBean {
 
         }
     }
+    public void volver() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("proponente.xhtml");
+    }
 }
