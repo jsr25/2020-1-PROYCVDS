@@ -26,4 +26,14 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
     }
 
     public void cambiarEstado(String estado, Idea idea) {daoIdea.cambiarEstado(estado,idea); }
+
+    @Override
+    public void registrarPalabraClave(PalabraClave palabraClave) {
+        daoIdea.registrarPalabraClave(palabraClave);
+    }
+
+    @Override
+    public Idea consultarIdea(String idea) {
+        return daoIdea.consultarIdea(idea);
+    }
 }

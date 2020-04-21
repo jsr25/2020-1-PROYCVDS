@@ -64,7 +64,7 @@
                                 <h:outputLabel value="Keyword : *" for="Keyword"></h:outputLabel>
                                 <p:inputText id="Keyword" value="#{registrarIDea.palabraClave.valor}" required="true"/>
                                 <p:commandButton id="btn_reset" value="Reset" type="reset"/>
-                                <p:commandButton id="btn_add" value="Add" update="Keyword msgs @parent" action="#{registrarIDea.reinit}" >
+                                <p:commandButton id="btn_add" value="Add" update="Keyword msgs @parent" action="#{registrarIDea.reinit(loginbean.login)}" >
                                     <p:collector value="#{registrarIDea.palabraClave}" addTo="#{registrarIDea.palabraClaves}" unique="true"/>
                                 </p:commandButton>
                             </h:panelGrid>
@@ -82,7 +82,7 @@
                         <br/>
                         <br/>
                         <div class="container-login100-form-btn">
-                            <p:commandButton class="login100-form-btn" value="Create" actionListener="#{registarbean.registroUsuario(username.value,firtsname.value,surname.value,password.value,corre.value,area.value)}" ajax="true"> </p:commandButton>
+                            <p:commandButton class="login100-form-btn" value="Create" actionListener="#{registrarIDea.registroIdea(ideaname.value,Description.value,loginbean.login,loginbean.area,loginbean.value)}" ajax="true"> </p:commandButton>
                         </div>
                     </h:form>
                     <div class="text-center p-t-90">

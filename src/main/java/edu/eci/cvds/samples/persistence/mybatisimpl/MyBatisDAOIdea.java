@@ -2,6 +2,7 @@ package edu.eci.cvds.samples.persistence.mybatisimpl;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.samples.entities.Idea;
+import edu.eci.cvds.samples.entities.PalabraClave;
 import edu.eci.cvds.samples.persistence.DAOIdea;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.IdeaMapper;
 
@@ -32,6 +33,16 @@ public class MyBatisDAOIdea implements DAOIdea {
      */
     public void cambiarEstado(String estado, Idea idea) {
         pmap.cambiarEstado(estado,idea);
+    }
+
+    @Override
+    public Idea consultarIdea(String idea) {
+        return pmap.consultarIdea2(idea);
+    }
+
+    @Override
+    public void registrarPalabraClave(PalabraClave palabraClave) {
+        pmap.registrarPalabraClave(palabraClave);
     }
 
     /**

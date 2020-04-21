@@ -31,4 +31,8 @@ public interface ServicioBancodeProyectos {
      * @param idea
      */
     public void cambiarEstado(String estado,Idea idea);
+
+    public void registrarPalabraClave(PalabraClave palabraClave);
+
+    public Idea consultarIdea(String idea);
 }

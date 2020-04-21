@@ -1,6 +1,7 @@
 package edu.eci.cvds.samples.persistence;
 
 import edu.eci.cvds.samples.entities.Idea;
+import edu.eci.cvds.samples.entities.PalabraClave;
 
 import java.util.List;
 
@@ -19,4 +20,9 @@ public interface DAOIdea {   /**
     public void registrarIDea(Idea idea);
 
     public void cambiarEstado(String estado,Idea idea);
+
+    public Idea consultarIdea(String idea);
+
+    public void registrarPalabraClave(PalabraClave palabraClave);
+
 }

@@ -16,14 +16,33 @@
     ON a.nombreidea = b.nombreidea
     where b.palabrasclave =#{idea};
     </select>
+    <select id='consultarIdea2' parameterType='map' resultMap='IdeaResult'>
+    select a.nombreidea,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado
+    FROM idea as a
+    where a.nombreidea=#{idea};
+    </select>
+    <select id='consultarpalabe' parameterType='map' resultMap='palabraResult'>
+    select a.nombreidea,
+    a.palabrasclave
+    FROM palabrasclave as a;
+    </select>
     <update id="cambiarEstado" parameterType="map" >
         update idea
         set estado= #{estado}
         where #{idea.descripcion}=descripcion and #{idea.loginProponente}=login_Prop
     </update>
 
-    <insert id="Idea" parameterType='map'>
-        insert into idea(descripcion,fecha,login_Prop,id,palabrasClave,area,estado)  values (#{usuario.descripcion},#{usuario.login_Prop},#{usuario.id},#{usuario.palabrasClave},#{usuario.AreaTrabajo}, #{usuario.fecha}, #{usuario.estado});
+    <insert id="registrarIdea" parameterType='map'>
+        insert into idea(nombreidea,descripcion,fecha,login_Prop,area,estado)  values (#{idea.nombreIdea},#{idea.descripcion}, #{idea.fecha},#{idea.login_Prop},#{idea.area}, #{idea.estado});
+    </insert>
+
+    <insert id="registrarPalabraClave" parameterType='map'>
+        insert into palabrasclave(nombreidea,palabrasclave) values(#{palabra.nombreIdea},#{palabra.valor})
     </insert>
 
     <resultMap type='Idea' id='IdeaResult'>
@@ -34,5 +53,10 @@
         <result property='fecha' column='fecha'/>
         <result property='estado' column='estado'/>
 
+    </resultMap>
+
+    <resultMap type='PalabraClave' id='palabraResult'>
+        <id property='nombreIdea' column='nombreidea'/>
+        <result property="valor" column="palabrasclave"/>
     </resultMap>
 </mapper>

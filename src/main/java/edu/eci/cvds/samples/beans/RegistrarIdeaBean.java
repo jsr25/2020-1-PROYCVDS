@@ -28,21 +28,18 @@ public class RegistrarIdeaBean extends BaseBean{
     private ServicioBancodeProyectos servicio;
     private PalabraClave palabraClave;
     private List<PalabraClave> palabraClaves;
+
     /**
      * Método que registra la idea.
      * @param descripcion Argumentos del programa.
      * @param loginProponente Argumentos del programa.
-     * @param iD Argumentos del programa.
-     * @param palabras Argumentos del programa.
-     * @param clave Argumentos del programa.
-     * @param fecha Argumentos del programa.
-     * @param estado Argumentos del programa.
      */
 
-    public void registroIdea(String descripcion, String loginProponente, String iD, String palabras, String clave, Date fecha, String estado) {
-        /*Idea idea = new Idea(descripcion,fecha ,iD,palabras,clave,loginProponente,estado);
+    public void registroIdea(String nombre,String descripcion, String loginProponente, String area) {
+        Date fecha2=new Date();
+        Idea idea = new Idea(nombre,descripcion,fecha2,loginProponente,area,"En espera");
         try{servicio.registrarIDea(idea);}
-        catch (Exception e){}*/
+        catch (Exception e){}
     }
     @PostConstruct
     public void init() {
@@ -68,8 +65,9 @@ public class RegistrarIdeaBean extends BaseBean{
     public void setPalabraClaves(List<PalabraClave> palabraClaves) {
         this.palabraClaves = palabraClaves;
     }
-    public void reinit(){
+    public void reinit(String nombre){
         palabraClave=new PalabraClave();
+        palabraClave.setNombreIdea(nombre);
         System.out.println(palabraClaves);
     }
 }

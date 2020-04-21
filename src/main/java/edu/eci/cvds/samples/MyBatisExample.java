@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.Date;
 
+import edu.eci.cvds.samples.entities.Idea;
+import edu.eci.cvds.samples.entities.PalabraClave;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.*;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -45,9 +48,13 @@ public class MyBatisExample {
     public static void main(String args[]) throws SQLException, ParseException {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
-        UsuarioMapper u=sqlss.getMapper(UsuarioMapper.class);
+        IdeaMapper u=sqlss.getMapper(IdeaMapper.class);
+        System.out.println(u.consultarIdea2("prueba"));
+        u.registrarPalabraClave(new PalabraClave("mariahv9","dasdasdadd"));
+        //System.out.print(u.consultarIdea2("prueba"));
+        //u.registrarIdea(new Idea("prueba","asdadsadasdasdasda",new Date(),"mariahv9","prueba","En espera"));
         //u.registrarUsuario(new Usuario("i","av","asda","asdads","asda@asdasd.com"));
-        System.out.print(u.consultarUsuarios("LuffyMD"));
+        //System.out.print(u.consultarUsuarios("LuffyMD"));
 
         sqlss.commit();
         sqlss.close();

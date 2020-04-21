@@ -1,8 +1,16 @@
 package edu.eci.cvds.samples.entities;
 
+import com.google.inject.internal.util.$AsynchronousComputationException;
+
 public class PalabraClave {
     private String nombreIdea;
     private String valor;
+
+    public PalabraClave(String nombreIdea, String valor) {
+        this.nombreIdea=nombreIdea;
+        this.valor=valor;
+    }
+    public PalabraClave(){}
 
     public String getNombreIdea() {
         return nombreIdea;
