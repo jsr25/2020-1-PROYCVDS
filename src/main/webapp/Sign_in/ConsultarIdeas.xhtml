@@ -54,7 +54,7 @@
         <p:commandButton  class="login100-form-btn" style= "width: 590px; height:30px "   value="Search" actionListener="#{infoIdeaBean.consultar(usuario.value)}" ajax="true"> </p:commandButton>
     </h:form>
     <h:form>
-        <p:dataTable id="basicDT"  var="idea" value="#{infoIdeaBean.ideas}">
+        <p:dataTable id="basicDT"  var="idea" value="#{infoIdeaBean.ideas}" >
             <p:column  headerText="Descripción"  style="min-width: 200px;">
                 <h:outputText value="#{idea.descripcion}" />
             </p:column>

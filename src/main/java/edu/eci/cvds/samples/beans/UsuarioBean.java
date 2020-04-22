@@ -28,4 +28,11 @@ public class UsuarioBean extends BaseBean {
 
         }
     }
+    public void paginada(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("paginadaIdeas.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
 }

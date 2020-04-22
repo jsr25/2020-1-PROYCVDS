@@ -35,4 +35,6 @@ public interface ServicioBancodeProyectos {
     public void registrarPalabraClave(PalabraClave palabraClave);
 
     public Idea consultarIdea(String idea);
+
+    public List<Idea> consultarTodo();
 }

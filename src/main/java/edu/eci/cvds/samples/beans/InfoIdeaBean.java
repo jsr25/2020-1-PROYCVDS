@@ -41,5 +41,10 @@ public class InfoIdeaBean extends BaseBean{
     public void setIdeas(List<Idea> ideas) {
         this.ideas = ideas;
     }
+    @PostConstruct
+    public void init(){
+        super.init();
+        lidea2=servicio.consultarTodo();
+    }
 }
 
