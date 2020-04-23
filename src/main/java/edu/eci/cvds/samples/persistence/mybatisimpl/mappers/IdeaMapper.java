@@ -1,5 +1,6 @@
 package edu.eci.cvds.samples.persistence.mybatisimpl.mappers;
 
+import edu.eci.cvds.samples.entities.Area;
 import edu.eci.cvds.samples.entities.PalabraClave;
 import org.apache.ibatis.annotations.Param;
 import edu.eci.cvds.samples.entities.Idea;
@@ -38,5 +39,9 @@ public interface IdeaMapper {
     public List<PalabraClave> consultarpalabe();
 
     public List<Idea> consultarIdeaArea(@Param("area") String area );
+
+    public List<Idea> consultarTodo();
+
+    public List<Area> consultarArea();
 
 }

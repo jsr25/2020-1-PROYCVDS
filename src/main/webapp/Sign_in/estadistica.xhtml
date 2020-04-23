@@ -48,12 +48,8 @@
                     <h:outputLabel style="color:white;size: B4" value="Graphic" />
 
                     <p:chart id="pie" type="pie" responsive="true" model="#{estadisticaBean.model}" style="height: 400px;width: 400px"/>
-                    <p:inputText binding="#{area}"/></center>
+                    </center>
                 </form>
-                <center>
-                <p:commandButton value="Search"  update="pie tbl" action="#{estadisticaBean.estadistica(area.value)}" ajax="true"/>
-                </center>
-                <br/>
                 <div>
 
                         <p:dataTable id="tbl" var="idea" value="#{estadisticaBean.ideas}"

@@ -2,6 +2,7 @@ package edu.eci.cvds.samples.persistence.mybatisimpl;
 
 import com.google.inject.Inject;
 import com.google.inject.internal.cglib.core.$ReflectUtils;
+import edu.eci.cvds.samples.entities.Area;
 import edu.eci.cvds.samples.entities.Idea;
 import edu.eci.cvds.samples.entities.PalabraClave;
 import edu.eci.cvds.samples.persistence.DAOIdea;
@@ -52,6 +53,16 @@ public class MyBatisDAOIdea implements DAOIdea {
     public List<Idea> consultarIdeaArea(String area) {
         return pmap.consultarIdeaArea(area);
 
+    }
+
+    @Override
+    public List<Idea> consultarTodo() {
+        return pmap.consultarTodo();
+    }
+
+    @Override
+    public List<Area> consultarArea() {
+        return pmap.consultarArea();
     }
 
     /**

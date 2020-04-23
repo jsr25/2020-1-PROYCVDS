@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.eci.cvds.samples.persistence.mybatisimpl.mappers.IdeaMapper">
+
     <select id='consultarIdea' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,
     a.descripcion,
@@ -37,11 +38,31 @@
     FROM idea as a
     where a.nombreidea=#{idea};
     </select>
+
+    <select id='consultarTodo' parameterType='map' resultMap='IdeaResult'>
+    select a.nombreidea,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado
+    FROM idea as a;
+    </select>
+
+    <select id='consultarArea' parameterType='map' resultMap='areaResult'>
+    select count(a.area) as cantidad ,
+	a.area as area
+	from idea as a
+	group by a.area ;
+    </select>
+
     <select id='consultarpalabe' parameterType='map' resultMap='palabraResult'>
     select a.nombreidea,
     a.palabrasclave
     FROM palabrasclave as a;
     </select>
+
+
     <update id="cambiarEstado" parameterType="map" >
         update idea
         set estado= #{estado}
@@ -70,4 +91,10 @@
         <id property='nombreIdea' column='nombreidea'/>
         <result property="valor" column="palabrasclave"/>
     </resultMap>
+
+    <resultMap type='Area' id='areaResult'>
+        <id property='nombreArea' column='area'/>
+        <result property="cantidadIdeas" column="cantidad"/>
+    </resultMap>
+
 </mapper>

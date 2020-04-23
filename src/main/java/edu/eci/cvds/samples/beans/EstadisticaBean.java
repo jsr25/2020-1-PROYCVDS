@@ -1,5 +1,6 @@
 package edu.eci.cvds.samples.beans;
 
+import edu.eci.cvds.samples.entities.Area;
 import edu.eci.cvds.samples.entities.Idea;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 import org.primefaces.model.chart.PieChartModel;
@@ -17,6 +18,8 @@ import java.util.List;
 public class EstadisticaBean extends BaseBean {
     private PieChartModel model;
     private List<Idea> ideas;
+    private List<Area> areas;
+
     @Inject
     private ServicioBancodeProyectos servicio;
 
@@ -24,60 +27,36 @@ public class EstadisticaBean extends BaseBean {
     public void init() {
         super.init();
         model = new PieChartModel();
-        //estadistica("monitoria");
-        //model.set("En Espera", 62);//jobs in thousands
-        //model.set("En Proceso", 46);
-        //model.set("Finalizado", 38);
-
-        //followings are some optional customizations:
-        //set title
-        model.setTitle("States Ideas");
-        //set legend position to 'e' (east), other values are 'w', 's' and 'n'
-        model.setLegendPosition("e");
-        //enable tooltips
-        model.setShowDatatip(true);
-        //show labels inside pie chart
-        model.setShowDataLabels(true);
-        //show label text  as 'value' (numeric) , others are 'label', 'percent' (default). Only one can be used.
-        model.setDataFormat("value");
-        //pie sector colors
-        model.setSeriesColors("f5ce61,82f8d3,f787a4");
+        generar();
+        llenarGrafica();
+        decorarModelo();
     }
 
     public PieChartModel getModel() {
         return model;
     }
 
-    public void estadistica(String area){
-        int totalAreas=0;
-        int espera=0;
-        int proceso=0;
-        int finalizado=0;
 
-        ideas = servicio.consultarIdeaArea(area);
-        totalAreas = ideas.size();
-        for (Idea a :ideas){
-           if ( a.getEstado().equals("En espera")){
-               espera+=1;
-           }
-           else if (a.getEstado().equals("En proceso")){
-               proceso+=1;
-           }
-           else if (a.getEstado().equals("Finalizado")) {
-               finalizado+=1;
-           }
+    private void generar(){
+        ideas=servicio.consultarTodo();
+        areas=servicio.consultarArea();
+    }
+    private void llenarGrafica(){
+        for(Area a: areas){
+            model.set(a.getNombreArea(),a.getCantidadIdeas());
         }
-        model.set("En espera",espera);
-        model.set("Finalizado",finalizado);
-        model.set("En proceso",proceso);
-
+    }
+    private void decorarModelo(){
+        model.setTitle("States Ideas");
+        model.setLegendPosition("e");
+        model.setShowDatatip(true);
+        model.setShowDataLabels(true);
+        model.setDataFormat("value");
+        model.setSeriesColors("f5ce61,82f8d3,f787a4");
     }
 
     public List<Idea> getIdeas() {
         return ideas;
     }
 
-    public void setIdeas(List<Idea> ideas) {
-        this.ideas = ideas;
-    }
 }

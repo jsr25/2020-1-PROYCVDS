@@ -39,12 +39,16 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
 
     @Override
     public List<Idea> consultarTodo() {
-       /* return daoIdea.consultarTodo();*/
-        return null;
+        return daoIdea.consultarTodo();
     }
 
     @Override
     public List<Idea> consultarIdeaArea(String area) {
         return daoIdea.consultarIdeaArea(area);
+    }
+
+    @Override
+    public List<Area> consultarArea() {
+        return daoIdea.consultarArea();
     }
 }

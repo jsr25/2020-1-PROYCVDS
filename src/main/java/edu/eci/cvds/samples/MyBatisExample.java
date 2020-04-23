@@ -106,7 +106,7 @@ public class MyBatisExample {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
         IdeaMapper u=sqlss.getMapper(IdeaMapper.class);
-//        System.out.println(u.consultarIdea2("prueba"));
+       System.out.println(u.consultarArea());
 //        u.registrarPalabraClave(new PalabraClave("prueba","dasdasdadd"));
         //System.out.print(u.consultarIdea2("prueba"));
         //u.registrarIdea(new Idea("prueba","asdadsadasdasdasda",new Date(),"mariahv9","prueba","En espera"));
@@ -115,6 +115,6 @@ public class MyBatisExample {
         sqlss.commit();
         sqlss.close();
 
-        createExcel();
+        //createExcel();
     }
 }
