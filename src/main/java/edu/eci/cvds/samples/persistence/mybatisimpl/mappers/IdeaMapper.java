@@ -37,4 +37,6 @@ public interface IdeaMapper {
 
     public List<PalabraClave> consultarpalabe();
 
+    public List<Idea> consultarIdeaArea(@Param("area") String area );
+
 }

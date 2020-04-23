@@ -16,6 +16,17 @@
     ON a.nombreidea = b.nombreidea
     where b.palabrasclave =#{idea};
     </select>
+
+    <select id='consultarIdeaArea' parameterType='map' resultMap='IdeaResult'>
+    select a.nombreidea,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado
+    FROM idea as a
+    where a.area=#{area};
+    </select>
     <select id='consultarIdea2' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,
     a.descripcion,
