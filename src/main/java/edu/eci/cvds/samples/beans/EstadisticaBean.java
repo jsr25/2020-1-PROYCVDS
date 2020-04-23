@@ -6,7 +6,9 @@ import org.primefaces.model.chart.PieChartModel;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import java.io.IOException;
 import java.util.List;
 
 
@@ -14,6 +16,7 @@ import java.util.List;
 @SessionScoped
 public class EstadisticaBean extends BaseBean {
     private PieChartModel model;
+    private List<Idea> ideas;
     @Inject
     private ServicioBancodeProyectos servicio;
 
@@ -21,7 +24,7 @@ public class EstadisticaBean extends BaseBean {
     public void init() {
         super.init();
         model = new PieChartModel();
-        estadistica("monitoria");
+        //estadistica("monitoria");
         //model.set("En Espera", 62);//jobs in thousands
         //model.set("En Proceso", 46);
         //model.set("Finalizado", 38);
@@ -37,8 +40,6 @@ public class EstadisticaBean extends BaseBean {
         model.setShowDataLabels(true);
         //show label text  as 'value' (numeric) , others are 'label', 'percent' (default). Only one can be used.
         model.setDataFormat("value");
-        //format: %d for 'value', %s for 'label', %d%% for 'percent'
-        model.setDataLabelFormatString("%dK");
         //pie sector colors
         model.setSeriesColors("f5ce61,82f8d3,f787a4");
     }
@@ -52,9 +53,10 @@ public class EstadisticaBean extends BaseBean {
         int espera=0;
         int proceso=0;
         int finalizado=0;
-        List<Idea> listIdeas = servicio.consultarIdeaArea(area);
-        totalAreas = listIdeas.size();
-        for (Idea a :listIdeas){
+
+        ideas = servicio.consultarIdeaArea(area);
+        totalAreas = ideas.size();
+        for (Idea a :ideas){
            if ( a.getEstado().equals("En espera")){
                espera+=1;
            }
@@ -68,6 +70,14 @@ public class EstadisticaBean extends BaseBean {
         model.set("En espera",espera);
         model.set("Finalizado",finalizado);
         model.set("En proceso",proceso);
+
     }
 
+    public List<Idea> getIdeas() {
+        return ideas;
+    }
+
+    public void setIdeas(List<Idea> ideas) {
+        this.ideas = ideas;
+    }
 }

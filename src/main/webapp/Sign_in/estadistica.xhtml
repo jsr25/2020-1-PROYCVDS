@@ -40,26 +40,30 @@
     <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
     <h:form style="alignment: center">
         <div class="limiter">
-            <div class="wrap-login100">
-                <form class="login100-form validate-form" action="">
+            <div class="wrap-login100" style="width: 800px" >
+                <form class="login100-form validate-form" action="" >
                     <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" />
                     </span>
                     <center>
                     <h:outputLabel style="color:white;size: B4" value="Graphic" />
-                    </center>
-                    <p:chart type="pie" responsive="true" model="#{estadisticaBean.model}" style="height: 400px;width: 400px"/>
-                </form>
 
+                    <p:chart id="pie" type="pie" responsive="true" model="#{estadisticaBean.model}" style="height: 400px;width: 400px"/>
+                    <p:inputText binding="#{area}"/></center>
+                </form>
+                <center>
+                <p:commandButton value="Search"  update="pie tbl" action="#{estadisticaBean.estadistica(area.value)}" ajax="true"/>
+                </center>
+                <br/>
                 <div>
-                    <h:form>
-                        <p:dataTable id="tbl" var="car" value="#{infoIdeaBean.ideas}"
+
+                        <p:dataTable id="tbl" var="idea" value="#{estadisticaBean.ideas}"
                                      paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
-                                     paginator="true" rows="10" style="margin-bottom:20px">
+                                     paginator="true" rows="2" style="margin-bottom:20px">
 
                             <f:facet name="{Exporters}">
                                 <div style="float:right;padding-top: 5px;">
                                     <h:commandLink>
-                                        <p:graphicImage name="/demo/images/excel.png" width="24"/>
+                                        <p:graphicImage name="images/icons/icon.png" width="24"/>
                                         <p:dataExporter type="xls" target="tbl" fileName="cars" />
                                     </h:commandLink>
 
@@ -89,57 +93,22 @@
                                     </h:commandLink>
                                 </div>
                             </f:facet>
-
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Id" />
-                                </f:facet>
-                                <h:outputText value="#{car.id}" />
+                            <p:column  headerText="Name"  style="min-width: 300px;">
+                                <h:outputText value="#{idea.nombreIdea}" />
                             </p:column>
-
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Year"/>
-                                </f:facet>
-                                <h:outputText value="#{car.year}" />
+                            <p:column  headerText="Description"  style="width: 200px">
+                                <h:outputText value="#{idea.descripcion}" />
                             </p:column>
-
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Brand" />
-                                </f:facet>
-                                <h:outputText value="#{car.brand}" />
+                            <p:column headerText="Proponent" style="min-width: 150px;" >
+                                <h:outputText value="#{idea.loginProponente}" />
                             </p:column>
-
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Color" />
-                                </f:facet>
-                                <h:outputText value="#{car.color}" />
+                            <p:column  headerText="Area" style="min-width: 100px;">
+                                <h:outputText value="#{idea.area}" />
+                            </p:column>
+                            <p:column  headerText="State" style="min-width: 100px;">
+                                <h:outputText value="#{idea.estado}" />
                             </p:column>
                         </p:dataTable>
-
-                        <h3>Export Page Data Only</h3>
-                        <h:commandLink>
-                            <p:graphicImage name="/demo/images/excel.png" />
-                            <p:dataExporter type="xls" target="tbl" fileName="cars" pageOnly="true"/>
-                        </h:commandLink>
-
-                        <h:commandLink>
-                            <p:graphicImage name="/demo/images/pdf.png" />
-                            <p:dataExporter type="pdf" target="tbl" fileName="cars" pageOnly="true" />
-                        </h:commandLink>
-
-                        <h:commandLink>
-                            <p:graphicImage name="/demo/images/csv.png" />
-                            <p:dataExporter type="csv" target="tbl" fileName="cars" pageOnly="true" />
-                        </h:commandLink>
-
-                        <h:commandLink>
-                            <p:graphicImage name="/demo/images/xml.png" />
-                            <p:dataExporter type="xml" target="tbl" fileName="cars" pageOnly="true" />
-                        </h:commandLink>
-                    </h:form>
                 </div>
 
                 <div class="container-login100-form-btn">
