@@ -1,17 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-<head>
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
     <title>
-        Colsultar Ideas
+        Sign in
     </title>
     <meta content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,51 +35,49 @@
     <link rel="stylesheet" type="text/css" href="css/util.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <!-- =============================================================================================== -->
-</head>
-
-<h:body>
+</h:head>
+<h:body  >
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-            <div class="wrap-login100" style= "width: 750px " >
-                <form class="login100-form validate-form"   action="">
-                    <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" /></span>
-                    <br/>
-                    <h:form id="form">
-                        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
-                        <p:inputText class="login100-form" id="Busqueda" style= "width: 590px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
-                        <br/>
-                        <br/>
-                        <p:commandButton  class="login100-form-btn" style= "width: 590px; height:30px "   value="Search" actionListener="#{infoIdeaBean.consultar(usuario.value)}" ajax="true"> </p:commandButton>
-                    </h:form>
-                    <h:form>
-                        <p:dataTable id="basicDT"  var="idea" value="#{infoIdeaBean.ideas}" paginator="true" rows="10"
-                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
-                            <p:column  headerText="Descripción"  style="min-width: 200px;">
-                                <h:outputText value="#{idea.descripcion}" />
-                            </p:column>
-                            <p:column headerText="LoginProponente" style="min-width: 150px;" >
-                                <h:outputText value="#{idea.loginProponente}" />
-                            </p:column>
-                            <p:column  headerText="Area" style="min-width: 100px;">
-                                <h:outputText value="#{idea.area}" />
-                            </p:column>
-                            <p:column  headerText="Estado" style="min-width: 100px;">
-                                <h:outputText value="#{idea.estado}" />
-                            </p:column>
-                        </p:dataTable>
-                    </h:form>
-                    <h:form>
-                        <div class="container-login100-form-btn ">
-                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{infoIdeaBean.volver}" ajax="true"/>
+            <h:form style="alignment: center">
+                <div class="limiter">
+                    <div class="wrap-login100" style="width: 800px" >
+                        <form class="login100-form validate-form" action="" >
+                    <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" />
+                    </span>
+                        </form>
+                        <div>
+
+                            <p:dataTable id="tbl" var="idea" value="#{paginadoBean.ideas}"
+                                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                                         paginator="true" rows="2" style="margin-bottom:20px" sortMode="multiple" >
+                                <f:facet name="header">
+                                    Table Ideas
+                                </f:facet>
+                                <p:column  headerText="Name"  style="min-width: 300px;" sortBy="#{idea.nombreIdea}">
+                                    <h:outputText value="#{idea.nombreIdea}" />
+                                </p:column>
+                                <p:column  headerText="Description"  style="width: 200px" sortBy="#{idea.descripcion}">
+                                    <h:outputText value="#{idea.descripcion}" />
+                                </p:column>
+                                <p:column headerText="Proponent" style="min-width: 150px;" sortBy="#{idea.loginProponente}" >
+                                    <h:outputText value="#{idea.loginProponente}" />
+                                </p:column>
+                                <p:column  headerText="Area" style="min-width: 100px;" sortBy="#{idea.area}">
+                                    <h:outputText value="#{idea.area}" />
+                                </p:column>
+                                <p:column  headerText="State" style="min-width: 100px;" sortBy="#{idea.estado}">
+                                    <h:outputText value="#{idea.estado}" />
+                                </p:column>
+                            </p:dataTable>
                         </div>
-                    </h:form>
-                </form>
-            </div>
+                        <div class="container-login100-form-btn">
+                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{usuariobean.volver}" ajax="true"/>
+                        </div>
+                    </div>
+                </div>
+            </h:form>
         </div>
     </div>
-
-
-
 </h:body>
 </html>
-

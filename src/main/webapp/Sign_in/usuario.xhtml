@@ -42,12 +42,12 @@
 <h:body>
     <div class="limiter">
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-            <div class="wrap-login100">
+            <div class="wrap-login100" style= "width: 600px ">
                 <form class="login100-form validate-form" action="">
                     <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" />
                     </span>
                     <br/>
-                    <div class="wrap-input100 validate-input">
+                    <div class="wrap-input100 validate-input" >
                         <h:form>
                             <h:outputLabel style="color:white;"  value="#{loginbean.login}"/>
                         </h:form>
@@ -61,6 +61,9 @@
                         </h:form>
                         <h:form>
                             <p:commandButton class="login100-form-btn" value="Graphic"  actionListener="#{usuariobean.graphic}"  ajax="true"> </p:commandButton>
+                        </h:form>
+                        <h:form>
+                            <p:commandButton class="login100-form-btn" value="Ideas"  actionListener="#{usuariobean.paginada}"  ajax="true"> </p:commandButton>
                         </h:form>
 
                     </div>

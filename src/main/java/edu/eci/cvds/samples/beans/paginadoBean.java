@@ -13,7 +13,7 @@ import javax.inject.Inject;
 import java.io.IOException;
 import java.util.List;
 
-@ManagedBean(name = "estadisticaBean")
+@ManagedBean(name = "paginadoBean")
 @SessionScoped
 
 

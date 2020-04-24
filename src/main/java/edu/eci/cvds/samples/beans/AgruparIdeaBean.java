@@ -1,11 +1,7 @@
 package edu.eci.cvds.samples.beans;
 
-
-import com.sun.scenario.effect.impl.state.LinearConvolveRenderState;
 import edu.eci.cvds.samples.entities.Idea;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
-import sun.awt.util.IdentityArrayList;
-
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
