@@ -28,6 +28,7 @@
     FROM idea as a
     where a.area=#{area};
     </select>
+
     <select id='consultarIdea2' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,
     a.descripcion,
@@ -39,6 +40,17 @@
     where a.nombreidea=#{idea};
     </select>
 
+    <select id='consultarIdeasM' parameterType='map' resultMap='IdeaResult'>
+    select a.nombreidea,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado
+    FROM idea as a
+    where (a.nombreidea=#{idea})=false;
+    </select>
+
     <select id='consultarTodo' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,
     a.descripcion,
@@ -47,6 +59,23 @@
     a.fecha,
     a.estado
     FROM idea as a;
+    </select>
+
+    <select id='consultarRelacion' parameterType='map' resultMap='IdeaResult'>
+     select a.nombreidea,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado
+    from idea as a
+    LEFT JOIN (select
+    			nombreidea,
+    			idearelacionada
+    			from relacion
+    			where nombreidea=#{idea}) as b
+    ON a.nombreidea = b.idearelacionada
+   where b.idearelacionada=a.nombreidea;
     </select>
 
     <select id='consultarArea' parameterType='map' resultMap='areaResult'>
@@ -77,6 +106,9 @@
         insert into palabrasclave(nombreidea,palabrasclave) values(#{palabra.nombreIdea},#{palabra.valor})
     </insert>
 
+    <insert id="registrarRelacion">
+        insert into relacion(nombreidea,idearelacionada) values(#{nombreIdea1},#{nombreIdea2})
+    </insert>
     <resultMap type='Idea' id='IdeaResult'>
         <id property='nombreIdea' column='nombreidea'/>
         <result property="descripcion" column="descripcion"/>

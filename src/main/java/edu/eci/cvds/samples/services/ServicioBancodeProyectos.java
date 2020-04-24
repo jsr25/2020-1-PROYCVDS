@@ -41,4 +41,10 @@ public interface ServicioBancodeProyectos {
     public  List<Idea>  consultarIdeaArea(String area);
 
     public List<Area> consultarArea();
+
+    public List<Idea> consultarIdeaM(String idea);
+
+    public void registrarRelacion(String idea1, String idea2);
+
+    public List<Idea> consultarRelacion(String idea);
 }

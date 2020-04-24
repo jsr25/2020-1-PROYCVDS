@@ -51,4 +51,20 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
     public List<Area> consultarArea() {
         return daoIdea.consultarArea();
     }
+
+    @Override
+    public List<Idea> consultarIdeaM(String idea) {
+        return daoIdea.consultarIdeaM(idea);
+    }
+
+    @Override
+    public void registrarRelacion(String idea1, String idea2) {
+        daoIdea.registrarRelacion(idea1,idea2);
+    }
+
+    @Override
+    public List<Idea> consultarRelacion(String idea) {
+        return daoIdea.consultarRelacion(idea);
+    }
+
 }

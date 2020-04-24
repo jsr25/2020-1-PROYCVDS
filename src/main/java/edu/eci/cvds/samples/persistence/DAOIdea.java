@@ -3,6 +3,7 @@ package edu.eci.cvds.samples.persistence;
 import edu.eci.cvds.samples.entities.Area;
 import edu.eci.cvds.samples.entities.Idea;
 import edu.eci.cvds.samples.entities.PalabraClave;
+import org.apache.ibatis.annotations.Param;
 
 import javax.persistence.Id;
 import java.util.List;
@@ -32,4 +33,10 @@ public interface DAOIdea {   /**
     public List<Idea> consultarTodo();
 
     public List<Area> consultarArea();
+
+    public List<Idea> consultarIdeaM(String idea);
+
+    public void registrarRelacion(String idea1,String idea2);
+
+    public List<Idea> consultarRelacion(String idea);
 }
