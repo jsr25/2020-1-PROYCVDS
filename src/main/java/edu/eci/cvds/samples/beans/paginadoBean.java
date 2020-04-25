@@ -21,6 +21,7 @@ public class paginadoBean extends BaseBean {
    @Inject
    private ServicioBancodeProyectos servicio;
    private List<Idea> ideas;
+   private Idea idea;
 
     private void generar() {
         ideas = servicio.consultarTodo();
@@ -31,6 +32,14 @@ public class paginadoBean extends BaseBean {
             FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
         } catch (IOException e) {
         }
+    }
+    public void view(String idea) {
+        this.idea=servicio.consultarIdea(idea);
+        System.out.println(this.idea);
+        /*try {
+            //FacesContext.getCurrentInstance().getExternalContext().redirect("viewIdea.xhtml");
+        } catch (IOException e) {
+        }*/
     }
     public List<Idea> getIdeas() {
         return ideas;
