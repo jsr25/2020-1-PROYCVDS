@@ -9,6 +9,8 @@
         <typeAlias type="edu.eci.cvds.samples.entities.Idea" alias="Idea"/>
         <typeAlias type="edu.eci.cvds.samples.entities.PalabraClave" alias="PalabraClave"/>
         <typeAlias type="edu.eci.cvds.samples.entities.Area" alias="Area"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Comentario" alias="Comentario"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Voto" alias="Voto"/>
     </typeAliases>
 
     <environments default="development">
@@ -26,6 +28,8 @@
     <mappers>
         <mapper resource="mappers/UsuarioMapper.xml"></mapper>
         <mapper resource="mappers/IdeaMapper.xml"></mapper>
+        <mapper resource="mappers/VotoMapper.xml"/>
+        <mapper resource="mappres/ComentarioMapper.xml"/>
     </mappers>
 
 

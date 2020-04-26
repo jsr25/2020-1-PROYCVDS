@@ -5,8 +5,10 @@ import com.google.inject.Injector;
 import edu.eci.cvds.samples.persistence.*;
 import edu.eci.cvds.samples.persistence.mybatisimpl.*;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
+import edu.eci.cvds.samples.services.ServicioComentario;
 import edu.eci.cvds.samples.services.ServicioUsuario;
 import edu.eci.cvds.samples.services.impl.ServicioBancodeProyectosimpl;
+import edu.eci.cvds.samples.services.impl.ServicioComentarioImpl;
 import edu.eci.cvds.samples.services.impl.ServicioUsuarioimpl;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
@@ -46,10 +48,12 @@ public class GuiceContextListener implements ServletContextListener {
                 bind(DAOUsuario.class).to(MyBatisDAOUsuario.class);
                 bind(DAOIdea.class).to(MyBatisDAOIdea.class);
                 bind(DAOVoto.class).to(MyBatisDAOVoto.class);
+                bind(DAOComentario.class).to(MyBatisDAOComentario.class);
 
                 //
                 bind(ServicioBancodeProyectos.class).to(ServicioBancodeProyectosimpl.class);
                 bind(ServicioUsuario.class).to(ServicioUsuarioimpl.class);
+                bind(ServicioComentario.class).to(ServicioComentarioImpl.class);
             }
         });
         servletContextEvent.getServletContext().setAttribute(Injector.class.getName(), injector);
