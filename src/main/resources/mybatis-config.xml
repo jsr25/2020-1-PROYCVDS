@@ -28,8 +28,8 @@
     <mappers>
         <mapper resource="mappers/UsuarioMapper.xml"></mapper>
         <mapper resource="mappers/IdeaMapper.xml"></mapper>
-        <mapper resource="mappers/VotoMapper.xml"/>
-        <mapper resource="mappres/ComentarioMapper.xml"/>
+        <mapper resource="mappers/VotoMapper.xml"></mapper>
+        <mapper resource="mappers/ComentarioMapper.xml"></mapper>
     </mappers>
 
 

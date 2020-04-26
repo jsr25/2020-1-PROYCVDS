@@ -36,11 +36,20 @@ public class paginadoBean extends BaseBean {
     public void view(String idea) {
         this.idea=servicio.consultarIdea(idea);
         System.out.println(this.idea);
-        /*try {
-            //FacesContext.getCurrentInstance().getExternalContext().redirect("viewIdea.xhtml");
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("viewIdea.xhtml");
         } catch (IOException e) {
-        }*/
+        }
     }
+
+    public Idea getIdea() {
+        return idea;
+    }
+
+    public void setIdea(Idea idea) {
+        this.idea = idea;
+    }
+
     public List<Idea> getIdeas() {
         return ideas;
     }

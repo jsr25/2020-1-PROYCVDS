@@ -1,5 +1,6 @@
 package edu.eci.cvds.samples.persistence.mybatisimpl.mappers;
 
+import edu.eci.cvds.samples.entities.Voto;
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -9,6 +10,7 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface VotoMapper {
     public void borrarVoto(@Param("login") String login, @Param("idea")String nombreIdea);
+    public Voto consultarVotos();
 }
 
 

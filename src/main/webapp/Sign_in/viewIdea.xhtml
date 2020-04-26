@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>
+        Sign in
+    </title>
+    <meta content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- =============================================================================================== -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/icons/icon.png" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- =============================================================================================== -->
+</h:head>
+<h:body  >
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+            <h:form style="alignment: center">
+                <div class="limiter">
+                    <div class="wrap-login100" style="width: 1000px" >
+                        <form class="login100-form validate-form" action="" >
+                    <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" />
+                    </span>
+                        </form>
+                        <center>
+                        <p:panelGrid columns="4" columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4" >
+                            <p:outputLabel for="text1" value="Name Idea" />
+                            <p:outputLabel id="text1" value="#{paginadoBean.idea.nombreIdea}" />
+
+                            <p:outputLabel for="text2" value="Description" />
+                            <p:outputLabel id="text2" value="#{paginadoBean.idea.descripcion}"/>
+
+                            <p:outputLabel for="date" value="Date" />
+                            <p:outputLabel id="date" value="#{paginadoBean.idea.fecha}"/>
+
+                            <p:outputLabel for="checkbox" value="Area" />
+                            <p:outputLabel id="checkbox" value="#{paginadoBean.idea.area}"/>
+
+                            <p:outputLabel for="text3" value="User" />
+                            <p:outputLabel id="text3" value="#{paginadoBean.idea.login_Prop}"/>
+
+                            <p:outputLabel for="text4" value="State" />
+                            <p:outputLabel id="text4" value="#{paginadoBean.idea.estado}"/>
+                        </p:panelGrid>
+                            <p:commandButton  class="login100-form-btn"  title="Show Comments"  style= "width: 50px; height:20px;
+                            " actionListener="#{comentarioBean.Buscar(paginadoBean.idea.nombreIdea)}" ajax="true" update="tbl">
+                            </p:commandButton>
+                        </center>
+                        <div>
+                            <h:outputLabel style="color:white;" for="Comment" value="Description"/>
+                            <p:inputTextarea id="Comment" rows="5" cols="30" counter="display" maxlength="100" counterTemplate="{0} characters remaining." autoResize="false" binding="#{comment}"/>
+                            <br />
+                            <h:outputText id="display" />
+                            <p:commandButton  class="login100-form-btn"  title="Add Comment"  style= "width: 50px; height:20px;
+                            " actionListener="#{comentarioBean.registrasComentario(loginbean.login,comment.value,paginadoBean.idea.nombreIdea)}" ajax="true" update="tbl">
+                            </p:commandButton>
+                        </div>
+
+                        <br/>
+                        <p:dataTable id="tbl" var="comentario" value="#{comentarioBean.comentarioList}"
+                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                                     paginator="true" rows="2" style="margin-bottom:20px"   >
+                            <f:facet name="header">
+                                Table Comments
+                            </f:facet>
+                            <p:column  headerText="User"  style="min-width: 300px;">
+                                <h:outputText value="#{comentario.loginUsuario}" />
+                            </p:column>
+                            <p:column  headerText="Comment"  style="min-width: 300px;">
+                                <h:outputText value="#{comentario.comentario}" />
+                            </p:column>
+                            <p:column  headerText="Date"  style="min-width: 300px;">
+                                <h:outputText value="#{comentario.fecha}" />
+                            </p:column>
+                        </p:dataTable>
+                    </div>
+                </div>
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>

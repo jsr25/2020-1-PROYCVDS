@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import edu.eci.cvds.samples.entities.Comentario;
 import edu.eci.cvds.samples.services.ServicioComentario;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.Date;
@@ -22,7 +23,7 @@ public class ComentariosBean extends BaseBean{
 
     @Inject
     private ServicioComentario servcom;
-
+    private Boolean visible;
     private String nombreIdea;
     private List<Comentario> comentarioList;
 
@@ -32,7 +33,7 @@ public class ComentariosBean extends BaseBean{
      * @param loginUsuario
      * @param comentario
      */
-    public void registrasComentario(String loginUsuario,String comentario){
+    public void registrasComentario(String loginUsuario,String comentario,String nombreIdea){
         Date fecha=new Date();
         Comentario comen= new Comentario(nombreIdea,loginUsuario,comentario,fecha);
         servcom.registrarComentario(comen);
@@ -48,7 +49,13 @@ public class ComentariosBean extends BaseBean{
     public void Buscar(String nombreIdea){
         this.nombreIdea=nombreIdea;
         comentarioList=servcom.consultarComentarios(nombreIdea);
+        visible=true;
 
+    }
+    @PostConstruct
+    public void init() {
+    super.init();
+    visible=false;
     }
 
     public String getNombreIdea() {
@@ -65,5 +72,13 @@ public class ComentariosBean extends BaseBean{
 
     public void setComentarioList(List<Comentario> comentarioList) {
         this.comentarioList = comentarioList;
+    }
+
+    public Boolean getVisible() {
+        return visible;
+    }
+
+    public void setVisible(Boolean visible) {
+        this.visible = visible;
     }
 }
