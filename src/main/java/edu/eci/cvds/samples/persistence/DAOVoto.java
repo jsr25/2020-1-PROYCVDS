@@ -1,6 +1,9 @@
 package edu.eci.cvds.samples.persistence;
 
+import edu.eci.cvds.samples.entities.Voto;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * Clase IdeaMapper de la aplicación.
@@ -9,4 +12,5 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface DAOVoto {
     public void borrarVoto( String login,String nombreIdea);
+    public List<Voto> consultarVotos(String idea);
 }

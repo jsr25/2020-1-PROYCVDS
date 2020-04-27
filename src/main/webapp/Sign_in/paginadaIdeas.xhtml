@@ -72,7 +72,11 @@
                                     <p:commandButton  class="login100-form-btn"  title="View Idea"  style= "width: 50px; height:20px;  " actionListener="#{paginadoBean.view(idea.nombreIdea)}" >
                                     </p:commandButton>
                                 </p:column>
+                                <p:column>
+                                    <p:rating value="#{votoBean.votos}" stars="1" />
+                                </p:column>
                             </p:dataTable>
+
                         </div>
                         <div class="container-login100-form-btn">
                             <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{usuariobean.volver}" ajax="true"/>

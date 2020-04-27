@@ -16,7 +16,7 @@
     </select>
 
     <insert id="registrarComentario">
-        insert into comentario(nombreidea,comentario,loginusuario,fecha) values(#{comentario.nomberaIdea},#{comentario.comentario},#{comentario.loginusuario},#{comentario.fecha});
+        insert into comentario(nombreidea,comentario,loginusuario,fecha) values(#{comentario.nombreIdea},#{comentario.comentario},#{comentario.loginUsuario},#{comentario.fecha});
     </insert>
    
     <resultMap type='Comentario' id='ComentarioResult'>

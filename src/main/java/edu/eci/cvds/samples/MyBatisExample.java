@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import edu.eci.cvds.samples.entities.Comentario;
 import edu.eci.cvds.samples.entities.Idea;
 import edu.eci.cvds.samples.entities.PalabraClave;
 import edu.eci.cvds.samples.persistence.mybatisimpl.mappers.*;
@@ -105,8 +106,9 @@ public class MyBatisExample {
     public static void main(String args[]) throws SQLException, ParseException {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
-        IdeaMapper u=sqlss.getMapper(IdeaMapper.class);
-       System.out.println(u.consultarArea());
+        ComentarioMapper u=sqlss.getMapper(ComentarioMapper.class);
+        u.registrarComentario(new Comentario("interventoria en sistemas", "jsr25","fdsaf",new Date()));
+       //System.out.println(u.registrarComentario(new Comentario()););
 //        u.registrarPalabraClave(new PalabraClave("prueba","dasdasdadd"));
         //System.out.print(u.consultarIdea2("prueba"));
         //u.registrarIdea(new Idea("prueba","asdadsadasdasdasda",new Date(),"mariahv9","prueba","En espera"));

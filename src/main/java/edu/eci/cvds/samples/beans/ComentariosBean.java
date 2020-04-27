@@ -7,6 +7,9 @@ import edu.eci.cvds.samples.services.ServicioComentario;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +21,7 @@ import java.util.List;
  * @version 1.0
  */
 @ManagedBean(name = "comentarioBean")
-@SessionScoped
+@ViewScoped
 public class ComentariosBean extends BaseBean{
 
     @Inject
@@ -35,7 +38,8 @@ public class ComentariosBean extends BaseBean{
      */
     public void registrasComentario(String loginUsuario,String comentario,String nombreIdea){
         Date fecha=new Date();
-        Comentario comen= new Comentario(nombreIdea,loginUsuario,comentario,fecha);
+        System.out.println(nombreIdea+" "+loginUsuario+" "+comentario);
+        Comentario comen= new Comentario(nombreIdea,"jsr25",comentario,fecha);
         servcom.registrarComentario(comen);
         Buscar(nombreIdea);
 
@@ -49,6 +53,7 @@ public class ComentariosBean extends BaseBean{
     public void Buscar(String nombreIdea){
         this.nombreIdea=nombreIdea;
         comentarioList=servcom.consultarComentarios(nombreIdea);
+        System.out.println(comentarioList);
         visible=true;
 
     }
@@ -57,7 +62,13 @@ public class ComentariosBean extends BaseBean{
     super.init();
     visible=false;
     }
+    public void volver(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("paginadaIdeas.xhtml");
+        } catch (IOException e) {
 
+        }
+    }
     public String getNombreIdea() {
         return nombreIdea;
     }

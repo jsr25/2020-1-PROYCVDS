@@ -5,10 +5,11 @@
 
 <mapper namespace="edu.eci.cvds.samples.persistence.mybatisimpl.mappers.VotoMapper">
     <select id='consultarVotos' parameterType='map' resultMap='VotoResult'>
-    select a.nombreIdea,
-    a.login_Prop,
+    select a.nombreidea,
+    a.loginusuario,
 
     FROM voto as a
+    where a.nombreidea=#{idea};
 
     </select>
 
