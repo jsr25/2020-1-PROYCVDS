@@ -9,6 +9,7 @@ import edu.eci.cvds.samples.services.ServicioUsuario;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
 
@@ -18,7 +19,7 @@ import java.io.IOException;
  * @version 1.0
  */
 @ManagedBean(name = "registarbean")
-@SessionScoped
+@ViewScoped
 public class RegistroBean extends BaseBean{
     @Inject
     private ServicioUsuario servicio;

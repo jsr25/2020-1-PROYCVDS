@@ -8,6 +8,7 @@ import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 import edu.eci.cvds.samples.services.ServicioUsuario;
 import org.h2.value.ValueStringIgnoreCase;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -46,12 +47,8 @@ public class LoginBean extends BaseBean{
             }
             login=this.usuario.getLogin();
             FacesContext.getCurrentInstance().getExternalContext().redirect(val);
-        } catch (BancoDeProyectosException e) {
-
-        } catch (PersistenceException e) {
-        }
-        catch (IOException e) {
-
+        } catch (Exception e) {
+            FacesContext.getCurrentInstance().addMessage("form:User", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "User or Password invalid"));
         }
     }
 

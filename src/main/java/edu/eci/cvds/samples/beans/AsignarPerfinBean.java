@@ -28,6 +28,7 @@ public class AsignarPerfinBean extends BaseBean {
     private List<Usuario> usuariosSeleccionados;
     private Usuario usuario;
     private String role;
+    private String name;
 
 
     /**
@@ -122,4 +123,11 @@ public class AsignarPerfinBean extends BaseBean {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
