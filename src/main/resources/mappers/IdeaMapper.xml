@@ -17,7 +17,19 @@
     ON a.nombreidea = b.nombreidea
     where b.palabrasclave =#{idea};
     </select>
-
+    <select id="consultarVoto" parameterType="map" resultMap="IdeaResult2">
+    select a.nombreidea ,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado,
+    (a.nombreidea in (select nombreidea
+                            from voto as b
+							where b.loginusuario =#{login}) ) as valor
+    from idea as a
+;
+    </select>
     <select id='consultarIdeaArea' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,
     a.descripcion,
@@ -116,6 +128,16 @@
         <result property='area' column='area'/>
         <result property='fecha' column='fecha'/>
         <result property='estado' column='estado'/>
+
+    </resultMap>
+    <resultMap type='Idea' id='IdeaResult2'>
+        <id property='nombreIdea' column='nombreidea'/>
+        <result property="descripcion" column="descripcion"/>
+        <result property='loginProponente' column='login_Prop'/>
+        <result property='area' column='area'/>
+        <result property='fecha' column='fecha'/>
+        <result property='estado' column='estado'/>
+        <result property="voto" column="valor"/>
 
     </resultMap>
 

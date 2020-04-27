@@ -19,6 +19,8 @@ public interface IdeaMapper {
      */
     public List<Idea> consultarIdea(@Param("idea")String idea);
 
+    public List<Idea> consultarVoto(@Param("login")String login);
+
     /**
      * Método que registra la idea.
      * @param idea

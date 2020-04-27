@@ -26,6 +26,8 @@ public interface DAOIdea {   /**
 
     public Idea consultarIdea(String idea);
 
+    public List<Idea> consultarVoto(String login);
+
     public void registrarPalabraClave(PalabraClave palabraClave);
 
     public List<Idea> consultarIdeaArea(String area);

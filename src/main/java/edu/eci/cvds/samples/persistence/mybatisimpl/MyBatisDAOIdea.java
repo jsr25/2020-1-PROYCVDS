@@ -45,6 +45,11 @@ public class MyBatisDAOIdea implements DAOIdea {
     }
 
     @Override
+    public List<Idea> consultarVoto(String login) {
+        return pmap.consultarVoto(login);
+    }
+
+    @Override
     public void registrarPalabraClave(PalabraClave palabraClave) {
         pmap.registrarPalabraClave(palabraClave);
     }

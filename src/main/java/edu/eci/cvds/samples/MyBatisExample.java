@@ -106,9 +106,9 @@ public class MyBatisExample {
     public static void main(String args[]) throws SQLException, ParseException {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
-        ComentarioMapper u=sqlss.getMapper(ComentarioMapper.class);
-        u.registrarComentario(new Comentario("interventoria en sistemas", "jsr25","fdsaf",new Date()));
-       //System.out.println(u.registrarComentario(new Comentario()););
+        IdeaMapper u=sqlss.getMapper(IdeaMapper.class);
+        //u.registrarComentario(new Comentario("interventoria en sistemas", "jsr25","fdsaf",new Date()));
+       System.out.println(u.consultarVoto("Jimmy"));
 //        u.registrarPalabraClave(new PalabraClave("prueba","dasdasdadd"));
         //System.out.print(u.consultarIdea2("prueba"));
         //u.registrarIdea(new Idea("prueba","asdadsadasdasdasda",new Date(),"mariahv9","prueba","En espera"));

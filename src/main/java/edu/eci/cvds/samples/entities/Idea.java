@@ -15,6 +15,7 @@ public class Idea {
     private String estado;
     private Date fecha;
     private List<PalabraClave> palabraClaves;
+    private Boolean voto;
 
     /**
      *
@@ -132,6 +133,14 @@ public class Idea {
         return area;
     }
 
+    public Boolean getVoto() {
+        return voto;
+    }
+
+    public void setVoto(Boolean voto) {
+        this.voto = voto;
+    }
+
     /**
      * Método que guarda area.
      * @param area Argumentos del programa.
@@ -157,6 +166,8 @@ public class Idea {
                 ", area='" + area + '\'' +
                 ", estado='" + estado + '\'' +
                 ", fecha=" + fecha +
+                ", palabraClaves=" + palabraClaves +
+                ", voto=" + voto +
                 '}';
     }
 }
