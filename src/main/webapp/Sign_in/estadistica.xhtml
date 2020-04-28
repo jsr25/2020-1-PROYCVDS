@@ -107,6 +107,13 @@
                             </p:column>
                         </p:dataTable>
                 </div>
+                <p:commandButton type="button" value="Download" style="background:#9ccff4" />
+
+                <f:facet name="{Exporters}">
+                        <h:commandLink>
+                            <p:dataExporter type="text" target="tbl" fileName="Estadistica" exporter="#{dataExporterView.textExporter}"/>
+                        </h:commandLink>
+                </f:facet>
 
                 <div class="container-login100-form-btn">
                     <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{usuariobean.volver}" ajax="true"/>

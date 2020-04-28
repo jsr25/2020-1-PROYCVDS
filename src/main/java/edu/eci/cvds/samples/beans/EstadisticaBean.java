@@ -3,13 +3,13 @@ package edu.eci.cvds.samples.beans;
 import edu.eci.cvds.samples.entities.Area;
 import edu.eci.cvds.samples.entities.Idea;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
+import org.primefaces.component.datatable.DataTable;
+import org.primefaces.component.export.Exporter;
 import org.primefaces.model.chart.PieChartModel;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import java.io.IOException;
 import java.util.List;
 
 
@@ -19,6 +19,7 @@ public class EstadisticaBean extends BaseBean {
     private PieChartModel model;
     private List<Idea> ideas;
     private List<Area> areas;
+    private Exporter <DataTable> textExporter;
 
     @Inject
     private ServicioBancodeProyectos servicio;
@@ -58,5 +59,4 @@ public class EstadisticaBean extends BaseBean {
     public List<Idea> getIdeas() {
         return ideas;
     }
-
 }

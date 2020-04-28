@@ -68,14 +68,11 @@
     a.area,
     a.fecha,
     a.estado
+
     from idea as a
-    LEFT JOIN (select
-    			nombreidea,
-    			idearelacionada
-    			from relacion
-    			where nombreidea=#{idea}) as b
-    ON a.nombreidea = b.idearelacionada
-   where b.idearelacionada=a.nombreidea;
+    where a.nombreidea in (select b.idearelacionada
+							from relacion as b
+						    where nombreidea='interventoria en sistemas');
     </select>
 
     <select id='consultarArea' parameterType='map' resultMap='areaResult'>

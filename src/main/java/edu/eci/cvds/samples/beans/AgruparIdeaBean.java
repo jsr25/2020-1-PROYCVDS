@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,12 +21,14 @@ public class AgruparIdeaBean extends BaseBean {
     private ServicioBancodeProyectos servicio;
 
     private List<Idea> ideas;
+    private List<Idea> seleccion;
     private Idea principal;
     private Idea segunda;
 
     @PostConstruct
     public void init() {
         super.init();
+        ideas = servicio.consultarTodo();
     }
 
     public void generar(String idea){
@@ -64,5 +67,13 @@ public class AgruparIdeaBean extends BaseBean {
 
     public void setSegunda(Idea segunda) {
         this.segunda = segunda;
+    }
+
+    public List<Idea> getSeleccion() {
+        return seleccion;
+    }
+
+    public void setSeleccion(List<Idea> seleccion) {
+        this.seleccion = seleccion;
     }
 }
