@@ -23,8 +23,13 @@ public class paginadoBean extends BaseBean {
    private List<Idea> ideas;
    private Idea idea;
 
-    private void generar() {
-        ideas = servicio.consultarTodo();
+    public void generar(String login) {
+        ideas = servicio.consultarVoto(login);
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("paginadaIdeas.xhtml");
+        } catch (IOException e) {
+
+        }
     }
     public void volver() {
         ideas = null;
@@ -56,11 +61,5 @@ public class paginadoBean extends BaseBean {
 
     public void setIdeas(List<Idea> ideas) {
         this.ideas = ideas;
-    }
-
-    @PostConstruct
-    public void init() {
-        super.init();
-        generar();
     }
 }

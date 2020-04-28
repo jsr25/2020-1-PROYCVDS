@@ -1,6 +1,7 @@
 package edu.eci.cvds.samples.services;
 
 import edu.eci.cvds.samples.entities.*;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -37,6 +38,7 @@ public interface ServicioBancodeProyectos {
     public Idea consultarIdea(String idea);
 
     public List<Idea> consultarTodo();
+    public List<Idea> consultarVoto(String login);
 
     public  List<Idea>  consultarIdeaArea(String area);
 
