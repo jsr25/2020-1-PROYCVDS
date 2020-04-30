@@ -41,12 +41,13 @@
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
             <h:form style="alignment: center">
                 <div class="limiter">
-                    <div class="wrap-login100" style="width: 1000px" >
+                    <div class="wrap-login100" style="width: 1500px" >
                         <form class="login100-form validate-form" action="" >
                     <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" />
                     </span>
                         </form>
                         <div>
+                            <br></br>
                             <p:dataTable id="tbl" var="idea" value="#{paginadoBean.ideas}"
                                          paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                                          paginator="true" rows="2" style="margin-bottom:20px" sortMode="multiple" >
@@ -59,7 +60,7 @@
                                 <p:column  headerText="Description"  style="width: 200px" sortBy="#{idea.descripcion}">
                                     <h:outputText value="#{idea.descripcion}" />
                                 </p:column>
-                                <p:column headerText="Proponent" style="min-width: 150px;" sortBy="#{idea.loginProponente}" >
+                                <p:column headerText="Proponent" style="min-width: 250px;" sortBy="#{idea.loginProponente}" >
                                     <h:outputText value="#{idea.loginProponente}" />
                                 </p:column>
                                 <p:column  headerText="Area" style="min-width: 100px;" sortBy="#{idea.area}">
@@ -79,7 +80,7 @@
                                     <p:selectBooleanCheckbox value="#{idea.voto}" itemLabel="Like"/>
                                 </p:column>
                             </p:dataTable>
-
+                            <br></br>
                         </div>
                         <div class="container-login100-form-btn">
                             <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{usuariobean.volver}" ajax="true"/>
