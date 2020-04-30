@@ -60,62 +60,35 @@
                         <p:growl id="msgs" />
                         <div class="wrap-input100 validate-input">
                             <h:outputLabel value="Keyword : " style="color: white" id="keyword" for="Keyword"/>
-                            <h:inputText  class="input100" id="Keyword" value="#{registrarIDea.palabraClave.valor}" required="true" type="String"/>
+                            <h:inputText  class="input100" id="Keyword" value="#{registrarIDeaBean.palabraClave.valor}" required="true" type="String"/>
                         </div>
                         <div class="container-login100-form-btn ">
-                            <p:commandButton class="login100-form-btn"  id="btn_add" style="height: 20px; width: 400px; size: B4" value="Add"  update="Keyword msgs @parent" action="#{registrarIDea.reinit(loginbean.login)}" ><p:collector value="#{registrarIDea.palabraClave}" addTo="#{registrarIDea.palabraClaves}" unique="true"/>
+                            <p:commandButton class="login100-form-btn"  id="btn_add" style="height: 20px; width: 400px; size: B4" value="Add"  update="Keyword msgs @parent" action="#{registrarIDeaBean.reinit(loginbean.login)}" ><p:collector value="#{registrarIDeaBean.palabraClave}" addTo="#{registrarIDeaBean.palabraClaves}" unique="true"/>
                             </p:commandButton>
                         </div>
                         <br/>
-                        <p:dataTable value="#{registrarIDea.palabraClaves}" var="palabraclave" id="palabraClavesTable">
+                        <p:dataTable value="#{registrarIDeaBean.palabraClaves}" var="palabraclave" id="palabraClavesTable">
                             <p:column headerText="Keyword" style="color: white">
                                 <h:outputText value="#{palabraclave.valor} " style="color: white"/>
                             </p:column>
                         </p:dataTable>
 
 
-                    </h:form>
-                    <h:form style="color:black;">
+
                         <br/>
                         <br/>
                         <div class="container-login100-form-btn">
-                            <h:form>
-                                <p:commandButton class="login100-form-btn" value="Back" actionListener="#{proponentebean.volver}"   ajax="true"> </p:commandButton>
-                            </h:form>
-                            <h:form>
-                            <p:commandButton class="login100-form-btn" value="Create" actionListener="#{registrarIDea.registroIdea(ideaname.value,description.value,loginbean.login,loginbean.area)}" ajax="true"> </p:commandButton>
-                            </h:form>
+
+                                <p:commandButton class="login100-form-btn" value="Back" actionListener="#{proponentebean.volver}" > </p:commandButton>
+
+
+                            <p:commandButton class="login100-form-btn"  value="Create" actionListener="#{registrarIDeaBean.registroIdea(ideaname.value,description.value,loginbean.login,loginbean.area)}"> </p:commandButton>
+
                         </div>
                     </h:form>
                 </form>
             </div>
         </div>
     </div>
-    <div id="dropDownSelect1"></div>
-    <!--
-      =============================================================================================== --><script
-        src="vendor/jquery/jquery-3.2.1.min.js" type="text/javascript"
-        xml:space="preserve"></script>
-    <!-- =============================================================================================== --><script
-        src="vendor/animsition/js/animsition.min.js" type="text/javascript"
-        xml:space="preserve"></script>
-    <!-- =============================================================================================== --><script
-        src="vendor/bootstrap/js/popper.js" type="text/javascript"
-        xml:space="preserve"></script> <script
-        src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"
-        xml:space="preserve"></script>
-    <!-- =============================================================================================== --><script
-        src="vendor/select2/select2.min.js" type="text/javascript"
-        xml:space="preserve"></script>
-    <!-- =============================================================================================== --><script
-        src="vendor/daterangepicker/moment.min.js" type="text/javascript"
-        xml:space="preserve"></script> <script
-        src="vendor/daterangepicker/daterangepicker.js" type="text/javascript"
-        xml:space="preserve"></script>
-    <!-- =============================================================================================== --><script
-        src="vendor/countdowntime/countdowntime.js" type="text/javascript"
-        xml:space="preserve"></script>
-    <!-- =============================================================================================== --><script
-        src="js/main.js" type="text/javascript" xml:space="preserve"></script>
 </h:body>
 </html>

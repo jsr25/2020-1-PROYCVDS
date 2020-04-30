@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.Date;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 import edu.eci.cvds.samples.entities.Comentario;
 import edu.eci.cvds.samples.entities.Idea;
@@ -107,8 +104,9 @@ public class MyBatisExample {
         SqlSessionFactory sessionfact = getSqlSessionFactory();
         SqlSession sqlss = sessionfact.openSession();
         IdeaMapper u=sqlss.getMapper(IdeaMapper.class);
+        u.registrarIdea(new Idea("a", "a", new Date(), "mariahv9", "sistema", "En espera", new ArrayList<PalabraClave>()));
         //u.registrarComentario(new Comentario("interventoria en sistemas", "jsr25","fdsaf",new Date()));
-       System.out.println(u.consultarVoto("Jimmy"));
+       //System.out.println(u.consultarVoto("Jimmy"));
 //        u.registrarPalabraClave(new PalabraClave("prueba","dasdasdadd"));
         //System.out.print(u.consultarIdea2("prueba"));
         //u.registrarIdea(new Idea("prueba","asdadsadasdasdasda",new Date(),"mariahv9","prueba","En espera"));

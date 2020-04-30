@@ -21,7 +21,7 @@ import java.util.List;
  * @version 1.0
  */
 
-@ManagedBean(name = "registrarIDea")
+@ManagedBean(name = "registrarIDeaBean")
 @SessionScoped
 public class RegistrarIdeaBean extends BaseBean{
     @Inject
@@ -39,8 +39,12 @@ public class RegistrarIdeaBean extends BaseBean{
         Date fecha2=new Date();
         asignarIdea(nombre);
         Idea idea = new Idea(nombre,descripcion,fecha2,loginProponente,area,"En espera",palabraClaves);
-        try{servicio.registrarIDea(idea);}
-        catch (Exception e){}
+        System.out.println(idea);
+        try{servicio.registrarIDea(idea);
+        System.out.println("------");}
+        catch (Exception e){
+            System.out.println(e.getStackTrace());
+        }
     }
     private void asignarIdea(String nombreIdea){
         for(int i=0;i<palabraClaves.size();i++){

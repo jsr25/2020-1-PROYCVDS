@@ -49,4 +49,5 @@ public interface ServicioBancodeProyectos {
     public void registrarRelacion(String idea1, String idea2);
 
     public List<Idea> consultarRelacion(String idea);
+
 }

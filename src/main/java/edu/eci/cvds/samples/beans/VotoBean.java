@@ -6,6 +6,7 @@ import edu.eci.cvds.samples.services.ServicioVoto;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ValueChangeEvent;
 import java.util.List;
 
 @ManagedBean(name = "votoBean")
@@ -25,5 +26,14 @@ public class VotoBean extends BaseBean {
 
     public void setVotos(Integer votos) {
         this.votos = votos;
+    }
+    public  void consultar(String idea,String login,Boolean valor){
+        if (valor){
+            servicio.remover(idea,login);
+        }
+        else{
+            servicio.insertar(idea,login);
+        }
+        System.out.println(valor);
     }
 }

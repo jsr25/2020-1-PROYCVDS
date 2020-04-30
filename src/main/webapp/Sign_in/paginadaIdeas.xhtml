@@ -73,10 +73,10 @@
                                     </p:commandButton>
                                 </p:column>
                                 <p:column>
-                                    <p:rating value="#{votoBean.votos}" stars="1" />
+                                    <p:commandButton  class="login100-form-btn"  title="Like" style= "width: 10px; height:20px " actionListener="#{votoBean.consultar(idea.nombreIdea,loginbean.login,idea.voto)}"/>
                                 </p:column>
                                 <p:column>
-                                    <p:selectBooleanCheckbox value="#{idea.voto}" itemLabel="Like"/>
+                                    <p:selectBooleanCheckbox onchange="submit()"  value="#{idea.voto}" />
                                 </p:column>
                             </p:dataTable>
 

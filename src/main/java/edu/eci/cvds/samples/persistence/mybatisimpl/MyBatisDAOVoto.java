@@ -18,12 +18,18 @@ public class MyBatisDAOVoto implements DAOVoto {
     private VotoMapper pmap = null;
 
     @Override
-    public void borrarVoto(String login, String nombreIdea) {
-        pmap.borrarVoto(login, nombreIdea);
+    public void remover(String login, String nombreIdea) {
+        pmap.remover(login, nombreIdea);
     }
 
     @Override
     public List<Voto> consultarVotos(String idea) {
         return pmap.consultarVotos(idea);
+    }
+
+    @Override
+    public void insertar(String login, String nombreIdea) {
+        pmap.insertar(login,nombreIdea);
+
     }
 }

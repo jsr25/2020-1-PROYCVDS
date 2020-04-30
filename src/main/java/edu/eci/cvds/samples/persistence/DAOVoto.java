@@ -11,6 +11,7 @@ import java.util.List;
  * @version 1.0
  */
 public interface DAOVoto {
-    public void borrarVoto( String login,String nombreIdea);
+    public void remover( String login,String nombreIdea);
     public List<Voto> consultarVotos(String idea);
+    public void insertar( String login,String nombreIdea);
 }

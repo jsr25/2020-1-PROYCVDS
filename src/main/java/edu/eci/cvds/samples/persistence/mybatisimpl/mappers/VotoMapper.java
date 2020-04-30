@@ -11,7 +11,8 @@ import java.util.List;
  * @version 1.0
  */
 public interface VotoMapper {
-    public void borrarVoto(@Param("login") String login, @Param("idea")String nombreIdea);
+    public void insertar(@Param("login") String login, @Param("idea")String nombreIdea);
+    public void remover(@Param("login") String login, @Param("idea")String nombreIdea);
     public List<Voto> consultarVotos(@Param("idea") String idea);
 }
 

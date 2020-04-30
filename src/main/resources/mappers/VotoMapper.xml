@@ -13,11 +13,11 @@
 
     </select>
 
-    <insert id="registrarPalabraClave" parameterType='map'>
-        insert into voto(login_Prop, nombreIdea) values(#{palabra.login_Prop},#{palabra.nombreIdea});
+    <insert id="insertar" parameterType='map'>
+        insert into voto(loginusuario, nombreidea) values(#{login},#{idea});
     </insert>
 
-    <delete id="borrarVoto">
+    <delete id="remover">
         delete from voto where login_Prop=#{login} and nombreIdea=#{idea};
     </delete>
 
