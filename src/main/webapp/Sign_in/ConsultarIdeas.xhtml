@@ -46,6 +46,7 @@
     <form class="login100-form validate-form"   action="">
     <span class="login100-form-logo"> <img src="images/icons/logo.png" width="80" height="70" alt="" /></span>
     <br/>
+        <br></br>
     <h:form id="form">
         <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
         <p:inputText class="login100-form" id="Busqueda" style= "width: 590px; height:30px "  required="true" type="String" binding="#{usuario}"></p:inputText>
@@ -53,12 +54,13 @@
         <br/>
         <p:commandButton  class="login100-form-btn" style= "width: 590px; height:30px "   value="Search" actionListener="#{infoIdeaBean.consultar(usuario.value)}" ajax="true"> </p:commandButton>
     </h:form>
+        <br></br>
     <h:form>
         <p:dataTable id="basicDT"  var="idea" value="#{infoIdeaBean.ideas}" >
             <p:column  headerText="Descripción"  style="min-width: 200px;">
                 <h:outputText value="#{idea.descripcion}" />
             </p:column>
-            <p:column headerText="LoginProponente" style="min-width: 150px;" >
+            <p:column headerText="LoginProponente" style="min-width: 250px;" >
                 <h:outputText value="#{idea.loginProponente}" />
             </p:column>
             <p:column  headerText="Area" style="min-width: 100px;">
@@ -69,6 +71,7 @@
             </p:column>
         </p:dataTable>
     </h:form>
+        <br></br>
         <h:form>
         <div class="container-login100-form-btn ">
             <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{infoIdeaBean.volver}" ajax="true"/>
