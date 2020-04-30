@@ -50,6 +50,7 @@ public class RegistroBean extends BaseBean{
     }
     public void reinicio (){
         try {
+
             FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
         } catch (IOException e) {
 

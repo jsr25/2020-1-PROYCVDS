@@ -11,6 +11,8 @@ import edu.eci.cvds.samples.services.ServicioUsuario;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,14 +40,14 @@ public class RegistrarIdeaBean extends BaseBean{
     public void registroIdea(String nombre,String descripcion, String loginProponente, String area) {
         Date fecha2=new Date();
         asignarIdea(nombre);
-        Idea idea = new Idea(nombre,descripcion,fecha2,loginProponente,area,"En espera",palabraClaves);
-        System.out.println(idea);
+        Idea idea = new Idea(nombre,descripcion,fecha2,loginProponente,area,"En espera", palabraClaves);
         try{servicio.registrarIDea(idea);
-        System.out.println("------");}
+            proponente();}
         catch (Exception e){
-            System.out.println(e.getStackTrace());
+
         }
     }
+
     private void asignarIdea(String nombreIdea){
         for(int i=0;i<palabraClaves.size();i++){
             palabraClaves.get(i).setNombreIdea(nombreIdea);
@@ -58,7 +60,17 @@ public class RegistrarIdeaBean extends BaseBean{
         palabraClave=new PalabraClave();
     }
 
+    public void proponente(){
+        try {
+            super.init();
+            palabraClaves=new ArrayList<PalabraClave>();
+            palabraClave=new PalabraClave();
+            FacesContext.getCurrentInstance().getExternalContext().redirect("proponente.xhtml");
 
+        } catch (IOException e) {
+
+        }
+    }
 
     public PalabraClave getPalabraClave() {
         return palabraClave;

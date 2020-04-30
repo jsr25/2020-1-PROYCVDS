@@ -48,7 +48,6 @@
                     <div class="wrap-input100 validate-input">
                         <h:outputLabel style="color:white;" for="Ideaname" value="Idea name"/>
                         <h:inputText class="input100" id="Ideaname" required="true" type="String" binding="#{ideaname}" />
-
                     </div>
                     <div>
                         <h:outputLabel style="color:white;" for="Description" value="Description"/>
@@ -60,10 +59,11 @@
                         <p:growl id="msgs" />
                         <div class="wrap-input100 validate-input">
                             <h:outputLabel value="Keyword : " style="color: white" id="keyword" for="Keyword"/>
-                            <h:inputText  class="input100" id="Keyword" value="#{registrarIDeaBean.palabraClave.valor}" required="true" type="String"/>
+                            <h:inputText  class="input100" id="Keyword" value="#{registrarIDeaBean.palabraClave.valor}" type="String"/>
                         </div>
                         <div class="container-login100-form-btn ">
-                            <p:commandButton class="login100-form-btn"  id="btn_add" style="height: 20px; width: 400px; size: B4" value="Add"  update="Keyword msgs @parent" action="#{registrarIDeaBean.reinit(loginbean.login)}" ><p:collector value="#{registrarIDeaBean.palabraClave}" addTo="#{registrarIDeaBean.palabraClaves}" unique="true"/>
+                            <p:commandButton class="login100-form-btn"  id="btn_add" style="height: 20px; width: 400px; size: B4" value="Add"  update="Keyword msgs @parent" action="#{registrarIDeaBean.reinit(loginbean.login)}" >
+                                <p:collector value="#{registrarIDeaBean.palabraClave}" addTo="#{registrarIDeaBean.palabraClaves}" unique="true"/>
                             </p:commandButton>
                         </div>
                         <br/>
@@ -72,17 +72,15 @@
                                 <h:outputText value="#{palabraclave.valor} " style="color: white"/>
                             </p:column>
                         </p:dataTable>
-
-
-
                         <br/>
                         <br/>
                         <div class="container-login100-form-btn">
+                            <h:form>
+                            <p:commandButton class="login100-form-btn" value="Back" actionListener="#{proponentebean.proponente}" > </p:commandButton>
 
-                                <p:commandButton class="login100-form-btn" value="Back" actionListener="#{proponentebean.volver}" > </p:commandButton>
+                            <p:commandButton class="login100-form-btn"  value="Create" actionListener="#{registrarIDeaBean.registroIdea(ideaname.value,description.value,loginbean.login,loginbean.area)}" ajax="true"></p:commandButton>
 
-
-                            <p:commandButton class="login100-form-btn"  value="Create" actionListener="#{registrarIDeaBean.registroIdea(ideaname.value,description.value,loginbean.login,loginbean.area)}"> </p:commandButton>
+                    </h:form>
 
                         </div>
                     </h:form>
