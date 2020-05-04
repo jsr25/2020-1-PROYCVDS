@@ -2,6 +2,8 @@ package edu.eci.cvds.samples.guice;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import edu.eci.cvds.samples.Segurity.LoginSegurity;
+import edu.eci.cvds.samples.Segurity.Shiro;
 import edu.eci.cvds.samples.persistence.*;
 import edu.eci.cvds.samples.persistence.mybatisimpl.*;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
@@ -57,6 +59,9 @@ public class GuiceContextListener implements ServletContextListener {
                 bind(ServicioUsuario.class).to(ServicioUsuarioimpl.class);
                 bind(ServicioComentario.class).to(ServicioComentarioImpl.class);
                 bind(ServicioVoto.class).to(ServicioVotoImpl.class);
+
+
+                bind(LoginSegurity.class).to(Shiro.class);
             }
         });
         servletContextEvent.getServletContext().setAttribute(Injector.class.getName(), injector);

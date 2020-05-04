@@ -1,6 +1,7 @@
 package edu.eci.cvds.samples.beans;
 
 import com.google.inject.Inject;
+import edu.eci.cvds.samples.Segurity.LoginSegurity;
 import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.samples.persistence.PersistenceException;
 import edu.eci.cvds.samples.services.BancoDeProyectosException;
@@ -14,6 +15,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
 
+
 /**
  * Clase LoginBean de la aplicación.
  * @author Juan Ramos, Mateo Quintero, Brayan Jimenez, Maria Hernandez.
@@ -25,83 +27,66 @@ import java.io.IOException;
 public class LoginBean extends BaseBean{
     @Inject
     private ServicioUsuario servicio;
-    private Usuario usuario;
-    private String val="login.xhtml";
-    private String login;
-    private String area;
+    @Inject
+    private LoginSegurity loginSegurity;
+    private String usuario;
+    private String password;
+    private Boolean remenber;
 
 
-    /**
-     * Método que revisa usuario con contrasena correcta.
-     * @param password Argumentos del programa.
-     * @param usuario Argumentos del programa.
-     * @throws IOException lanza excepcion si no es correcto algun dato ingresado.
-     */
-    public void datos(String usuario, String password)  {
-        try {
+    public Boolean getRemenber() {
+        return remenber;
+    }
 
-            this.usuario=servicio.consultarUsuario(usuario);
-            this.area=this.usuario.getArea();
-            if (password.equals(this.usuario.getPassword())) {
-                comprobacion(password);
-            }
-            login=this.usuario.getLogin();
-            FacesContext.getCurrentInstance().getExternalContext().redirect(val);
-        } catch (Exception e) {
-            FacesContext.getCurrentInstance().addMessage("form:User", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error!", "User or Password invalid"));
+    public void setRemenber(Boolean remenber) {
+        this.remenber = remenber;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public void login() throws IOException {
+        if(!loginSegurity.isLogged()) {
+            loginSegurity.login(usuario, password, false);
+            pantallaInicial();
+        }
+        else{
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            facesContext.getExternalContext().redirect("../login.xhtml");
         }
     }
 
-   public void comprobacion(String password){
-        if(usuario.getRole().equals("Administrador")){
-            val="administrador.xhtml";
-        }
-        else if(usuario.getRole().equals("Proponente")){
-            val="proponente.xhtml";
-        }
-        else if(usuario.getRole().equals("PersonalPMO")){
-            val="personal.xhtml";
-        }
-        else if(usuario.getRole().equals("Usuario")){
-            val="usuario.xhtml";
-        }
-   }
-    public void volverLogin(){
-        usuario=null;
-        val="login.xhtml";
-        login=null;
-        try {
-            FacesContext.getCurrentInstance().getExternalContext().redirect(val);
-        } catch (IOException e) {
-
-        }
-
-    }
-    public void reinicio(){
-        usuario=null;
-        val="index.xhtml";
-        login=null;
-        try {
-            FacesContext.getCurrentInstance().getExternalContext().redirect(val);
-        } catch (IOException e) {
-
-        }
-
+    public void salir() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("../login.xhtml");
+        loginSegurity.salir();
     }
 
-    public String getLogin() {
-        return login;
+    public void pantallaInicial() throws IOException {
+        if(loginSegurity.proponente()){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("proponente/proponente.xhtml");
+        }
+        if(loginSegurity.administrador()){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("admin/administrador.xhtml");
+        }
+        if(loginSegurity.usuario()){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("usuario/usuario.xhtml");
+        }
+        if(loginSegurity.pmo()){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("PMO/personal.xhtml");
+        }
     }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getArea() {
-        return area;
-    }
-
-    public void setArea(String area) {
-        this.area = area;
-    }
 }

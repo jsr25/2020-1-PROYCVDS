@@ -46,21 +46,21 @@
                     src="images/icons/logo.png" width="80" height="70" alt="" /> </span>
                 <div class="wrap-input100 validate-input">
                     <h:outputLabel style="color:white;" for="User" value="Username"/>
-                    <h:inputText class="input100" id="User"  required="true" type="String" binding="#{usuario}" />
+                    <h:inputText class="input100" id="User"  required="true" type="String" value="#{loginbean.usuario}" />
                 </div>
                 <div class="wrap-input100 validate-input">
                     <h:outputLabel style="color:white;" for="Password" value="Pasword"/>
-                    <h:inputSecret class="input100" id="Password"  required="true" type="String" binding="#{password}" />
+                    <h:inputSecret class="input100" id="Password"  required="true" type="String" value="#{loginbean.password}" />
                 </div>
 
 
             <br/>
                 <div class="container-login100-form-btn">
                     <h:form>
-                        <p:commandButton class="login100-form-btn" value="Login" actionListener="#{loginbean.datos(usuario.value,password.value)}" ajax="true"> </p:commandButton>
+                        <p:commandButton class="login100-form-btn" value="Login" actionListener="#{loginbean.login}" ajax="true"> </p:commandButton>
                     </h:form>
                     <h:form>
-                        <p:commandButton class="login100-form-btn" value="Cancel" actionListener="#{loginbean.reinicio}" ajax="true"> </p:commandButton>
+                        <p:commandButton class="login100-form-btn" value="Cancel" actionListener="#{loginbean.salir}" ajax="true"> </p:commandButton>
                     </h:form>
                 </div>
             </form>
