@@ -63,6 +63,17 @@
     where (a.nombreidea=#{idea})=false;
     </select>
 
+    <select id='consultarIdeasProponente' parameterType='map' resultMap='IdeaResult'>
+    select a.nombreidea,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado
+    FROM idea as a
+    where (a.login_Prop==#{proponente})
+    </select>
+
     <select id='consultarTodo' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,
     a.descripcion,

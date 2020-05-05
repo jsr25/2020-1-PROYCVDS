@@ -50,4 +50,7 @@ public interface ServicioBancodeProyectos {
 
     public List<Idea> consultarRelacion(String idea);
 
+    public List<Idea> consultarIdeasProponente(String proponente);
+
+
 }

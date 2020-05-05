@@ -72,4 +72,9 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
         return daoIdea.consultarRelacion(idea);
     }
 
+    @Override
+    public List<Idea> consultarIdeasProponente(String proponente) {
+        return  daoIdea.consultarIdeasProponente(proponente);
+    }
+
 }

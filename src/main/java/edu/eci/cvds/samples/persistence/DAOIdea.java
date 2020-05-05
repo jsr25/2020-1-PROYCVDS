@@ -41,4 +41,6 @@ public interface DAOIdea {   /**
     public void registrarRelacion(String idea1,String idea2);
 
     public List<Idea> consultarRelacion(String idea);
+
+    public List<Idea> consultarIdeasProponente(String proponente);
 }

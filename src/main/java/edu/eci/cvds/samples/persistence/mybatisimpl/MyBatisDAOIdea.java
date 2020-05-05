@@ -85,6 +85,9 @@ public class MyBatisDAOIdea implements DAOIdea {
         return pmap.consultarRelacion(idea);
     }
 
+    @Override
+    public List<Idea> consultarIdeasProponente(String proponente) { return pmap.consultarIdeaProponente(proponente);}
+
     /**
      * Método que consulta informacion de la idea.
      * @param idea Argumentos del programa.
