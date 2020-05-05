@@ -30,6 +30,22 @@
     from idea as a
 ;
     </select>
+
+    <select id="consultarPalabrasClave" parameterType="map" resultMap="palabraResult">
+    select a.nombreidea ,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado,
+    from palabrasclave as a
+    where nombreidea = #{idea}
+;
+    </select>
+
+
+
+
     <select id='consultarIdeaArea' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,
     a.descripcion,
@@ -40,6 +56,19 @@
     FROM idea as a
     where a.area=#{area};
     </select>
+
+    <select id='consultarIdeaEnEspera' parameterType='map' resultMap='IdeaResult'>
+    select a.nombreidea,
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+    a.estado
+    FROM idea as a
+    where a.login_Prop=#{login} and a.estado='en espera de revisión';
+    </select>
+
+
 
     <select id='consultarIdea2' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,
@@ -117,6 +146,13 @@
         set estado= #{estado}
         where #{idea.descripcion}=descripcion and #{idea.loginProponente}=login_Prop
     </update>
+
+    <update id="actualizarIdea" parameterType="map" >
+        update idea
+        set descripcion = #{idea.descripcion}
+        where #{idea.nombreIdea} = nombreidea
+    </update>
+
 
     <insert id="registrarIdea" parameterType='map'>
         insert into idea(nombreidea,descripcion,fecha,login_Prop,area,estado)  values (#{idea.nombreIdea},#{idea.descripcion}, #{idea.fecha},#{idea.login_Prop},#{idea.area}, #{idea.estado});

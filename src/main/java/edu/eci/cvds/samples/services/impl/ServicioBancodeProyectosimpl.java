@@ -77,4 +77,19 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
         return  daoIdea.consultarIdeasProponente(proponente);
     }
 
+    @Override
+    public List<Idea> consultarIdeaEnEspera(String login) {
+        return daoIdea.consultarIdeaEnEspera(login);
+    }
+
+    @Override
+    public List<PalabraClave> consultarPalabrasClave(String idea) {
+        return daoIdea.consultarPalabrasClave(idea);
+    }
+
+    @Override
+    public void actualizarIdea(Idea idea) {
+        daoIdea.actualizarIdea(idea);
+    }
+
 }

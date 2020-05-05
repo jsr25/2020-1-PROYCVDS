@@ -88,6 +88,21 @@ public class MyBatisDAOIdea implements DAOIdea {
     @Override
     public List<Idea> consultarIdeasProponente(String proponente) { return pmap.consultarIdeaProponente(proponente);}
 
+    @Override
+    public List<Idea> consultarIdeaEnEspera(String login) {
+        return pmap.consultarIdeaEnEspera(login);
+    }
+
+    @Override
+    public List<PalabraClave> consultarPalabrasClave(String idea) {
+        return pmap.consultarPalabrasClave(idea);
+    }
+
+    @Override
+    public void actualizarIdea(Idea idea) {
+        pmap.actualizarIdea(idea);
+    }
+
     /**
      * Método que consulta informacion de la idea.
      * @param idea Argumentos del programa.

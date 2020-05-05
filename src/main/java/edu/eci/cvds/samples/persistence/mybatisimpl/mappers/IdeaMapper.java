@@ -51,4 +51,11 @@ public interface IdeaMapper {
     public List<Idea> consultarRelacion(@Param("idea") String idea);
 
     public List<Idea> consultarIdeaProponente(String proponente);
+
+    public List<Idea> consultarIdeaEnEspera(@Param("login") String login);
+
+    public List<PalabraClave> consultarPalabrasClave(@Param("idea") String idea);
+
+    public void actualizarIdea(@Param("idea") Idea idea);
+
 }
