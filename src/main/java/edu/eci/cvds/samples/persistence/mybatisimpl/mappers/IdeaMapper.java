@@ -58,4 +58,6 @@ public interface IdeaMapper {
 
     public void actualizarIdea(@Param("idea") Idea idea);
 
+    public List<Idea> consultarIdeaPorEstado(@Param("estado")  String estado);
+
 }

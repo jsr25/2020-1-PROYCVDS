@@ -68,7 +68,13 @@
     where a.login_Prop=#{login} and a.estado='en espera de revisión';
     </select>
 
-
+    <select id='consultarIdeaPorEstado' parameterType='map' resultMap='IdeaResult'>
+    select a.nombreidea,
+		   a.estado
+         from
+         idea as a
+         where a.estado = #{estado}
+    </select>
 
     <select id='consultarIdea2' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,

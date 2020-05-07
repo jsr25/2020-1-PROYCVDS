@@ -44,6 +44,8 @@ public interface DAOIdea {   /**
 
     public List<Idea> consultarIdeasProponente(String proponente);
 
+    public List<Idea> consultarIdeaPorEstado(String estado);
+
     public List<Idea> consultarIdeaEnEspera(String login);
 
     public List<PalabraClave> consultarPalabrasClave(String idea);

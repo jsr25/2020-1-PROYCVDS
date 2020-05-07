@@ -92,4 +92,8 @@ public class ServicioBancodeProyectosimpl implements ServicioBancodeProyectos {
         daoIdea.actualizarIdea(idea);
     }
 
+    @Override
+    public List<Idea> consultarIdeaPorEstado(String estado) {
+        return daoIdea.consultarIdeaPorEstado(estado);
+    }
 }

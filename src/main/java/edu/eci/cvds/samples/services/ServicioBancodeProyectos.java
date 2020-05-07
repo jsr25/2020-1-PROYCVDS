@@ -55,6 +55,7 @@ public interface ServicioBancodeProyectos {
     public List<Idea> consultarIdeaEnEspera(String login);
     public List<PalabraClave> consultarPalabrasClave(String idea);
     public void actualizarIdea(Idea idea);
+    public List<Idea> consultarIdeaPorEstado(String estado);
 
 
 }
