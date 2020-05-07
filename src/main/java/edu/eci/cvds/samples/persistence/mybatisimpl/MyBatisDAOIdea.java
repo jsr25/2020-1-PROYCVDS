@@ -89,6 +89,10 @@ public class MyBatisDAOIdea implements DAOIdea {
     public List<Idea> consultarIdeasProponente(String proponente) { return pmap.consultarIdeaProponente(proponente);}
 
     @Override
+    public List<Idea> consultarIdeaPorEstado(String estado) {
+        return pmap.consultarIdeaPorEstado(estado);
+    }
+    @Override
     public List<Idea> consultarIdeaEnEspera(String login) {
         return pmap.consultarIdeaEnEspera(login);
     }

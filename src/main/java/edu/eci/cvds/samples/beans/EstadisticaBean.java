@@ -9,7 +9,9 @@ import org.primefaces.model.chart.PieChartModel;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import java.io.IOException;
 import java.util.List;
 
 
@@ -58,5 +60,17 @@ public class EstadisticaBean extends BaseBean {
 
     public List<Idea> getIdeas() {
         return ideas;
+    }
+
+    public void consultarIdeaPorEstado () {
+         List<Idea> ideas1;
+         List<Idea> ideas2;
+         List<Idea> ideas3;
+        ideas1 = servicio.consultarIdeaPorEstado("finalizado");
+        ideas2 = servicio.consultarIdeaPorEstado("en espera de revisión");
+        ideas3 = servicio.consultarIdeaPorEstado("En proceso");
+        model.set("finalizado",ideas1.size());
+        model.set("en espera de revision",ideas2.size());
+        model.set("En proceso",ideas3.size());
     }
 }
