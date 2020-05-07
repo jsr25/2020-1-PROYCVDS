@@ -38,13 +38,17 @@ public class paginadoBean extends BaseBean {
         } catch (IOException e) {
         }
     }
-    public void view(String idea) {
+    public void view(String idea,Boolean voto) {
         this.idea=servicio.consultarIdea(idea);
         System.out.println(this.idea);
+        this.idea.setVoto(voto);
         try {
             FacesContext.getCurrentInstance().getExternalContext().redirect("viewIdea.xhtml");
         } catch (IOException e) {
         }
+    }
+    public void prueba() {
+        System.out.println("Entre");
     }
 
     public Idea getIdea() {

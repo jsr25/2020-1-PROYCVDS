@@ -18,7 +18,7 @@
     </insert>
 
     <delete id="remover">
-        delete from voto where login_Prop=#{login} and nombreIdea=#{idea};
+        delete from voto where loginusuario=#{login} and nombreIdea=#{idea};
     </delete>
 
     <resultMap type='Voto' id='VotoResult'>

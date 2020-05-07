@@ -29,10 +29,12 @@ public class VotoBean extends BaseBean {
     }
     public  void consultar(String idea,String login,Boolean valor){
         if (valor){
-            servicio.remover(idea,login);
+            servicio.remover(login,idea);
+            System.out.println("remover");
         }
         else{
-            servicio.insertar(idea,login);
+            servicio.insertar(login,idea);
+            System.out.println("insertar");
         }
         System.out.println(valor);
     }
