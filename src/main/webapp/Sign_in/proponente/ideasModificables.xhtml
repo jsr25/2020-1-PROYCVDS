@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--tabla idea que cumplan con el criterio de espera de revision-->
+<!--y un boton que me lleve a modificar-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<head>
+    <title>
+        Sign in
+    </title>
+    <meta content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- =============================================================================================== -->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/icons/icon.png" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../css/util.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <!-- =============================================================================================== -->
+</head>
+
+<h:body>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('../images/bg-01.jpg');">
+            <div class="wrap-login100" style="width: 800px">
+                <form class="login100-form validate-form" action="">
+                    <span class="login100-form-logo"> <img src="../images/icons/logo.png" width="80" height="70" alt="" />
+                    </span>
+                    <br/>
+                    <div class="wrap-input100 validate-input">
+                        <center>
+                        <h3>MODIFY IDEAS</h3>
+                        </center>
+                        <p:dataTable id="tbl" var="idea" value="#{modificarIdeaBean.ideaList}"
+                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                                     paginator="true" rows="2" style="margin-bottom:20px" sortMode="multiple" >
+                            <f:facet name="header">
+                                Modify Ideas
+                            </f:facet>
+                            <p:column  headerText="Name"  style="min-width: 100px;" sortBy="#{idea.nombreIdea}">
+                                <h:outputText value="#{idea.nombreIdea}" />
+                            </p:column>
+                            <p:column  headerText="Description"  style="width: 150px" sortBy="#{idea.descripcion}">
+                                <h:outputText value="#{idea.descripcion}" />
+                            </p:column>
+                            <p:column headerText="Proponent" style="min-width: 100px;" sortBy="#{idea.loginProponente}" >
+                                <h:outputText value="#{idea.loginProponente}" />
+                            </p:column>
+                            <p:column  headerText="Area" style="min-width: 100px;" sortBy="#{idea.area}">
+                                <h:outputText value="#{idea.area}" />
+                            </p:column>
+                            <p:column  headerText="State" style="min-width: 150px;" sortBy="#{idea.estado}">
+                                <h:outputText value="#{idea.estado}" />
+                            </p:column>
+                            <p:column style="width:150px;text-align: center">
+                                <p:commandButton  class="login100-form-btn"  title="Modify Idea"  style= "width: 50px; height:20px;  " actionListener="#{modificarIdeaBean.modificar(idea.nombreIdea)}" ajax="true">
+                                </p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>

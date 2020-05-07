@@ -30,8 +30,8 @@ public class ModificarIdeaBean extends BaseBean{
 
     }
 
-    public void  modificar(Idea idea) throws IOException {
-        this.idea=idea;
+    public void  modificar(String NombreIdea) throws IOException {
+        this.idea=servicio.consultarIdea(NombreIdea);
         editable=idea;
         palabraClaves = servicio.consultarPalabrasClave(idea.getNombreIdea());
         FacesContext.getCurrentInstance().getExternalContext().redirect("modificaciones.xhtml");
