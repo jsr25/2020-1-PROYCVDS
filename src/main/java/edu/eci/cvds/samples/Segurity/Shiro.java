@@ -10,9 +10,10 @@ import org.apache.shiro.subject.Subject;
 
 
 public class Shiro  implements LoginSegurity{
+
     @Override
     public void login(String usuario, String password, Boolean record) {
-                Subject subject = SecurityUtils.getSubject();
+            Subject  subject = SecurityUtils.getSubject();
             UsernamePasswordToken token = new UsernamePasswordToken(usuario, password, record);
             subject.getSession().setAttribute("usuario", usuario);
             subject.login(token);
@@ -47,6 +48,6 @@ public class Shiro  implements LoginSegurity{
 
     @Override
     public void salir() {
-        SecurityUtils.getSubject().isAuthenticated();
+        SecurityUtils.getSubject().logout();
     }
 }

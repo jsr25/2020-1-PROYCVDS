@@ -49,7 +49,10 @@
                     <br/>
                     <div class="wrap-input100 validate-input">
                         <h:form>
-                            <h:outputLabel style="color:white;"  value="Bienvenido #{loginbean.login}"/>
+                            <h:outputLabel style="color:white;"  value="Bienvenido #{loginbean.usuario}"/>
+                        </h:form>
+                        <h:form>
+                            <p:commandButton class="login100-form-btn" value="Back" actionListener="#{loginbean.salir}"   ajax="true"> </p:commandButton>
                         </h:form>
                     </div>
 

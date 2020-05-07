@@ -70,8 +70,9 @@ public class LoginBean extends BaseBean{
     }
 
     public void salir() throws IOException {
-        FacesContext.getCurrentInstance().getExternalContext().redirect("../login.xhtml");
+        //
         loginSegurity.salir();
+        FacesContext.getCurrentInstance().getExternalContext().redirect("../login.xhtml");
     }
 
     public void pantallaInicial() throws IOException {
