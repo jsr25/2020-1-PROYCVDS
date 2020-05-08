@@ -171,6 +171,7 @@
     <insert id="registrarRelacion">
         insert into relacion(nombreidea,idearelacionada) values(#{nombreIdea1},#{nombreIdea2})
     </insert>
+
     <resultMap type='Idea' id='IdeaResult'>
         <id property='nombreIdea' column='nombreidea'/>
         <result property="descripcion" column="descripcion"/>
@@ -188,7 +189,6 @@
         <result property='fecha' column='fecha'/>
         <result property='estado' column='estado'/>
         <result property="voto" column="valor"/>
-
     </resultMap>
 
     <resultMap type='PalabraClave' id='palabraResult'>

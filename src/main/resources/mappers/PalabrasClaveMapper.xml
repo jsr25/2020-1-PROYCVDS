@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.eci.cvds.samples.persistence.mybatisimpl.mappers.PalabrasClaveMapper">
+
+
+
+
+
+    <insert id="registrarPalabraClave" parameterType='map'>
+        insert into palabrasclave(nombreidea,palabrasclave) values(#{palabra.nombreIdea},#{palabra.valor})
+    </insert>
+
+
+    <select id='consultarpalabe' parameterType='map' resultMap='palabraResult'>
+    select a.nombreidea,
+    a.palabrasclave
+    FROM palabrasclave as a;
+    </select>
+
+    <delete id="borrarPalabraClave">
+        delete
+        from palabrasclave as a
+        where a.nombreidea = #{idea} and a.paalabrasclave = #{palabra};
+    </delete>
+
+
+    <resultMap type='PalabraClave' id='palabraResult'>
+        <id property='nombreIdea' column='nombreidea'/>
+        <result property="valor" column="palabrasclave"/>
+    </resultMap>
+
+</mapper>
