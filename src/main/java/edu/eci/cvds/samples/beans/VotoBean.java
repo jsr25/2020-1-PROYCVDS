@@ -47,14 +47,13 @@ public class VotoBean extends BaseBean {
         if (voto){
             servicio.remover(login,idea.getNombreIdea());
             System.out.println("remover");
-            idea.setVoto(!voto);
+            this.idea.setVoto(false);
         }
         else{
             servicio.insertar(login,idea.getNombreIdea());
             System.out.println("insertar");
-            idea.setVoto(!voto);
+            this.idea.setVoto(true);
         }
-        System.out.println(valor);
     }
 
     public Idea getIdea() {

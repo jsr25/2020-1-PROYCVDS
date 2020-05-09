@@ -100,8 +100,8 @@
                             <p:commandButton  class="login100-form-btn"  title="Add Comment"  style= "width: 50px; height:20px;
                             " actionListener="#{comentarioBean.registrasComentario(loginbean.usuario,comment.value,votoBean.idea.nombreIdea)}" ajax="true" update="tbl">
                             </p:commandButton>
-                            <p:commandButton  class="login100-form-btn"  title="Like" style= "width: 10px; height:20px " actionListener="#{votoBean.consultar(loginbean.usuario)}"/>
-                            <p:selectBooleanCheckbox onchange="submit()"  value="#{votoBean.idea.voto}" />
+                            <p:commandButton  class="login100-form-btn" update="like"   title="Like" style= "width: 10px; height:20px " actionListener="#{votoBean.consultar(loginbean.usuario)}"/>
+                            <p:selectBooleanCheckbox id="like"  value="#{votoBean.idea.voto}" />
                             </p:panelGrid>
                         </div>
                         </center>
