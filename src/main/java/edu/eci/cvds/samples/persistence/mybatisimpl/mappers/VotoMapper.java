@@ -14,6 +14,7 @@ public interface VotoMapper {
     public void insertar(@Param("login") String login, @Param("idea")String nombreIdea);
     public void remover(@Param("login") String login, @Param("idea")String nombreIdea);
     public List<Voto> consultarVotos(@Param("idea") String idea);
+    public Voto consultarVoto(@Param("idea") String idea, @Param("login") String login);
 }
 
 

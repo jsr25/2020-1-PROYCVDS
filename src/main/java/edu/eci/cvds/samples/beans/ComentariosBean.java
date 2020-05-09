@@ -39,7 +39,7 @@ public class ComentariosBean extends BaseBean{
     public void registrasComentario(String loginUsuario,String comentario,String nombreIdea){
         Date fecha=new Date();
         System.out.println(nombreIdea+" "+loginUsuario+" "+comentario);
-        Comentario comen= new Comentario(nombreIdea,"jsr25",comentario,fecha);
+        Comentario comen= new Comentario(nombreIdea,loginUsuario,comentario,fecha);
         servcom.registrarComentario(comen);
         Buscar(nombreIdea);
 

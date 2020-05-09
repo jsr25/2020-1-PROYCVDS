@@ -17,6 +17,7 @@
     ON a.nombreidea = b.nombreidea
     where b.palabrasclave =#{idea};
     </select>
+
     <select id="consultarVoto" parameterType="map" resultMap="IdeaResult2">
     select a.nombreidea ,
     a.descripcion,
@@ -70,10 +71,13 @@
 
     <select id='consultarIdeaPorEstado' parameterType='map' resultMap='IdeaResult'>
     select a.nombreidea,
-		   a.estado
-         from
-         idea as a
-         where a.estado = #{estado}
+    a.descripcion,
+    a.login_Prop,
+    a.area,
+    a.fecha,
+	a.estado
+    from  idea as a
+    where a.estado = #{estado}
     </select>
 
     <select id='consultarIdea2' parameterType='map' resultMap='IdeaResult'>

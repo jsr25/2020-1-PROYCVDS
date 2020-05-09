@@ -47,10 +47,18 @@
                     </span>
                         </form>
                         <div>
+                            <h:selectOneMenu class="input100" id="console" value="#{consultarPorEstado.estado}" style="width:590px;color:black; ">
+                                <f:selectItem  itemValue="Select type state" />
+                                <f:selectItem itemLabel="en espera de revisión" itemValue="en espera de revisión" style="color:black;"   />
+                                <f:selectItem itemLabel="En proceso" itemValue="En proceso" style="color:black;" />
+                                <f:selectItem itemLabel="Finalizado" itemValue="Finalizado" style="color:black;" />
+                            </h:selectOneMenu>
+                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Show"  actionListener="#{consultarPorEstado.mostrar}"  update="table"/>
                             <br></br>
-                            <p:dataTable id="tbl" var="idea" value="#{paginadoBean.ideas}"
-                                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
-                                         paginator="true" rows="2" style="margin-bottom:20px" sortMode="multiple" >
+                            <h:form id="table">
+                            <p:dataTable id="tbl" var="idea" value="#{consultarPorEstado.ideaList}"
+                                         paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
+                                         paginator="true" rows="3" style="margin-bottom:20px" sortMode="multiple">
                                 <f:facet name="header">
                                     Table Ideas
                                 </f:facet>
@@ -69,14 +77,8 @@
                                 <p:column  headerText="State" style="min-width: 100px;" sortBy="#{idea.estado}">
                                     <h:outputText value="#{idea.estado}" />
                                 </p:column>
-                                <p:column style="width:150px;text-align: center">
-                                    <p:commandButton  class="login100-form-btn"  title="View Idea"  style= "width: 50px; height:20px;  " actionListener="#{votoBean.generar(idea)}" >
-                                    </p:commandButton>
-                                </p:column>
-                                <p:column>
-                                    <p:selectBooleanCheckbox   value="#{idea.voto}" />
-                                </p:column>
                             </p:dataTable>
+                            </h:form>
                             <br></br>
                         </div>
                         <div class="container-login100-form-btn">

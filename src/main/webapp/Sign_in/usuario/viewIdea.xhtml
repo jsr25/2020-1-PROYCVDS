@@ -49,49 +49,47 @@
                         <center>
                         <p:panelGrid columns="4" columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4" >
                             <p:outputLabel for="text1" value="Name Idea" />
-                            <p:outputLabel id="text1" value="#{paginadoBean.idea.nombreIdea}" />
+                            <p:outputLabel id="text1" value="#{votoBean.idea.nombreIdea}" />
 
                             <p:outputLabel for="text2" value="Description" />
-                            <p:outputLabel id="text2" value="#{paginadoBean.idea.descripcion}"/>
+                            <p:outputLabel id="text2" value="#{votoBean.idea.descripcion}"/>
 
                             <p:outputLabel for="date" value="Date" />
-                            <p:outputLabel id="date" value="#{paginadoBean.idea.fecha}"/>
+                            <p:outputLabel id="date" value="#{votoBean.idea.fecha}"/>
 
                             <p:outputLabel for="checkbox" value="Area" />
-                            <p:outputLabel id="checkbox" value="#{paginadoBean.idea.area}"/>
+                            <p:outputLabel id="checkbox" value="#{votoBean.idea.area}"/>
 
                             <p:outputLabel for="text3" value="User" />
-                            <p:outputLabel id="text3" value="#{paginadoBean.idea.login_Prop}"/>
+                            <p:outputLabel id="text3" value="#{votoBean.idea.login_Prop}"/>
 
                             <p:outputLabel for="text4" value="State" />
-                            <p:outputLabel id="text4" value="#{paginadoBean.idea.estado}"/>
+                            <p:outputLabel id="text4" value="#{votoBean.idea.estado}"/>
 
 
                         </p:panelGrid>
                             <br/>
                         </center>
                         <p:dataTable id="tbl" var="comentario" value="#{comentarioBean.comentarioList}"
-                                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                                     paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
                                      paginator="true" rows="6" style="margin-bottom:20px"   >
-                            <f:facet name="header">
-                                Table Comments
-                            </f:facet>
-                            <p:column  headerText="User"  style="min-width: 300px;">
-                                <h:outputText value="#{comentario.loginUsuario}" />
-                            </p:column>
-                            <p:column  headerText="Comment"  style="min-width: 300px;">
-                                <h:outputText value="#{comentario.comentario}" />
-                            </p:column>
-                            <p:column  headerText="Date"  style="min-width: 300px;">
-                                <h:outputText value="#{comentario.fecha}" />
-                            </p:column>
-
-
+                                    <f:facet name="header">
+                                        Table Comments
+                                    </f:facet>
+                                    <p:column  headerText="User"  style="min-width: 300px;">
+                                        <h:outputText value="#{comentario.loginUsuario}" />
+                                    </p:column>
+                                    <p:column  headerText="Comment"  style="min-width: 300px;">
+                                        <h:outputText value="#{comentario.comentario}" />
+                                    </p:column>
+                                    <p:column  headerText="Date"  style="min-width: 300px;">
+                                        <h:outputText value="#{comentario.fecha}" />
+                                    </p:column>
                         </p:dataTable>
                         <br/>
                         <center>
                         <p:commandButton  class="login100-form-btn"  title="Show Comments"  style= "width: 50px; height:20px;
-                            " actionListener="#{comentarioBean.Buscar(paginadoBean.idea.nombreIdea)}" ajax="true" update="tbl">
+                            " actionListener="#{comentarioBean.Buscar(votoBean.idea.nombreIdea)}" ajax="true" update="tbl">
                         </p:commandButton>
                         </center>
                         <br/>
@@ -100,10 +98,10 @@
                             <p:panelGrid columns="2" rows="2" columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4" >
                             <p:inputTextarea id="Comment" rows="5" cols="30" maxlength="100"  autoResize="false" binding="#{comment}"/>
                             <p:commandButton  class="login100-form-btn"  title="Add Comment"  style= "width: 50px; height:20px;
-                            " actionListener="#{comentarioBean.registrasComentario(loginbean.login,comment.value,paginadoBean.idea.nombreIdea)}" ajax="true" update="tbl">
+                            " actionListener="#{comentarioBean.registrasComentario(loginbean.usuario,comment.value,votoBean.idea.nombreIdea)}" ajax="true" update="tbl">
                             </p:commandButton>
-                            <p:commandButton  class="login100-form-btn"  title="Like" style= "width: 10px; height:20px " actionListener="#{votoBean.consultar(paginadoBean.idea.nombreIdea,loginbean.usuario,paginadoBean.idea.voto)}"/>
-                            <p:selectBooleanCheckbox onchange="submit()"  value="#{paginadoBean.idea.voto}" />
+                            <p:commandButton  class="login100-form-btn"  title="Like" style= "width: 10px; height:20px " actionListener="#{votoBean.consultar(loginbean.usuario)}"/>
+                            <p:selectBooleanCheckbox onchange="submit()"  value="#{votoBean.idea.voto}" />
                             </p:panelGrid>
                         </div>
                         </center>

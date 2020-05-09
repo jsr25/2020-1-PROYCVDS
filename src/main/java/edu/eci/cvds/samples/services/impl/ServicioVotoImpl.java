@@ -25,4 +25,10 @@ public class ServicioVotoImpl implements ServicioVoto {
     public void insertar(String login, String nombreIdea) {
         daoVoto.insertar(login,nombreIdea);
     }
+
+    @Override
+    public Voto consultarVoto(String idea, String login) {
+        daoVoto.consultarVoto(idea,login);
+        return null;
+    }
 }

@@ -29,10 +29,9 @@ public class EstadisticaBean extends BaseBean {
     @PostConstruct
     public void init() {
         super.init();
-        model = new PieChartModel();
+
         generar();
-        llenarGrafica();
-        decorarModelo();
+
     }
 
     public PieChartModel getModel() {
@@ -41,10 +40,11 @@ public class EstadisticaBean extends BaseBean {
 
 
     private void generar(){
+        model = new PieChartModel();
         ideas=servicio.consultarTodo();
-        areas=servicio.consultarArea();
     }
-    private void llenarGrafica(){
+    private void consultarPorArea(){
+        areas=servicio.consultarArea();
         for(Area a: areas){
             model.set(a.getNombreArea(),a.getCantidadIdeas());
         }
@@ -66,11 +66,27 @@ public class EstadisticaBean extends BaseBean {
          List<Idea> ideas1;
          List<Idea> ideas2;
          List<Idea> ideas3;
-        ideas1 = servicio.consultarIdeaPorEstado("finalizado");
+        ideas1 = servicio.consultarIdeaPorEstado("Finalizado");
         ideas2 = servicio.consultarIdeaPorEstado("en espera de revisión");
         ideas3 = servicio.consultarIdeaPorEstado("En proceso");
         model.set("finalizado",ideas1.size());
         model.set("en espera de revision",ideas2.size());
         model.set("En proceso",ideas3.size());
+    }
+    public void porEstado() throws IOException {
+        consultarIdeaPorEstado();
+        decorarModelo();
+        FacesContext.getCurrentInstance().getExternalContext().redirect("estadistica.xhtml");
+    }
+
+    public void porArea() throws IOException {
+        consultarPorArea();
+        decorarModelo();
+        FacesContext.getCurrentInstance().getExternalContext().redirect("estadistica.xhtml");
+    }
+
+    public void volver() throws IOException {
+        generar();
+        FacesContext.getCurrentInstance().getExternalContext().redirect("usuario.xhtml");
     }
 }

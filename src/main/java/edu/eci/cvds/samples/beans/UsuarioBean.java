@@ -14,9 +14,9 @@ public class UsuarioBean extends BaseBean {
 
         }
     }
-    public void graphic(){
+    public void porEstado(){
         try {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("estadistica.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("IdeasPorEstado.xhtml");
         } catch (IOException e) {
 
         }

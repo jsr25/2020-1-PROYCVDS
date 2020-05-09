@@ -9,7 +9,15 @@
     a.loginusuario,
 
     FROM voto as a
-    where a.nombreidea=#{idea};
+    where a.nombreidea=#{idea} ;
+
+    </select>
+
+    <select id='consultarVoto' parameterType='map' resultMap='VotoResult'>
+    select a.nombreidea,
+    a.loginusuario,
+    FROM voto as a
+    where a.nombreidea=#{idea} and a.loginusuario=#{login};
 
     </select>
 

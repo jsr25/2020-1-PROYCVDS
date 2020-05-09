@@ -32,4 +32,9 @@ public class MyBatisDAOVoto implements DAOVoto {
         pmap.insertar(login,nombreIdea);
 
     }
+
+    @Override
+    public Voto consultarVoto(String idea, String login) {
+        return pmap.consultarVoto(idea,login);
+    }
 }

@@ -14,4 +14,5 @@ public interface DAOVoto {
     public void remover( String login,String nombreIdea);
     public List<Voto> consultarVotos(String idea);
     public void insertar( String login,String nombreIdea);
+    public Voto consultarVoto(String idea, String login);
 }
