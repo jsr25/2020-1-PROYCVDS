@@ -1,6 +1,6 @@
 package edu.eci.cvds.samples.beans;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow;
+
 import edu.eci.cvds.samples.entities.PalabraClave;
 import edu.eci.cvds.samples.services.ServicioPalabrasClave;
 
