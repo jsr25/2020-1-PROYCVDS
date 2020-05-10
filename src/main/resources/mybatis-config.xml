@@ -30,6 +30,7 @@
         <mapper resource="mappers/IdeaMapper.xml"></mapper>
         <mapper resource="mappers/VotoMapper.xml"></mapper>
         <mapper resource="mappers/ComentarioMapper.xml"></mapper>
+        <mapper resource="mappers/PalabrasClaveMapper.xml"></mapper>
     </mappers>
 
 

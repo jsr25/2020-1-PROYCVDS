@@ -6,14 +6,8 @@ import edu.eci.cvds.samples.Segurity.LoginSegurity;
 import edu.eci.cvds.samples.Segurity.Shiro;
 import edu.eci.cvds.samples.persistence.*;
 import edu.eci.cvds.samples.persistence.mybatisimpl.*;
-import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
-import edu.eci.cvds.samples.services.ServicioComentario;
-import edu.eci.cvds.samples.services.ServicioUsuario;
-import edu.eci.cvds.samples.services.ServicioVoto;
-import edu.eci.cvds.samples.services.impl.ServicioBancodeProyectosimpl;
-import edu.eci.cvds.samples.services.impl.ServicioComentarioImpl;
-import edu.eci.cvds.samples.services.impl.ServicioUsuarioimpl;
-import edu.eci.cvds.samples.services.impl.ServicioVotoImpl;
+import edu.eci.cvds.samples.services.*;
+import edu.eci.cvds.samples.services.impl.*;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 import javax.servlet.ServletContext;
@@ -53,12 +47,14 @@ public class GuiceContextListener implements ServletContextListener {
                 bind(DAOIdea.class).to(MyBatisDAOIdea.class);
                 bind(DAOVoto.class).to(MyBatisDAOVoto.class);
                 bind(DAOComentario.class).to(MyBatisDAOComentario.class);
+                bind(DAOPalabrasClave.class).to(MyBatisDAOPalabrasClave.class);
 
                 //
                 bind(ServicioBancodeProyectos.class).to(ServicioBancodeProyectosimpl.class);
                 bind(ServicioUsuario.class).to(ServicioUsuarioimpl.class);
                 bind(ServicioComentario.class).to(ServicioComentarioImpl.class);
                 bind(ServicioVoto.class).to(ServicioVotoImpl.class);
+                bind(ServicioPalabrasClave.class).to(ServicioPalabrasClaveImpl.class);
 
 
                 bind(LoginSegurity.class).to(Shiro.class);

@@ -9,7 +9,7 @@
 
 
 
-    <insert id="registrarPalabraClave" parameterType='map'>
+    <insert id="registrarPalabra" parameterType='map'>
         insert into palabrasclave(nombreidea,palabrasclave) values(#{palabra.nombreIdea},#{palabra.valor})
     </insert>
 
@@ -17,13 +17,14 @@
     <select id='consultarpalabe' parameterType='map' resultMap='palabraResult'>
     select a.nombreidea,
     a.palabrasclave
-    FROM palabrasclave as a;
+    FROM palabrasclave as a
+    WHERE a.nombreidea = #{idea} ;
     </select>
 
-    <delete id="borrarPalabraClave">
+    <delete id="removerPalabra">
         delete
         from palabrasclave as a
-        where a.nombreidea = #{idea} and a.paalabrasclave = #{palabra};
+        where a.nombreidea = #{palabra.nombreIdea} and a.palabrasclave = #{palabra.valor};
     </delete>
 
 

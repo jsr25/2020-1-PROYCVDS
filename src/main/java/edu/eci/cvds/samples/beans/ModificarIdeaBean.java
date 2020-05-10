@@ -22,9 +22,10 @@ public class ModificarIdeaBean extends BaseBean{
     private List<PalabraClave> palabraClaves;
     private Idea idea;
     private Idea editable;
-    private String pl="valor";
+    private String login;
 
     public void consultar(String login) throws IOException {
+        this.login=login;
         ideaList = servicio.consultarIdeaEnEspera(login);
         FacesContext.getCurrentInstance().getExternalContext().redirect("ideasModificables.xhtml");
 
@@ -38,8 +39,10 @@ public class ModificarIdeaBean extends BaseBean{
         FacesContext.getCurrentInstance().getExternalContext().redirect("modificaciones.xhtml");
     }
     //corregir
-    public void  actuaizarIdea(){
+    public void  actuaizarIdea() throws IOException {
         servicio.actualizarIdea(this.idea);
+        idea = new Idea();
+        consultar(login);
     }
     public void removerpalabra(String palabra){
         String nombreIdea = idea.getNombreIdea();
@@ -55,7 +58,10 @@ public class ModificarIdeaBean extends BaseBean{
         palabraClaves.add(pal);
     }
 
-
+    public void volver() throws IOException {
+        idea = new Idea();
+        FacesContext.getCurrentInstance().getExternalContext().redirect("ideasModificables.xhtml");
+    }
 
     public void guardar(){
         servicio.actualizarIdea(editable);
@@ -79,11 +85,4 @@ public class ModificarIdeaBean extends BaseBean{
         this.idea = idea;
     }
 
-    public String getPl() {
-        return pl;
-    }
-
-    public void setPl(String pl) {
-        this.pl = pl;
-    }
 }

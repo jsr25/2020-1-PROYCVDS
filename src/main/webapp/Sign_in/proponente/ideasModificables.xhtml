@@ -55,7 +55,7 @@
                         <h:form>
                         <p:dataTable id="tbl" var="idea" value="#{modificarIdeaBean.ideaList}"
                                      paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
-                                     paginator="true" rows="2" style="margin-bottom:20px" sortMode="multiple" >
+                                     paginator="true" rows="10" style="margin-bottom:20px" sortMode="multiple" >
                             <f:facet name="header">
                                 Modify Ideas
                             </f:facet>
@@ -79,6 +79,7 @@
                                 </p:commandButton>
                             </p:column>
                         </p:dataTable>
+                        <p:commandButton class="login100-form-btn"  style= "width: 50px; height:20px;" value="volver" actionListener="#{proponentebean.volver}"></p:commandButton>
                         </h:form>
                     </div>
                 </form>

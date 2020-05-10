@@ -56,28 +56,32 @@
                     </div>
                     <h:form id="form">
                         <p:growl id="msgs" />
+                        <p:commandButton class="login100-form-btn"  id="btn_show" style="height: 20px; width: 400px; size: B4" value="show" actionListener="#{palabrasClaveBean.generar(modificarIdeaBean.idea.nombreIdea)}" update="palabraClavesTable" ></p:commandButton>
                         <div class="wrap-input100 validate-input">
                             <h:outputLabel value="Keyword : " style="color: white" id="keyword" for="Keyword"/>
-                            <h:inputText  class="input100" id="Keyword" value="#{registrarIDeaBean.palabraClave.valor}" type="String"/>
+                            <h:inputText  class="input100" id="Keyword" binding="#{valor}" type="String"/>
                         </div>
+
                         <div class="container-login100-form-btn ">
-                            <p:commandButton class="login100-form-btn"  id="btn_add" style="height: 20px; width: 400px; size: B4" value="Add"  update="Keyword msgs @parent" action="#{registrarIDeaBean.reinit(loginbean.login)}" >
-                                <p:collector value="#{registrarIDeaBean.palabraClave}" addTo="#{registrarIDeaBean.palabraClaves}" unique="true"/>
+                            <p:commandButton class="login100-form-btn"  id="btn_add" style="height: 20px; width: 400px; size: B4" value="Add"  update="Keyword msgs @parent" actionListener="#{palabrasClaveBean.registarPalabra(modificarIdeaBean.idea.nombreIdea,valor.value)}" >
                             </p:commandButton>
                         </div>
                         <br/>
-                        <p:dataTable value="#{registrarIDeaBean.palabraClaves}" var="palabraclave" id="palabraClavesTable">
+                        <p:dataTable value="#{palabrasClaveBean.claveList}" var="palabraclave" id="palabraClavesTable">
                             <p:column headerText="Keyword" style="color: white">
                                 <h:outputText value="#{palabraclave.valor} " style="color: white"/>
+                            </p:column>
+                            <p:column>
+                                <p:commandButton class="login100-form-btn" value="remover" actionListener="#{palabrasClaveBean.removerPalabra(palabraclave)}"></p:commandButton>
                             </p:column>
                         </p:dataTable>
                         <br/>
                         <br/>
                         <div class="container-login100-form-btn">
                             <h:form>
-                                <p:commandButton class="login100-form-btn" value="Back" actionListener="#{proponentebean.proponente}" > </p:commandButton>
+                                <p:commandButton class="login100-form-btn" value="Back" actionListener="#{modificarIdeaBean.volver}" action="#{palabrasClaveBean.iniciar}" > </p:commandButton>
 
-                                <p:commandButton class="login100-form-btn"  value="Create" actionListener="#{modificarIdeaBean.actuaizarIdea}" ajax="true"></p:commandButton>
+                                <p:commandButton class="login100-form-btn"  value="Create" actionListener="#{modificarIdeaBean.actuaizarIdea}" action="#{palabrasClaveBean.actualizarPalabras}" ajax="true"></p:commandButton>
 
                             </h:form>
 
