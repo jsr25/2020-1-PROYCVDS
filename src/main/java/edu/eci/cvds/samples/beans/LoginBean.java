@@ -32,6 +32,7 @@ public class LoginBean extends BaseBean{
     private String usuario;
     private String password;
     private Boolean remenber;
+    private String area;
 
 
     public Boolean getRemenber() {
@@ -77,6 +78,10 @@ public class LoginBean extends BaseBean{
 
     public void pantallaInicial() throws IOException {
         if(loginSegurity.proponente()){
+            try {
+                area=servicio.consultarUsuario(usuario).getArea();
+            } catch (BancoDeProyectosException e) { }
+            catch (PersistenceException e) {  }
             FacesContext.getCurrentInstance().getExternalContext().redirect("proponente/proponente.xhtml");
         }
         if(loginSegurity.administrador()){
@@ -90,4 +95,11 @@ public class LoginBean extends BaseBean{
         }
     }
 
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
 }

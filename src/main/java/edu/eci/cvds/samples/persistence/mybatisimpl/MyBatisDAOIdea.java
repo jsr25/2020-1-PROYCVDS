@@ -25,10 +25,6 @@ public class MyBatisDAOIdea implements DAOIdea {
      */
     public void registrarIDea(Idea idea) {
         pmap.registrarIdea(idea);
-        List<PalabraClave> palabraClaves=idea.getPalabraClaves();
-        for(int i=0;i<palabraClaves.size();i++){
-            pmap.registrarPalabraClave(palabraClaves.get(i));
-        }
     }
 
     /**

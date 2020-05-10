@@ -17,8 +17,12 @@ public class ServicioPalabrasClaveImpl implements ServicioPalabrasClave {
     }
 
     @Override
-    public void registrarPalabra(PalabraClave palabraClave) {
-        daoPC.registrarPalabra(palabraClave);
+    public void registrarPalabra(List<PalabraClave> claveList,String ideaname) {
+        for(int i =0;i < claveList.size(); i++){
+            PalabraClave palabraClave =claveList.get(i);
+            palabraClave.setNombreIdea(ideaname);
+            daoPC.registrarPalabra(palabraClave);
+        }
     }
 
     @Override

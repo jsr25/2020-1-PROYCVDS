@@ -40,7 +40,7 @@ public class RegistrarIdeaBean extends BaseBean{
     public void registroIdea(String nombre,String descripcion, String loginProponente, String area) {
         Date fecha2=new Date();
         asignarIdea(nombre);
-        Idea idea = new Idea(nombre,descripcion,fecha2,loginProponente,area,"En espera", palabraClaves);
+        Idea idea = new Idea(nombre,descripcion,fecha2,loginProponente,area,"en espera de revision", palabraClaves);
         try{servicio.registrarIDea(idea);
             proponente();}
         catch (Exception e){

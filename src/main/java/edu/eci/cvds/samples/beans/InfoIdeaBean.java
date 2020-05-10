@@ -19,12 +19,14 @@ public class InfoIdeaBean extends BaseBean{
     private ServicioBancodeProyectos servicio;
     private List<Idea> ideas;
     private List<Idea> lidea2;
+    private String pala;
     private String val = "login.xhtml";
 
 
-    public void consultar (String palabrasClave )
+    public void consultar ( )
     {
-        ideas= servicio.consultarIDea(palabrasClave);
+        ideas= servicio.consultarIDea(pala);
+        System.out.println(ideas);
     }
     public void volver(){
         ideas=null;
@@ -45,6 +47,14 @@ public class InfoIdeaBean extends BaseBean{
     public void init(){
         super.init();
         lidea2=servicio.consultarTodo();
+    }
+
+    public String getPala() {
+        return pala;
+    }
+
+    public void setPala(String pala) {
+        this.pala = pala;
     }
 }
 

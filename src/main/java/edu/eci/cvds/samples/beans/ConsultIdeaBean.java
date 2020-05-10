@@ -20,10 +20,10 @@ public class ConsultIdeaBean extends BaseBean {
     private String estado;
     /**
      * Método que consulta los usuarios de la base de datos.
-     * @param pClave Argumentos del programa.
      * @throws IOException lanza excepcion si el usuario no coincide.*/
-    public void consultar(String pClave) throws IOException {
-        ideas=servicio.consultarIDea(pClave);
+    public void consultar() throws IOException {
+        ideas=servicio.consultarTodo();
+        FacesContext.getCurrentInstance().getExternalContext().redirect("estado_idea.xhtml");
     }
     public void cambiarEstado(){
 

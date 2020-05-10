@@ -7,6 +7,7 @@ import edu.eci.cvds.samples.services.BancoDeProyectosException;
 import edu.eci.cvds.samples.services.ServicioBancodeProyectos;
 import edu.eci.cvds.samples.services.ServicioUsuario;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -33,21 +34,26 @@ public class AsignarPerfinBean extends BaseBean {
 
     /**
      * Método que consulta los usuarios de la base de datos.
-     * @param pClave Argumentos del programa.
      * @throws IOException lanza excepcion si el usuario no coincide.
      */
-    public void consultar(String pClave) throws IOException {
+    public void consultar() {
         try {
-            usuarios=servicio.consultarUsuarios(pClave);
-            System.out.println(usuarios);
+            usuarios=servicio.consultarUsuarios("Administrador");
         } catch (BancoDeProyectosException e) {
 
         } catch (PersistenceException e) {
 
         }
 
+
     }
 
+    @PostConstruct
+    public void init()  {
+        super.init();
+        consultar();
+
+    }
     /**
      * Método que obtiene los usuarios de la base de datos que han sido seleccionados.
      * @return usuariosSeleccioandos retorno del programa.
@@ -99,7 +105,7 @@ public class AsignarPerfinBean extends BaseBean {
             try {
                 servicio.carbiarRole(role,usuario);
                 usuario=null;
-                usuarios=null;
+                usuarios=servicio.consultarUsuarios("Administrador");;
                 role=null;
                 FacesContext.getCurrentInstance().getExternalContext().redirect("administrador.xhtml");
 
@@ -114,7 +120,14 @@ public class AsignarPerfinBean extends BaseBean {
     }
     public void volver(){
         usuario=null;
-        usuarios=null;
+        try {
+            usuarios=servicio.consultarUsuarios("Administrador");
+        } catch (BancoDeProyectosException e) {
+
+        } catch (PersistenceException e) {
+
+        }
+        ;
         role=null;
         try {
             FacesContext.getCurrentInstance().getExternalContext().redirect("administrador.xhtml");

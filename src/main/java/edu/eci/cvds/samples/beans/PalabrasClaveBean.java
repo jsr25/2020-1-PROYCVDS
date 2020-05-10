@@ -56,6 +56,15 @@ public class PalabrasClaveBean extends BaseBean {
         servicio.actualizarPalabras(addList,removList);
         iniciar();
     }
+    public void registarSinNombre(String valor){
+        PalabraClave pl =new PalabraClave();
+        pl.setValor(valor);
+        claveList.add(pl);
+        addList.add(pl);
+    }
+    public void crear(String ideaname){
+        servicio.registrarPalabra(addList,ideaname);
+    }
     public void iniciar(){
         removList = new ArrayList<>();
         claveList = new ArrayList<>();
