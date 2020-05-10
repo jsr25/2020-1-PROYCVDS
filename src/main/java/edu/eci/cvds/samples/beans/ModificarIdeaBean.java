@@ -31,12 +31,16 @@ public class ModificarIdeaBean extends BaseBean{
     }
 
     public void  modificar(String NombreIdea) throws IOException {
+        System.out.println("....");
         this.idea=servicio.consultarIdea(NombreIdea);
         editable=idea;
-        palabraClaves = servicio.consultarPalabrasClave(idea.getNombreIdea());
+        //palabraClaves = servicio.consultarPalabrasClave(idea.getNombreIdea());
         FacesContext.getCurrentInstance().getExternalContext().redirect("modificaciones.xhtml");
     }
-
+    //corregir
+    public void  actuaizarIdea(){
+        servicio.actualizarIdea(this.idea);
+    }
     public void removerpalabra(String palabra){
         String nombreIdea = idea.getNombreIdea();
         //servicio.removerPalabra( nombreIdea, palabra)

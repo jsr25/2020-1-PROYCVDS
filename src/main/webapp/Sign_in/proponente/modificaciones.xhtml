@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--campos donde se modifican las ideas-->
-<!--palabras clave-->
-<!--descripcion-->
+
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
 
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:color="http://java.sun.com/jsf/html" lang="en"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-
 <head>
     <title>
-        Sign in
+        Sign up
     </title>
     <meta content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,41 +37,55 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <!-- =============================================================================================== -->
 </head>
-
 <h:body>
     <div class="limiter">
         <div class="container-login100" style="background-image: url('../images/bg-01.jpg');">
             <div class="wrap-login100">
                 <form class="login100-form validate-form" action="">
-                    <span class="login100-form-logo"> <img src="../images/icons/logo.png" width="80" height="70" alt="" />
-                    </span>
-                    <br/>
+            <span class="login100-form-logo"> <img
+                    src="../images/icons/logo.png" width="80" height="70" alt="" /> </span>
+                    <span class="login100-form-title p-b-34 p-t-27"> Sign Up </span>
                     <div class="wrap-input100 validate-input">
-                        <h:form>
-                            <h:outputLabel style="color:white;"  value="Bienvenido #{loginbean.usuario}"/>
-                        </h:form>
+                        <h:outputLabel style="color:white;" value="#{modificarIdeaBean.idea.nombreIdea}"/>
                     </div>
-                    <div class="container-login100-form-btn ">
-                        <h:form>
-                            <p:commandButton class="login100-form-btn" value="Back" actionListener="#{loginbean.volverLogin}"   ajax="true"> </p:commandButton>
-                        </h:form>
-                        <p:spacer width="30" height="80"></p:spacer>
-                        <h:form>
-                            <p:commandButton class="login100-form-btn" value="Add Idea" actionListener="#{proponentebean.registroIdea}" ajax="true"/>
-                        </h:form>
-                        <h:form>
-                            <p:commandButton class="login100-form-btn" value="View Ideas" actionListener="#{ideasProponente.consultarIdeasProponente(loginbean.usuario)}" ajax="true"/>
-                        </h:form>
-                        <p:spacer width="30" height="80"></p:spacer>
-                        <h:form>
-                            <p:commandButton class="login100-form-btn" value="Modify Ideas" actionListener="#{modificarIdeaBean.consultar(loginbean.usuario)}" ajax="true"/>
-                        </h:form>
+                    <div>
+                        <h:outputLabel style="color:white;" for="Description" value="Description"/>
+                        <p:inputTextarea id="Description" value="#{modificarIdeaBean.idea.descripcion}" rows="5" cols="30" counter="display" maxlength="100" counterTemplate="{0} characters remaining." autoResize="false" binding="#{description}"/>
+                        <br />
+                        <h:outputText id="display" />
                     </div>
+                    <h:form id="form">
+                        <p:growl id="msgs" />
+                        <div class="wrap-input100 validate-input">
+                            <h:outputLabel value="Keyword : " style="color: white" id="keyword" for="Keyword"/>
+                            <h:inputText  class="input100" id="Keyword" value="#{registrarIDeaBean.palabraClave.valor}" type="String"/>
+                        </div>
+                        <div class="container-login100-form-btn ">
+                            <p:commandButton class="login100-form-btn"  id="btn_add" style="height: 20px; width: 400px; size: B4" value="Add"  update="Keyword msgs @parent" action="#{registrarIDeaBean.reinit(loginbean.login)}" >
+                                <p:collector value="#{registrarIDeaBean.palabraClave}" addTo="#{registrarIDeaBean.palabraClaves}" unique="true"/>
+                            </p:commandButton>
+                        </div>
+                        <br/>
+                        <p:dataTable value="#{registrarIDeaBean.palabraClaves}" var="palabraclave" id="palabraClavesTable">
+                            <p:column headerText="Keyword" style="color: white">
+                                <h:outputText value="#{palabraclave.valor} " style="color: white"/>
+                            </p:column>
+                        </p:dataTable>
+                        <br/>
+                        <br/>
+                        <div class="container-login100-form-btn">
+                            <h:form>
+                                <p:commandButton class="login100-form-btn" value="Back" actionListener="#{proponentebean.proponente}" > </p:commandButton>
+
+                                <p:commandButton class="login100-form-btn"  value="Create" actionListener="#{modificarIdeaBean.actuaizarIdea}" ajax="true"></p:commandButton>
+
+                            </h:form>
+
+                        </div>
+                    </h:form>
                 </form>
             </div>
         </div>
     </div>
 </h:body>
 </html>
-
-

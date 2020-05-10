@@ -88,7 +88,7 @@
     a.fecha,
     a.estado
     FROM idea as a
-    where a.nombreidea=#{idea};
+    where a.nombreidea=#{idea}
     </select>
 
     <select id='consultarIdeasM' parameterType='map' resultMap='IdeaResult'>

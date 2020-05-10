@@ -52,6 +52,7 @@
                         <center>
                         <h3>MODIFY IDEAS</h3>
                         </center>
+                        <h:form>
                         <p:dataTable id="tbl" var="idea" value="#{modificarIdeaBean.ideaList}"
                                      paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                                      paginator="true" rows="2" style="margin-bottom:20px" sortMode="multiple" >
@@ -78,6 +79,7 @@
                                 </p:commandButton>
                             </p:column>
                         </p:dataTable>
+                        </h:form>
                     </div>
                 </form>
             </div>
