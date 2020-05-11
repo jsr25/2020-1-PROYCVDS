@@ -59,47 +59,50 @@ En la pagina web hay roles, cada uno con diferentes caracteristicas.
 
 ### Usuarios de consulta
 
-### Installing
 
-A step by step series of examples that tell you how to get a development env running
+## Arquitectura y Diseño
 
-Say what the step will be
+* Modelo E-R.
+* Diagrama de clases (hacerlo mediante ingeniería inversa)
 
 ```
 Give the example
 ```
 
-And repeat
+## Descripción del Proyecto
 
-```
-until finished
-```
+* Breve descripción de la Metodología.
+* Generar el 'release-burndown chart' del proyecto, e indicar los puntos de
+historia realizados y los faltantes.
 
-End with an example of getting some data out of the system or using it for a little demo
+* Sprint 1
+
+![](img/S1.png)
+![](img/GS1.png)
+
+* Sprint 2
+
+![](img/S2.png)
+![](img/GS2.png)
+
+* Sprint 3
+
+![](img/S3.png)
+![](img/GS3.png)
 
 
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+○ Reporte de pruebas y de cubrimiento de las mismas (sólo la foto del reporte
+principal). Para la cobertura, pueden usar los plugins disponibles (EclEmma,
+Jacoco, etc.)
+○ Reporte de análisis estático de código. Se pueden usar las mismas
+herramientas trabajadas en los laboratorios.
 
 
 ## Construido con
 
 * [Primefaces](https://www.primefaces.org/)
 * [Maven](https://mvnrepository.com/)
+* Enlace al sistema de integración continua.
 
 
 ## Herramientas
