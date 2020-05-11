@@ -23,6 +23,7 @@ Estudiantes de la Escuela Colombiana de Ingeniería Julio Garavito de la carrera
 ### Manual del usuario
 
 * Login
+
 ![](img/Login.png)
 
 En la pagina web hay roles, cada uno con diferentes caracteristicas.
@@ -41,6 +42,20 @@ En la pagina web hay roles, cada uno con diferentes caracteristicas.
 # Personal PMO - ODI
 
 # Proponente de iniciativa o idea de proyecto
+
+![](img/Mateo.png)
+
+* Agregar Idea
+
+![](img/AddIdea.png)
+
+* Modificar Idea
+
+![](img/ModifyIdea.png)
+
+* Ver Idea
+
+![](img/ViewIdea.png)
 
 # Usuarios de consulta
 
