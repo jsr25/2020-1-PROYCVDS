@@ -76,10 +76,12 @@
                         <p:commandButton class="login100-form-btn" value="Create" actionListener="#{registarbean.registroUsuario(username.value,firtsname.value,surname.value,password.value,corre.value,area.value)}" ajax="true"> </p:commandButton>
                     </div>
                 </h:form>
-                <div class="text-center p-t-90">
-                    <a class="txt1" href="https://proyecto-cvds-2020-1.herokuapp.com/">
-                        Cancel </a>
-                </div>
+                <br/>
+                    <div class="container-login100-form-btn">
+                    <h:form>
+                        <p:commandButton class="login100-form-btn" value="Cancel" actionListener="#{loginbean.home2}" ajax="true"> </p:commandButton>
+                    </h:form>
+                    </div>
             </form>
         </div>
     </div>

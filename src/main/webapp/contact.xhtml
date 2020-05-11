@@ -4,7 +4,10 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx" xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 <head>
     <meta content="" />
     <title>
@@ -42,80 +45,83 @@
     </div>
 </div>
 <!--  Preloader Start -->
-<!--  Header Start -->
-<div class="header-area">
-    <div class="main-header ">
-        <div class="header-top top-bg d-none d-lg-block">
-            <div class="container-fluid">
-                <div class="col-xl-12">
-                    <div class="row d-flex justify-content-between align-items-center">
+    <!--  Header Start -->
+    <div class="header-area">
+        <div class="main-header ">
+            <div class="header-top top-bg d-none d-lg-block">
+                <div class="container-fluid">
+                    <div class="col-xl-12">
+                        <div class="row d-flex justify-content-between align-items-center">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="header-bottom  header-sticky">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <!--  Logo -->
-                    <div class="col-xl-2 col-lg-1 col-md-1">
-                        <div class="logo">
-                            <a href="Sign_in/index.xhtml"><img src="assets/img/logo/logo.png"
-                                                               width="100" height="100" alt="" /></a>
+            <div class="header-bottom  header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!--  Logo -->
+                        <div class="col-xl-2 col-lg-1 col-md-1">
+                            <div class="logo">
+                                <a href="index.xhtml"><img src="../assets/img/logo/logo.png"
+                                                           width="100" height="100" alt="" /></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-8 col-md-8">
-                        <!--  Main-menu -->
-                        <div class="main-menu f-right d-none d-lg-block">
-                            <ul id="navigation">
-                                <li>
-                                    <a href="Sign_in/index.xhtml">Home</a>
-                                </li>
-                                <li>
-                                    <a href="about.xhtml">About</a>
-                                </li>
-                                <li>
-                                    <a href="#">Services</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="contact.xhtml">Contact</a>
-                                        </li>
-                                        <li>
-                                            <a href="elements.xhtml">Element</a>
-                                        </li>
-                                        <li>
-                                            <a href="case_details.xhtml">Case Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Login</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="Sign_in/sign_in.xhtml">Sign in</a>
-                                        </li>
-                                        <li>
-                                            <a href="Sign_in/sign_up.xhtml">Sign up</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <div class="col-xl-8 col-lg-8 col-md-8">
+                            <!--  Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <ul id="navigation">
+                                    <li>
+                                        <h:form>
+
+                                            <p:commandButton style="color: white; background: #002d5b;border-color: white; width: 120px" value="Home" actionListener="#{loginbean.home}" ajax="true">
+                                            </p:commandButton>
+
+                                        </h:form>
+                                    </li>
+                                    <li>
+                                        <h:form>
+                                        <p:commandButton style="color: white; background: #002d5b;border-color: white; width: 120px" value="About" actionListener="#{loginbean.about}" ajax="true">
+                                        </p:commandButton>
+                                        </h:form>
+                                    </li>
+                                    <li>
+                                        <a href="#">Login</a>
+                                        <ul class="submenu">
+                                            <h:form>
+
+                                                <p:commandButton style="color: white; background: #002d5b;border-color: white; width: 170px" value="Sign in" actionListener="#{loginbean.sign_in2}" ajax="true">
+                                                </p:commandButton>
+
+                                            </h:form>
+                                            <h:form>
+
+                                                <p:commandButton    style="color: white; background: #002d5b;border-color: white; width: 170px" value="Sign up" actionListener="#{loginbean.sign_up2}" ajax="true">
+                                                </p:commandButton>
+
+                                            </h:form>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-3">
-                        <div class="header-right-btn f-right d-none d-lg-block">
-                            <a href="contact.html" class="btn header-btn">Contact Now</a>
+                        <div class="col-xl-2 col-lg-3 col-md-3">
+                            <div class="header-right-btn f-right d-none d-lg-block">
+                                <h:form>
+                                <p:commandButton    style="color: white; background: #e6373d;border-color: white; width: 170px" value="Contact Now" actionListener="#{loginbean.contact}" ajax="true">
+                                </p:commandButton>
+                                </h:form>
+                            </div>
                         </div>
-                    </div>
-                    <!--  Mobile Menu -->
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
+                        <!--  Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!--  Header End -->
+    <!--  Header End -->
 <br/>
 <br/>
 <!--  ================ contact section start ================= -->

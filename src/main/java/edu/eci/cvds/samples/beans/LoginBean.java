@@ -73,9 +73,56 @@ public class LoginBean extends BaseBean{
     public void salir() throws IOException {
         //
         loginSegurity.salir();
-        FacesContext.getCurrentInstance().getExternalContext().redirect("../login.xhtml");
+        FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
     }
-
+    public void sign_in(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
+        } catch (IOException e) {
+        }
+    }
+    public void sign_in2(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("Sign_in/login.xhtml");
+        } catch (IOException e) {
+        }
+    }
+    public void about(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("../about.xhtml");
+        } catch (IOException e) {
+        }
+    }
+    public void contact(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("../contact.xhtml");
+        } catch (IOException e) {
+        }
+    }
+    public void home(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("Sign_in/index.xhtml");
+        } catch (IOException e) {
+        }
+    }
+    public void home2(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+        } catch (IOException e) {
+        }
+    }
+    public void sign_up(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("sign_up.xhtml");
+        } catch (IOException e) {
+        }
+    }
+    public void sign_up2(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("Sign_in/sign_up.xhtml");
+        } catch (IOException e) {
+        }
+    }
     public void pantallaInicial() throws IOException {
         if(loginSegurity.proponente()){
             try {
