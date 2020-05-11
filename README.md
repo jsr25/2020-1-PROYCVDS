@@ -22,17 +22,17 @@ Estudiantes de la Escuela Colombiana de Ingeniería Julio Garavito de la carrera
 
 ## Manual del usuario
 
-* Login
+### Login
 
 ![](img/Login.png)
 
 En la pagina web hay roles, cada uno con diferentes caracteristicas.
 
 ```
-* Administrador
-* Personal PMO - ODI
-* Proponente de iniciativa o idea de proyecto
-* Usuarios de consulta
+- Administrador
+- Personal PMO - ODI
+- Proponente de iniciativa o idea de proyecto
+- Usuarios de consulta
 ```
 
 ### Administrador 
@@ -62,8 +62,8 @@ En la pagina web hay roles, cada uno con diferentes caracteristicas.
 
 ## Arquitectura y Diseño
 
-* Modelo E-R.
-* Diagrama de clases (hacerlo mediante ingeniería inversa)
+### Modelo E-R.
+### Diagrama de clases (hacerlo mediante ingeniería inversa)
 
 ```
 Give the example
@@ -71,30 +71,30 @@ Give the example
 
 ## Descripción del Proyecto
 
-* Breve descripción de la Metodología.
-* Generar el 'release-burndown chart' del proyecto, e indicar los puntos de
+### Breve descripción de la Metodología.
+### Generar el 'release-burndown chart' del proyecto, e indicar los puntos de
 historia realizados y los faltantes.
 
-* Sprint 1
+### Sprint 1
 
 ![](img/S1.png)
 ![](img/GS1.png)
 
-* Sprint 2
+### Sprint 2
 
 ![](img/S2.png)
 ![](img/GS2.png)
 
-* Sprint 3
+### Sprint 3
 
 ![](img/S3.png)
 ![](img/GS3.png)
 
 
-○ Reporte de pruebas y de cubrimiento de las mismas (sólo la foto del reporte
+### Reporte de pruebas y de cubrimiento de las mismas (sólo la foto del reporte
 principal). Para la cobertura, pueden usar los plugins disponibles (EclEmma,
 Jacoco, etc.)
-○ Reporte de análisis estático de código. Se pueden usar las mismas
+### Reporte de análisis estático de código. Se pueden usar las mismas
 herramientas trabajadas en los laboratorios.
 
 
