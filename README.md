@@ -7,6 +7,7 @@ Este proyecto es la culminación de nuestro curso de nuestro curso de ciclos de 
 
 ### Dueño del proyecto
 * Oscar David Ospina Rodríguez
+
 Docente de la materia y graduado Ingeniero de Sistemas de la Escuela Colombiana de Ingeniería Julio Garavito.
 
 ### Scrum master
@@ -19,13 +20,29 @@ Docente de la materia y graduado Ingeniero de Sistemas de la Escuela Colombiana 
 
 Estudiantes de la Escuela Colombiana de Ingeniería Julio Garavito de la carrera de ingeniería de sistemas, cursan el septimo semestre.
 
-### Prerequisites
+### Manual del usuario
 
-What things you need to install the software and how to install them
+* Login
+![](img/Login.png)
+
+En la pagina web hay roles, cada uno con diferentes caracteristicas.
 
 ```
-Give examples
+* Administrador
+* Personal PMO - ODI
+* Proponente de iniciativa o idea de proyecto
+* Usuarios de consulta
 ```
+
+# Administrador 
+
+
+
+# Personal PMO - ODI
+
+# Proponente de iniciativa o idea de proyecto
+
+# Usuarios de consulta
 
 ### Installing
 
