@@ -107,7 +107,7 @@ herramientas trabajadas en los laboratorios.
 
 ## Herramientas
 
-* [Taiga](https://tree.taiga.io/) 
+* [Taiga](https://tree.taiga.io/project/jsr25-plataforma-banco-de-iniciativas-de-proyectos/backlog) 
 * [Heroku](https://gist.github.com/PurpleBooth/b24679402957c63ec426) 
 
 
