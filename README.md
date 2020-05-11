@@ -51,11 +51,11 @@ En la pagina web hay roles, cada uno con diferentes caracteristicas.
 
 * Modificar Idea
 
-![](img/ModifyIdea.png)
+![](img/ModifyIdeas.png)
 
 * Ver Idea
 
-![](img/ViewIdea.png)
+![](img/ViewIdeas.png)
 
 ### Usuarios de consulta
 
