@@ -20,7 +20,7 @@ Docente de la materia y graduado Ingeniero de Sistemas de la Escuela Colombiana 
 
 Estudiantes de la Escuela Colombiana de Ingeniería Julio Garavito de la carrera de ingeniería de sistemas, cursan el septimo semestre.
 
-### Manual del usuario
+## Manual del usuario
 
 * Login
 
@@ -35,13 +35,13 @@ En la pagina web hay roles, cada uno con diferentes caracteristicas.
 * Usuarios de consulta
 ```
 
-# Administrador 
+### Administrador 
 
 
 
-# Personal PMO - ODI
+### Personal PMO - ODI
 
-# Proponente de iniciativa o idea de proyecto
+### Proponente de iniciativa o idea de proyecto
 
 ![](img/Mateo.png)
 
@@ -57,7 +57,7 @@ En la pagina web hay roles, cada uno con diferentes caracteristicas.
 
 ![](img/ViewIdea.png)
 
-# Usuarios de consulta
+### Usuarios de consulta
 
 ### Installing
 
