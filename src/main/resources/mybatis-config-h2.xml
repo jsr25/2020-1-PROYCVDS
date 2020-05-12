@@ -1,23 +1,33 @@
-
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <settings>
-        <setting name="logImpl" value="LOG4J"/>
-    </settings>
-
+    <typeAliases>
+        <typeAlias type="edu.eci.cvds.samples.entities.Usuario" alias="Usuario"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Idea" alias="Idea"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.PalabraClave" alias="PalabraClave"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Area" alias="Area"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Comentario" alias="Comentario"/>
+        <typeAlias type="edu.eci.cvds.samples.entities.Voto" alias="Voto"/>
+    </typeAliases>
 
 <environments default="development">
     <environment id="development">
         <transactionManager type="JDBC" />
         <dataSource type="POOLED">
-            <property name="driver" value="org.h2.Driver" />
-            <property name="url" value="jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL" />
-            <property name="username" value="anonymous" />
-            <property name="password" value="" />
+            <property name="driver" value="org.postgresql.Driver"/>
+            <property name="url" value="jdbc:postgresql://ec2-34-195-169-25.compute-1.amazonaws.com:5432/dek3j011at9roj?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory" />
+            <property name="username" value="wqhihehjfijyiu" />
+            <property name="password" value="7e00e3b6e4eee09ac940fae8645f8bc841ce48ca9307fb67465919b93f9d0942" />
         </dataSource>
     </environment>
 </environments>
+    <mappers>
+        <mapper resource="mappers/UsuarioMapper.xml"></mapper>
+        <mapper resource="mappers/IdeaMapper.xml"></mapper>
+        <mapper resource="mappers/VotoMapper.xml"></mapper>
+        <mapper resource="mappers/ComentarioMapper.xml"></mapper>
+        <mapper resource="mappers/PalabrasClaveMapper.xml"></mapper>
+    </mappers>
 </configuration>

@@ -47,7 +47,9 @@ public interface IdeaMapper {
     public List<Area> consultarArea();
 
     public List<Idea> consultarIdeasM(@Param("idea") String idea);
+
     public void registrarRelacion(@Param("nombreIdea1")String idea1,@Param("nombreIdea2")String idea2);
+
     public List<Idea> consultarRelacion(@Param("idea") String idea);
 
     public List<Idea> consultarIdeaProponente(String proponente);
