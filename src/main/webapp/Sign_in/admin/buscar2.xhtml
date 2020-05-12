@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>
+        Sign in
+    </title>
+    <meta content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- =============================================================================================== -->
+    <link rel="shortcut icon" type="image/x-icon" href="../images/icons/icon.png" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css" />
+    <!-- =============================================================================================== -->
+    <link rel="stylesheet" type="text/css" href="../css/util.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <!-- =============================================================================================== -->
+</h:head>
+<h:body  >
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('../images/bg-01.jpg');">
+            <h:form style="alignment: center">
+                <div class="limiter">
+                    <div class="wrap-login100" style="width: 1200px" >
+                        <form class="login100-form validate-form" action="" >
+                    <span class="login100-form-logo"> <img src="../images/icons/logo.png" width="80" height="70" alt="" />
+                    </span>
+                        </form>
+                        <div>
+                            <br></br>
+                            <h:form>
+                            <p:dataTable id="tbl" var="usuario" value="#{asignarPerfil.usuarios}"
+                                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                                         paginator="true" rows="2" style="margin-bottom:20px" sortMode="multiple" >
+                                <f:facet name="header">
+                                    Users
+                                </f:facet>
+                                <p:column  headerText="Usuario"  style="width: 30px;" sortBy="#{usuario.login}">
+                                    <h:outputText value="#{usuario.login}" />
+                                </p:column>
+                                <p:column headerText="Nombre" style="width: 30px;" sortBy="#{usuario.nombre}" >
+                                    <h:outputText value="#{usuario.nombre}" />
+                                </p:column>
+                                <p:column  headerText="apellido" style="width: 30px;" sortBy="#{usuario.apellido}">
+                                    <h:outputText value="#{usuario.apellido}" />
+                                </p:column>
+                                <p:column  headerText="Area" style="width: 30px;" sortBy="#{usuario.area}">
+                                    <h:outputText value="#{usuario.area}" />
+                                </p:column>
+                                <p:column  headerText="Correo" style="width: 50px;" sortBy="#{usuario.correo}">
+                                    <h:outputText value="#{usuario.correo}" />
+                                </p:column>
+                                <p:column  headerText="Role" style="width: 50px;" sortBy="#{usuario.role}">
+                                    <h:outputText value="#{usuario.role}" />
+                                </p:column>
+                                <p:column style="width:32px;text-align: center">
+                                    <p:commandButton  class="login100-form-btn"  title="Select" style= "width: 50px; height:20px ">
+                                        <f:setPropertyActionListener value="#{usuario}" target="#{asignarPerfil.usuario}" />
+                                    </p:commandButton>
+                                </p:column>
+                            </p:dataTable>
+                            </h:form>
+                            <h:form>
+                                <h:selectOneMenu class="input100" id="console" value="#{asignarPerfil.role}" style="width:750px;color:black; " >
+                                    <f:selectItem  itemValue="Select type user" />
+                                    <f:selectItem itemLabel="Administrator" itemValue="Administrador" style="color:black;"   />
+                                    <f:selectItem itemLabel="Personal PMO" itemValue="PersonalPMO" style="color:black;" />
+                                    <f:selectItem itemLabel="Proponente" itemValue="Proponente" style="color:black;" />
+                                    <f:selectItem itemLabel="Usuario" itemValue="Usuario" style="color:black;" />
+                                </h:selectOneMenu>
+                                <br/>
+                                <div class="container-login100-form-btn ">
+                                    <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{asignarPerfil.volver}" ajax="true"/>
+                                    <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Cambiar" actionListener="#{asignarPerfil.cambiar}"/>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>

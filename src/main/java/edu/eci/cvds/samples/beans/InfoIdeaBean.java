@@ -36,6 +36,14 @@ public class InfoIdeaBean extends BaseBean{
 
         }
     }
+    public void volver2(){
+        ideas=null;
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("administrador.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
     public List<Idea> getIdeas() {
         return ideas;
     }

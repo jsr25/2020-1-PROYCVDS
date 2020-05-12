@@ -25,4 +25,7 @@ public class AdministradorBean extends BaseBean{
     public void volver() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("administrador.xhtml");
     }
+    public void agrupar() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("agruparIdeas.xhtml");
+    }
 }
