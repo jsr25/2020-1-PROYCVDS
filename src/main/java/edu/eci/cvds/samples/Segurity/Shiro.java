@@ -43,7 +43,7 @@ public class Shiro  implements LoginSegurity{
 
     @Override
     public boolean pmo() {
-        return SecurityUtils.getSubject().hasRole("PerosnalPMO");
+        return SecurityUtils.getSubject().hasRole("PersonalPMO");
     }
 
     @Override
