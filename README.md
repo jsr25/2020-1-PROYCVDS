@@ -160,7 +160,6 @@ Este rol tiene las características de:
 
 * [Primefaces](https://www.primefaces.org/)
 * [Maven](https://mvnrepository.com/)
-* Enlace al sistema de integración continua.
 
 ## Herramientas
 
