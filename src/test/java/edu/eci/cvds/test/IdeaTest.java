@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Assert;
 import org.junit.Test;
-import org.omg.CORBA.PUBLIC_MEMBER;
+//import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -46,35 +46,40 @@
                 <form class="login100-form validate-form" action="">
                     <span class="login100-form-logo"> <img src="../images/icons/logo.png" width="80" height="70" alt="" />
                     </span>
-                    <br/>
+                    <br></br>
+                    <center>
+                        <h1>Welcome</h1>
+                    </center>
                     <br></br>
                     <div class="wrap-input100 validate-input" >
                         <h:form>
-                            <h:outputLabel style="color:white;"  value="Welcome #{loginbean.usuario}"/>
+                            <h:outputLabel style="color:white;"  value="User #{loginbean.usuario}"/>
                         </h:form>
                     </div>
                     <br></br>
                     <div class="container-login100-form-btn ">
                         <h:form>
-                            <p:commandButton class="login100-form-btn" value="Back" actionListener="#{loginbean.salir}" ajax="true"> </p:commandButton>
+                            <p:commandButton class="login100-form-btn" value="States Idea"  actionListener="#{usuariobean.porEstado}"  ajax="true"> </p:commandButton>
                         </h:form>
-                        <p:spacer width="30" height="80"></p:spacer>
+                        <p:spacer width="30" height="70"></p:spacer>
                         <h:form>
-                            <p:commandButton class="login100-form-btn" value="Consultar"  actionListener="#{usuariobean.consultar}"  ajax="true"> </p:commandButton>
+                            <p:commandButton class="login100-form-btn" value="Consult Idea"  actionListener="#{usuariobean.consultar}"  ajax="true"> </p:commandButton>
                         </h:form>
-                        <p:spacer width="30" height="80"></p:spacer>
+                        <p:spacer width="30" height="70"></p:spacer>
                         <h:form>
-                            <p:commandButton class="login100-form-btn" value="Graphic Area"  actionListener="#{estadisticaBean.porArea}"  ajax="true"> </p:commandButton>
+                            <p:commandButton class="login100-form-btn" value="Area Chart"  actionListener="#{estadisticaBean.porArea}"  ajax="true"> </p:commandButton>
                         </h:form>
+                        <p:spacer width="60" height="70"></p:spacer>
                         <h:form>
                             <p:commandButton class="login100-form-btn" value="Ideas"  actionListener="#{paginadoBean.generar(loginbean.usuario)}"  ajax="true"> </p:commandButton>
                         </h:form>
-                        <p:spacer width="100" height="80"></p:spacer>
+                        <p:spacer width="50" height="70"></p:spacer>
                         <h:form>
-                            <p:commandButton class="login100-form-btn" value="Graphic States"  actionListener="#{estadisticaBean.porEstado}"  ajax="true"> </p:commandButton>
+                            <p:commandButton class="login100-form-btn" value="States Chart"  actionListener="#{estadisticaBean.porEstado}"  ajax="true"> </p:commandButton>
                         </h:form>
+
                         <h:form>
-                        <p:commandButton class="login100-form-btn" value="Ideas States"  actionListener="#{usuariobean.porEstado}"  ajax="true"> </p:commandButton>
+                            <p:commandButton class="login100-form-btn" value="Back" actionListener="#{loginbean.salir}" ajax="true"> </p:commandButton>
                     </h:form>
                     </div>
                 </form>

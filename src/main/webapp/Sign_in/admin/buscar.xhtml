@@ -43,45 +43,39 @@
 <h:body>
     <div class="limiter">
         <div class="container-login100" style="background-image: url('../images/bg-01.jpg');">
-            <div class="wrap-login100" style= "width: 920px " >
+            <div class="wrap-login100" style= "width: 1200px " >
                 <form class="login100-form validate-form"   action="">
                     <span class="login100-form-logo"> <img src="../images/icons/logo.png" width="80" height="70" alt="" /></span>
                     <br/>
                     <h:form id="form">
                         <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
-                        <br/>
-                        <br/>
-                                            </h:form>
-                    <br/>
+                    </h:form>
                     <h:form>
+                        <br></br>
+                        <center>
+                            <h1>Search Idea</h1>
+                        </center>
+                        <br></br>
                         <p:dataTable id="basicDT"  var="usuario" value="#{asignarPerfil.usuarios}" reflow="true" style="margin-top:20px">
-                               <f:facet name="header" >
-                                   <center>
-                                <h5><b>USUARIOS</b></h5>
-                                   </center>
-                               </f:facet>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <p:column  headerText="Usuario"  style="min-width: 90px;border-style: solid; border-color: black; color: white ">
+                            <p:column  headerText="User"  style="min-width: 150px; color: white ">
                                 <h:outputText value="#{usuario.login}" style="color: black" />
                             </p:column>
-                            <p:column headerText="Nombre" style="min-width: 90px; border-style: solid; border-color: black; color: white" >
+                            <p:column headerText="Name" style="min-width: 120px; color: white" >
                                 <h:outputText value="#{usuario.nombre}" style="color: black" />
                             </p:column>
-                            <p:column  headerText="Apellido" style="min-width: 90px; border-style: solid; border-color: black; color: white">
+                            <p:column  headerText="Last Name" style="min-width: 150px; black; color: white">
                                 <h:outputText value="#{usuario.apellido}" style="color: black" />
                             </p:column>
-                            <p:column  headerText="Area" style="min-width: 90px; border-style: solid; border-color: black; color: white">
+                            <p:column  headerText="Area" style="min-width: 150px; color: white">
                                 <h:outputText value="#{usuario.area}" style="color: black" />
                             </p:column>
-                            <p:column  headerText="Correo" style="min-width: 90px; border-style: solid; border-color: black; color: white">
+                            <p:column  headerText="E-mail" style="min-width: 250px; color: white">
                                 <h:outputText value="#{usuario.correo}" style="color: black" />
                             </p:column>
-                            <p:column  headerText="Role" style="min-width: 90px; border-style: solid; border-color: black; color: white; ">
+                            <p:column  headerText="Role" style="min-width: 150px; color: white; ">
                                 <h:outputText value="#{usuario.role}" style="color: black"  />
                             </p:column >
-                            <p:column headerText="Select one" style="min-width: 90px; border-style: solid; border-color: black; color: white">
+                            <p:column headerText="Select one" style="min-width: 150px; color: white">
                                 <p:commandButton  class="login100-form-btn"  title="Select" style="color:black ; background: #9a46f6 ;border-color: white; height: 20px; ">
                                     <f:setPropertyActionListener value="#{usuario}" target="#{asignarPerfil.usuario}" />
                                 </p:commandButton>
@@ -100,8 +94,9 @@
                         </h:selectOneMenu>
                         <br/>
                         <div class="container-login100-form-btn ">
+                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Change" actionListener="#{asignarPerfil.cambiar}"/>
+                            <p:spacer width="30" height="30"></p:spacer>
                             <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{asignarPerfil.volver}" ajax="true"/>
-                            <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Cambiar" actionListener="#{asignarPerfil.cambiar}"/>
                         </div>
                     </h:form>
                 </form>

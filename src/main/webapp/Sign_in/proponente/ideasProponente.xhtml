@@ -46,13 +46,15 @@
                     <span class="login100-form-logo"> <img src="../images/icons/logo.png" width="80" height="70" alt="" />
                     </span>
                         </form>
+                        <br></br>
+                        <center>
+                            <h1>View Ideas</h1>
+                        </center>
+                        <br></br>
                         <div>
                             <p:dataTable id="tbl" var="idea" value="#{ideasProponente.ideas}"
                                          paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                                          paginator="true" rows="2" style="margin-bottom:20px" sortMode="multiple" >
-                                <f:facet name="header">
-                                    Table Ideas
-                                </f:facet>
                                 <p:column  headerText="Name"  sortBy="#{idea.nombreIdea}">
                                     <h:outputText value="#{idea.nombreIdea}" />
                                 </p:column>

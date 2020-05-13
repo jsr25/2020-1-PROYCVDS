@@ -47,21 +47,25 @@
                     </span>
                         </form>
                         <div>
+                            <br></br>
+                            <center>
+                            <h1>Status Ideas</h1>
+                            </center>
+                            <br></br>
                             <h:selectOneMenu class="input100" id="console" value="#{consultarPorEstado.estado}" style="width:590px;color:black; ">
                                 <f:selectItem  itemValue="Select type state" />
                                 <f:selectItem itemLabel="en espera de revisión" itemValue="en espera de revisión" style="color:black;"   />
                                 <f:selectItem itemLabel="En proceso" itemValue="En proceso" style="color:black;" />
                                 <f:selectItem itemLabel="Finalizado" itemValue="Finalizado" style="color:black;" />
                             </h:selectOneMenu>
+                            <br></br>
                             <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Show"  actionListener="#{consultarPorEstado.mostrar}"  update="table"/>
                             <br></br>
                             <h:form id="table">
+                                <br></br>
                             <p:dataTable id="tbl" var="idea" value="#{consultarPorEstado.ideaList}"
                                          paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}"
                                          paginator="true" rows="3" style="margin-bottom:20px" sortMode="multiple">
-                                <f:facet name="header">
-                                    Table Ideas
-                                </f:facet>
                                 <p:column  headerText="Name"  style="min-width: 300px;" sortBy="#{idea.nombreIdea}">
                                     <h:outputText value="#{idea.nombreIdea}" />
                                 </p:column>

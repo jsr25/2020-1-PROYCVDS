@@ -44,7 +44,11 @@
                 <form class="login100-form validate-form" action="">
             <span class="login100-form-logo"> <img
                     src="../images/icons/logo.png" width="80" height="70" alt="" /> </span>
-                    <span class="login100-form-title p-b-34 p-t-27"> Sign Up </span>
+                    <br></br>
+                    <center>
+                        <h1>Register Idea</h1>
+                    </center>
+                    <br></br>
                     <div class="wrap-input100 validate-input">
                         <h:outputLabel style="color:white;" for="Ideaname" value="Idea name"/>
                         <h:inputText class="input100" id="Ideaname" required="true" type="String" binding="#{ideaname}" />
@@ -79,12 +83,10 @@
                         <br/>
                         <div class="container-login100-form-btn">
                             <h:form>
-                            <p:commandButton class="login100-form-btn" value="Back" actionListener="#{registrarIDeaBean.proponente}" action="#{palabrasClaveBean.iniciar}" > </p:commandButton>
-
-                            <p:commandButton class="login100-form-btn"  value="Create" actionListener="#{registrarIDeaBean.registroIdea(ideaname.value,description.value,loginbean.usuario,loginbean.area)}" action="#{palabrasClaveBean.crear(ideaname.value)}" ajax="true"></p:commandButton>
-
-                    </h:form>
-
+                                <p:commandButton class="login100-form-btn"  value="Create" actionListener="#{registrarIDeaBean.registroIdea(ideaname.value,description.value,loginbean.usuario,loginbean.area)}" action="#{palabrasClaveBean.crear(ideaname.value)}" ajax="true"></p:commandButton>
+                                <p:spacer width="30" height="70"></p:spacer>
+                                <p:commandButton class="login100-form-btn" value="Back" actionListener="#{registrarIDeaBean.proponente}" action="#{palabrasClaveBean.iniciar}" > </p:commandButton>
+                            </h:form>
                         </div>
                     </h:form>
                 </form>

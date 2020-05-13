@@ -47,28 +47,34 @@
     <span class="login100-form-logo"> <img src="../images/icons/logo.png" width="80" height="70" alt="" /></span>
     <br/>
         <br></br>
+            <center>
+                <h1>Consult Ideas</h1>
+            </center>
+        <br></br>
         <h:form>
         <p:inputText class="login100-form-btn" style= "width: 590px; height:30px "  value="#{infoIdeaBean.pala}" ></p:inputText>
-
         <p:commandButton  class="login100-form-btn" style= "width: 590px; height:30px "   value="Search" actionListener="#{infoIdeaBean.consultar}" ajax="true"> </p:commandButton>
         </h:form>
         <h:form>
+            <br></br>
+            <br></br>
             <p:dataTable id="basicDT"  var="idea" value="#{infoIdeaBean.ideas}" >
-                <p:column  headerText="Descripción"  style="min-width: 200px;">
-                    <h:outputText value="#{idea.descripcion}" />
-                </p:column>
-                <p:column headerText="LoginProponente" style="min-width: 250px;" >
+                <p:column headerText="Login Proponent" style="min-width: 180px;" >
                     <h:outputText value="#{idea.loginProponente}" />
                 </p:column>
-                <p:column  headerText="Area" style="min-width: 100px;">
+                <p:column  headerText="Description"  style="min-width: 250px;">
+                    <h:outputText value="#{idea.descripcion}" />
+                </p:column>
+                <p:column  headerText="Area" style="min-width: 120px;">
                     <h:outputText value="#{idea.area}" />
                 </p:column>
-                <p:column  headerText="Estado" style="min-width: 100px;">
+                <p:column  headerText="Status" style="min-width: 100px;">
                     <h:outputText value="#{idea.estado}" />
                 </p:column>
             </p:dataTable>
         </h:form>
         <h:form>
+            <br></br>
             <div class="container-login100-form-btn ">
                 <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{infoIdeaBean.volver}" ajax="true"/>
             </div>
@@ -77,10 +83,6 @@
     </div>
     </div>
     </div>
-
-
-
-
 </h:body>
 </html>
 

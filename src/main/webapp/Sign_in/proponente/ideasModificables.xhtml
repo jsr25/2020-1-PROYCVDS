@@ -50,19 +50,17 @@
                     <br/>
                     <div class="wrap-input100 validate-input">
                         <center>
-                        <h3>MODIFY IDEAS</h3>
+                        <h1>Modify Ideas</h1>
                         </center>
+                        <br></br>
                         <h:form>
                         <p:dataTable id="tbl" var="idea" value="#{modificarIdeaBean.ideaList}"
                                      paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                                      paginator="true" rows="10" style="margin-bottom:20px" sortMode="multiple" >
-                            <f:facet name="header">
-                                Modify Ideas
-                            </f:facet>
-                            <p:column  headerText="Name"  style="min-width: 100px;" sortBy="#{idea.nombreIdea}">
+                            <p:column  headerText="Name"  style="min-width: 150px;" sortBy="#{idea.nombreIdea}">
                                 <h:outputText value="#{idea.nombreIdea}" />
                             </p:column>
-                            <p:column  headerText="Description"  style="width: 150px" sortBy="#{idea.descripcion}">
+                            <p:column  headerText="Description"  style="width: 200px" sortBy="#{idea.descripcion}">
                                 <h:outputText value="#{idea.descripcion}" />
                             </p:column>
                             <p:column headerText="Proponent" style="min-width: 100px;" sortBy="#{idea.loginProponente}" >
@@ -71,15 +69,16 @@
                             <p:column  headerText="Area" style="min-width: 100px;" sortBy="#{idea.area}">
                                 <h:outputText value="#{idea.area}" />
                             </p:column>
-                            <p:column  headerText="State" style="min-width: 150px;" sortBy="#{idea.estado}">
+                            <p:column  headerText="Status" style="min-width: 150px;" sortBy="#{idea.estado}">
                                 <h:outputText value="#{idea.estado}" />
                             </p:column>
                             <p:column style="width:150px;text-align: center">
-                                <p:commandButton  class="login100-form-btn"  title="Modify Idea"  style= "width: 50px; height:20px;  " actionListener="#{modificarIdeaBean.modificar(idea.nombreIdea)}" ajax="true">
-                                </p:commandButton>
+                                <p:commandButton  class="login100-form-btn"  title="Modify Idea"  style= "width: 50px; height:20px;  " actionListener="#{modificarIdeaBean.modificar(idea.nombreIdea)}" ajax="true"></p:commandButton>
                             </p:column>
                         </p:dataTable>
-                        <p:commandButton class="login100-form-btn"  style= "width: 50px; height:20px;" value="volver" actionListener="#{proponentebean.volver}"></p:commandButton>
+                            <center>
+                                <p:commandButton class="login100-form-btn"  style= "width: 50px; height:20px;" value="Back" actionListener="#{proponentebean.volver}"></p:commandButton>
+                            </center>
                         </h:form>
                     </div>
                 </form>

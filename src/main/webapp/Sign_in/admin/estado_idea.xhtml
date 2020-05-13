@@ -41,21 +41,26 @@
 <h:body>
     <div class="limiter">
         <div class="container-login100" style="background-image: url('../images/bg-01.jpg');">
-            <div class="wrap-login100" style= "width: 750px " >
+            <div class="wrap-login100" style= "width: 1500px " >
                 <span class="login100-form-logo"> <img src="../images/icons/logo.png" width="80" height="70" alt="" /></span>
                     <br/>
                 <h:form>
+                    <br></br>
+                    <center>
+                        <h1>Ideas</h1>
+                    </center>
+                    <br></br>
                     <p:dataTable id="basicDT"  var="idea" value="#{ConsultBean.ideas}">
-                        <p:column  headerText="Descripción"  style="min-width: 200px;">
-                            <h:outputText value="#{idea.descripcion}" />
-                        </p:column>
-                        <p:column headerText="LoginProponente" style="min-width: 150px;" >
+                        <p:column headerText="Login Proponent" style="min-width: 200px;" >
                             <h:outputText value="#{idea.loginProponente}" />
                         </p:column>
-                        <p:column  headerText="Area" style="min-width: 100px;">
+                        <p:column  headerText="Description"  style="min-width: 500px;">
+                            <h:outputText value="#{idea.descripcion}" />
+                        </p:column>
+                        <p:column  headerText="Area" style="min-width: 180px;">
                             <h:outputText value="#{idea.area}" />
                         </p:column>
-                        <p:column  headerText="Estado" style="min-width: 100px;">
+                        <p:column  headerText="Status" style="min-width: 300px;">
                             <h:outputText value="#{idea.estado}" />
                         </p:column>
                         <p:column style="width:32px;text-align: center">
@@ -73,13 +78,13 @@
                     <f:selectItem itemLabel="En proceso" itemValue="En proceso" style="color:black;" />
                     <f:selectItem itemLabel="Finalizado" itemValue="Finalizado" style="color:black;" />
                 </h:selectOneMenu>
+                    <br></br>
                     <div class="container-login100-form-btn ">
-                        <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{ConsultBean.volver}" ajax="true"/>
                         <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Cambiar" actionListener="#{ConsultBean.cambiarEstado}"/>
+                        <p:spacer width="30" height="70"></p:spacer>
+                        <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{ConsultBean.volver}" ajax="true"/>
                     </div>
                 </h:form>
-
-
             </div>
         </div>
     </div>

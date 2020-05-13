@@ -48,26 +48,27 @@
                         </form>
                         <div>
                             <br></br>
+                            <center>
+                                <h1>Search Idea</h1>
+                            </center>
+                            <br></br>
                             <h:form>
                             <p:dataTable id="tbl" var="usuario" value="#{asignarPerfil.usuarios}"
                                          paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
                                          paginator="true" rows="2" style="margin-bottom:20px" sortMode="multiple" >
-                                <f:facet name="header">
-                                    Users
-                                </f:facet>
-                                <p:column  headerText="Usuario"  style="width: 30px;" sortBy="#{usuario.login}">
+                                <p:column  headerText="User"  style="width: 30px;" sortBy="#{usuario.login}">
                                     <h:outputText value="#{usuario.login}" />
                                 </p:column>
-                                <p:column headerText="Nombre" style="width: 30px;" sortBy="#{usuario.nombre}" >
+                                <p:column headerText="Name" style="width: 30px;" sortBy="#{usuario.nombre}" >
                                     <h:outputText value="#{usuario.nombre}" />
                                 </p:column>
-                                <p:column  headerText="apellido" style="width: 30px;" sortBy="#{usuario.apellido}">
+                                <p:column  headerText="Last Name" style="width: 30px;" sortBy="#{usuario.apellido}">
                                     <h:outputText value="#{usuario.apellido}" />
                                 </p:column>
                                 <p:column  headerText="Area" style="width: 30px;" sortBy="#{usuario.area}">
                                     <h:outputText value="#{usuario.area}" />
                                 </p:column>
-                                <p:column  headerText="Correo" style="width: 50px;" sortBy="#{usuario.correo}">
+                                <p:column  headerText="E-mail" style="width: 50px;" sortBy="#{usuario.correo}">
                                     <h:outputText value="#{usuario.correo}" />
                                 </p:column>
                                 <p:column  headerText="Role" style="width: 50px;" sortBy="#{usuario.role}">
@@ -90,8 +91,9 @@
                                 </h:selectOneMenu>
                                 <br/>
                                 <div class="container-login100-form-btn ">
-                                    <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{asignarPerfil.volver}" ajax="true"/>
                                     <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Cambiar" actionListener="#{asignarPerfil.cambiar}"/>
+                                    <p:spacer width="30" height="30"></p:spacer>
+                                    <p:commandButton class="login100-form-btn" style= "width: 145px; height:30px "  title="Back"  actionListener="#{asignarPerfil.volver}" ajax="true"/>
                                 </div>
                             </h:form>
                         </div>
