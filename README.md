@@ -170,19 +170,16 @@ Jacoco, etc.)
 ### Reporte de análisis estático de código. Se pueden usar las mismas
 herramientas trabajadas en los laboratorios.
 
-
 ## Construido con
 
 * [Primefaces](https://www.primefaces.org/)
 * [Maven](https://mvnrepository.com/)
 * Enlace al sistema de integración continua.
 
-
 ## Herramientas
 
 * [Taiga](https://tree.taiga.io/project/jsr25-plataforma-banco-de-iniciativas-de-proyectos/backlog) 
 * [Heroku](https://proyecto-cvds-2020-1.herokuapp.com/) 
-
 
 ## Autores
 
