@@ -135,18 +135,11 @@ Este rol tiene las características de:
 
 ## Arquitectura y Diseño
 
-### Modelo E-R.
-### Diagrama de clases (hacerlo mediante ingeniería inversa)
+#### Modelo E-R.
 
-```
-Give the example
-```
+![](img/clases.png)
 
-## Descripción del Proyecto
-
-### Breve descripción de la Metodología.
-### Generar el 'release-burndown chart' del proyecto, e indicar los puntos de
-historia realizados y los faltantes.
+#### Diagrama de clases (hacerlo mediante ingeniería inversa)
 
 ### Sprint 1
 
@@ -162,12 +155,6 @@ historia realizados y los faltantes.
 
 ![](img/SPRINT/3.png)
 ![](img/SPRINT/S3.png)
-
-### Reporte de pruebas y de cubrimiento de las mismas (sólo la foto del reporte
-principal). Para la cobertura, pueden usar los plugins disponibles (EclEmma,
-Jacoco, etc.)
-### Reporte de análisis estático de código. Se pueden usar las mismas
-herramientas trabajadas en los laboratorios.
 
 ## Construido con
 
