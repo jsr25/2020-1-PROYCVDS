@@ -23,8 +23,14 @@ Estudiantes de la Escuela Colombiana de Ingeniería Julio Garavito de la carrera
 ## Manual del usuario
 
 ### Login
+![](img/LOGIN/Login.png)
 
-![](img/Login.png)
+### Sign Up
+![](img/LOGIN/sign.png)
+
+### Registro Exitoso
+![](img/LOGIN/in.png)
+
 
 En la pagina web hay roles, cada uno con diferentes caracteristicas.
 
@@ -37,28 +43,96 @@ En la pagina web hay roles, cada uno con diferentes caracteristicas.
 
 ### Administrador 
 
+![](img/ADMINISTRADOR/welcome.png)
 
+Este rol tiene las características de:
+
+```
+- Buscar idea
+- Estado idea
+- Agrupar idea
+```
+* Buscar idea
+
+![](img/ADMINISTRADOR/buscar.png)
+
+* Estado idea
+
+![](img/ADMINISTRADOR/estado.png)
+
+* Agrupar idea
+
+![](img/ADMINISTRADOR/join.png)
 
 ### Personal PMO - ODI
+falta
+
+Este rol tiene las características de:
+
+```
+-
+```
+* 
 
 ### Proponente de iniciativa o idea de proyecto
 
-![](img/Mateo.png)
+![](img/PROPONENTE/welcome.png)
 
-* Agregar Idea
+Este rol tiene las características de:
 
-![](img/AddIdea.png)
+```
+- Ver ideas
+- Modificar idea
+- Registrar idea
+```
 
-* Modificar Idea
+* Ver ideas
 
-![](img/ModifyIdeas.png)
+![](img/PROPONENTE/ideas.png)
 
-* Ver Idea
+* Modificar idea
 
-![](img/ViewIdeas.png)
+![](img/PROPONENTE/mod1.png)
+
+![](img/PROPONENTE/mod.png)
+
+* Registrar idea
+
+![](img/PROPONENTE/regi.png)
 
 ### Usuarios de consulta
 
+![](img/USUARIO/welcome.png)
+
+Este rol tiene las características de:
+
+```
+- Consultar ideas por palabra clave
+- Ver estadísticas de las ideas
+- Consultar tabla de ideas registradas
+- Consultar estado de las ideas
+- Consultar y agregar comentario a las ideas
+```
+
+* Consultar ideas por palabra clave
+
+![](img/USUARIO/consul.png)
+
+* Ver estadísticas de las ideas
+
+![](img/USUARIO/chart.png)
+
+* Consultar tabla de ideas registradas
+
+![](img/USUARIO/ideas.png)
+
+* Consultar estado de las ideas
+
+![](img/USUARIO/status.png)
+
+* Consultar y agregar comentario a las ideas
+
+![](img/USUARIO/view.png)
 
 ## Arquitectura y Diseño
 
@@ -77,19 +151,18 @@ historia realizados y los faltantes.
 
 ### Sprint 1
 
-![](img/S1.png)
-![](img/GS1.png)
+![](img/SPRINT/1.png)
+![](img/SPRINT/S1.png)
 
 ### Sprint 2
 
-![](img/S2.png)
-![](img/GS2.png)
+![](img/SPRINT/2.png)
+![](img/SPRINT/S2.png)
 
 ### Sprint 3
 
-![](img/S3.png)
-![](img/GS3.png)
-
+![](img/SPRINT/3.png)
+![](img/SPRINT/S3.png)
 
 ### Reporte de pruebas y de cubrimiento de las mismas (sólo la foto del reporte
 principal). Para la cobertura, pueden usar los plugins disponibles (EclEmma,
@@ -108,7 +181,7 @@ herramientas trabajadas en los laboratorios.
 ## Herramientas
 
 * [Taiga](https://tree.taiga.io/project/jsr25-plataforma-banco-de-iniciativas-de-proyectos/backlog) 
-* [Heroku](https://gist.github.com/PurpleBooth/b24679402957c63ec426) 
+* [Heroku](https://proyecto-cvds-2020-1.herokuapp.com/) 
 
 
 ## Autores
