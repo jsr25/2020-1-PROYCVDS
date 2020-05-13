@@ -5,15 +5,15 @@ Este proyecto es la culminación de nuestro curso de nuestro curso de ciclos de 
 
 ## Equipo
 
-### Dueño del proyecto
+#### Dueño del proyecto
 * Oscar David Ospina Rodríguez
 
 Docente de la materia y graduado Ingeniero de Sistemas de la Escuela Colombiana de Ingeniería Julio Garavito.
 
-### Scrum master
+#### Scrum master
 * Juan Sebastián Ramos Isaza
 
-### Equipo de Desarrolladores
+#### Equipo de Desarrolladores
 * Brayan Alexis Jimenez Moya
 * Mateo Ernesto Quintero Acevedo
 * María Fernanda Hernández Vargas
