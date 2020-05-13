@@ -43,7 +43,7 @@ En la pagina web hay roles, cada uno con diferentes caracteristicas.
 
 ### Administrador 
 
-![](img/ADMINISTRADOR/welcome.png)
+![](img/ADMIN/welcome.png)
 
 Este rol tiene las características de:
 
@@ -54,15 +54,15 @@ Este rol tiene las características de:
 ```
 * Buscar idea
 
-![](img/ADMINISTRADOR/buscar.png)
+![](img/ADMIN/buscar.png)
 
 * Estado idea
 
-![](img/ADMINISTRADOR/estado.png)
+![](img/ADMIN/estado.png)
 
 * Agrupar idea
 
-![](img/ADMINISTRADOR/join.png)
+![](img/ADMIN/join.png)
 
 ### Personal PMO - ODI
 falta
