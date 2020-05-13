@@ -23,7 +23,7 @@ Estudiantes de la Escuela Colombiana de Ingeniería Julio Garavito de la carrera
 ## Manual del usuario
 
 ### Login
-![](img/LOGIN/Login.png)
+![](img/LOGIN/login.png)
 
 ### Sign Up
 ![](img/LOGIN/sign.png)
