@@ -93,7 +93,7 @@ Este rol tiene las características de:
 * Modificar idea
 
 ![](img/PROPONENTE/mod1.png)
-![](img/PROPONENTE/mod.png)
+![](img/PROPONENTE/modify.png)
 
 * Registrar idea
 
