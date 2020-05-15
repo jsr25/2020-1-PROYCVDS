@@ -11,7 +11,6 @@
 
 <head>
     <title>
-        Sign in
     </title>
     <meta content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -56,9 +55,17 @@
                         <h:form>
                             <h:outputLabel style="color:white;"  value="User #{loginbean.usuario}"/>
                         </h:form>
+                        <br/>
+                    <div class="container-login100-form-btn ">
+                        <h:form>
+                            <p:commandButton class="login100-form-btn" value="Ideas"  actionListener="#{ConsultBean.consultar}"  ajax="true"> </p:commandButton>
+                        </h:form>
+                        <p:spacer width="30" height="70"></p:spacer>
+
                         <h:form>
                             <p:commandButton class="login100-form-btn" value="Back" actionListener="#{loginbean.salir}"   ajax="true"> </p:commandButton>
                         </h:form>
+                    </div>
                     </div>
                 </form>
             </div>

@@ -60,13 +60,18 @@ public class LoginBean extends BaseBean{
     }
 
     public void login() throws IOException {
-        if(!loginSegurity.isLogged()) {
+        try{
+            if(!loginSegurity.isLogged()) {
+
             loginSegurity.login(usuario, password, false);
+
             pantallaInicial();
-        }
-        else{
+            }
+
+        }catch (Exception e)
+        {
             FacesContext facesContext = FacesContext.getCurrentInstance();
-            facesContext.getExternalContext().redirect("../login.xhtml");
+            facesContext.getExternalContext().redirect("login.xhtml");
         }
     }
 
@@ -140,6 +145,7 @@ public class LoginBean extends BaseBean{
         if(loginSegurity.pmo()){
             FacesContext.getCurrentInstance().getExternalContext().redirect("PMO/personal.xhtml");
         }
+
     }
 
     public String getArea() {

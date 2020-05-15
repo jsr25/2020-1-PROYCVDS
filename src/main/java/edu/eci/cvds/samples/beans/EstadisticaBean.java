@@ -55,7 +55,7 @@ public class EstadisticaBean extends BaseBean {
         model.setShowDatatip(true);
         model.setShowDataLabels(true);
         model.setDataFormat("value");
-        model.setSeriesColors("f5ce61,82f8d3,f787a4");
+        model.setSeriesColors("f5ce61,82f8d3,f787a4,FF1493,FF4500,EE82EE,6A5ACD,98FB98,808000,5F9EA0,A52A2A,778899");
     }
 
     public List<Idea> getIdeas() {

@@ -49,6 +49,16 @@ public class ConsultIdeaBean extends BaseBean {
 
         }
     }
+    public void volver2(){
+        estado=null;
+        idea=null;
+        ideas=null;
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("personal.xhtml");
+        } catch (IOException e) {
+
+        }
+    }
     public List<Idea> getIdeas() {
         return ideas;
     }
