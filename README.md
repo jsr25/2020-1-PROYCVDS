@@ -1,6 +1,6 @@
 # PROYECTO CVDS RamioSquad
 
-Este proyecto es la culminación de nuestro curso de nuestro curso de ciclos de vida del desarrollo del software. El cual consiste en una herramienta donde se pueden registrar, consultar o modificar, iniciativas e ideas de proyectos para la Escuela. En la herramienta pueden interactuar diferentes actores donde cada uno de ellos tiene diferentes habilidades. 
+Este proyecto es la culminación de nuestro curso de ciclos de vida del desarrollo del software. El cual es una herramienta donde se pueden registrar, consultar o modificar, iniciativas e ideas de proyectos para la Escuela. En la herramienta pueden interactuar diferentes actores donde cada uno de ellos tiene opciones.
 
 
 ## Equipo
