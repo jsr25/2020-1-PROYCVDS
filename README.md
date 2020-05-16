@@ -48,11 +48,11 @@ En la pagina web hay roles, cada uno con diferentes caracteristicas.
 Este rol tiene las características de:
 
 ```
-- Buscar idea
+- Buscar usuario
 - Estado idea
 - Agrupar idea
 ```
-* Buscar idea
+* Buscar usuario
 
 ![](img/ADMIN/buscar.png)
 
@@ -70,9 +70,9 @@ Este rol tiene las características de:
 Este rol tiene las características de:
 
 ```
-- Cambiar el estado de las ideas.
+- Cambiar el estado de las ideas
 ```
-* Cambiar el estado de las ideas.
+* Cambiar el estado de las ideas
 ![](img/PMO/ideas.png)
 
 ### Proponente de iniciativa o idea de proyecto
