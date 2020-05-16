@@ -65,14 +65,15 @@ Este rol tiene las características de:
 ![](img/ADMIN/join.png)
 
 ### Personal PMO - ODI
-falta
 
+![](img/PMO/welcome.png)
 Este rol tiene las características de:
 
 ```
--
+- Cambiar el estado de las ideas.
 ```
-* 
+* Cambiar el estado de las ideas.
+![](img/PMO/ideas.png)
 
 ### Proponente de iniciativa o idea de proyecto
 
