@@ -33,7 +33,7 @@ public class ConsultIdeaBean extends BaseBean {
             idea=null;
             ideas=null;
             try {
-                FacesContext.getCurrentInstance().getExternalContext().redirect("administrador.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("personal.xhtml");
             } catch (IOException e) {
 
             }
