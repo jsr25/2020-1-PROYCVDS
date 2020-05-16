@@ -136,13 +136,10 @@ Este rol tiene las características de:
 
 ## Arquitectura y Diseño
 
-#### Modelo E-R.
-
 ![](img/clases.png)
 
 ![](img/entidad.png)
 
-#### Diagrama de clases (hacerlo mediante ingeniería inversa)
 
 ### Sprint 1
 
